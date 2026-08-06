@@ -48,17 +48,36 @@ $env:BLOG_ASSETS_DIR = "路径\到\你的\生成图目录"
 | `align-paths.py` | inventory / manifest / MD 三方路径对齐 |
 | `dedupe-markdown-images.py` | 清理 `1–9.*.md` 中重复或错误图片行 |
 | `scaffold_agent_infographics_214_254.py` | 为 AI Agent 教程 214–254 生成 README、prompts、PNG 并插入正文引用 |
-| `render_hand_drawn_infographic.py` | 从 `prompts/*.md` 渲染 hand-drawn-edu 风格 PNG（1536×1024） |
+| `regen_agent_infographics_214_254.py` | 增强 214–254 prompts、生成 baoyu-image-gen 批量 JSON |
+| `export_agent_gen_manifest.py` | 导出紧凑生成描述 manifest |
+| `apply_gen_images.py` | 将 `assets/` 中生成的 PNG 复制到 `image/{slug}/`（支持 `index:filename` 批量参数） |
+| `status_agent_infographics.py` | 检查 214–254 系列 AI 图 vs 占位图进度 |
+| `render_hand_drawn_infographic.py` | **已废弃占位渲染**（Pillow 色块，非 hand-drawn-edu） |
 
 ## AI Agent 系列（214–254）配图
 
+风格约定见 `.baoyu-skills/baoyu-infographic/EXTEND.md`：`hand-drawn-edu` · 16:9 · 中文。
+
 ```bash
-# 一键：生成 prompts + PNG + 正文引用
+# 一键：生成/更新 prompts + README + 正文引用（不渲染 PNG）
 python scripts/scaffold_agent_infographics_214_254.py
 
-# 仅重绘某个 slug 的 PNG
-python scripts/render_hand_drawn_infographic.py --slug rag-to-agent-transition
+# 增强 prompts 并生成 baoyu-image-gen 批量文件
+python scripts/regen_agent_infographics_214_254.py --enhance-prompts --write-batch
+
+# AI 批量出图（需配置 API Key，见 baoyu-image-gen EXTEND.md）
+npx -y bun ~/.codex/skills/baoyu-image-gen/scripts/main.ts --batchfile scripts/_agent_batch_214_254.json --jobs 4
+
+# 将 assets/ 中的生成图复制到 image/ 并更新进度
+python scripts/apply_gen_images.py
+
+# 检查重生成进度
+python scripts/status_agent_infographics.py
 ```
+
+**勿用** `render_hand_drawn_infographic.py`——该脚本仅生成 Pillow 色块占位图，不符合 `hand-drawn-edu` 风格。
+
+> **注意**：多个 slug 共用 `03-concept-map.png` 文件名。批量生成到 `assets/` 时请使用唯一名（如 `03-concept-map-{slug}.png`），再用 `apply_gen_images.py 索引:assets文件名` 复制到目标路径。
 
 ## 单张流程图（非教程流水线）
 

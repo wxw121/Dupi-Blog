@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Render hand-drawn-edu style PNG infographics from prompt markdown files."""
+"""DEPRECATED: Pillow placeholder renderer — NOT real hand-drawn-edu style.
+
+Use baoyu-image-gen batch or Cursor GenerateImage instead.
+See scripts/regen_agent_infographics_214_254.py and scripts/README.md.
+"""
 from __future__ import annotations
 
 import argparse

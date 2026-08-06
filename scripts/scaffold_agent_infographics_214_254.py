@@ -176,8 +176,11 @@ def main() -> None:
         slugs.append(slug)
         print(f"OK {num} {slug}: refs={n}")
 
-    # render all PNGs
-    subprocess.run([sys.executable, str(ROOT / "scripts" / "render_hand_drawn_infographic.py"), "--all-agent"], check=True)
+    # render all PNGs — use AI generation (baoyu-image-gen), NOT Pillow placeholder
+    print("NOTE: PNG rendering skipped. Run:")
+    print("  python scripts/regen_agent_infographics_214_254.py --enhance-prompts --write-batch")
+    print("  npx -y bun ~/.codex/skills/baoyu-image-gen/scripts/main.ts --batchfile scripts/_agent_batch_214_254.json")
+    print("Or regenerate via baoyu-infographic / Cursor GenerateImage with hand-drawn-edu style.")
     print(f"Done {len(slugs)} articles")
 
 

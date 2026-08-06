@@ -1,0 +1,1112 @@
+{
+  "jobs": 4,
+  "tasks": [
+    {
+      "id": "rag-to-agent-transition/01-rag-to-agent-transition-idea.png",
+      "promptFiles": [
+        "image\\rag-to-agent-transition\\prompts\\01-rag-to-agent-transition-idea.md"
+      ],
+      "image": "image\\rag-to-agent-transition\\01-rag-to-agent-transition-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "rag-to-agent-transition/02-rag-to-agent-transition-flow.png",
+      "promptFiles": [
+        "image\\rag-to-agent-transition\\prompts\\02-rag-to-agent-transition-flow.md"
+      ],
+      "image": "image\\rag-to-agent-transition\\02-rag-to-agent-transition-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "rag-to-agent-transition/03-concept-map.png",
+      "promptFiles": [
+        "image\\rag-to-agent-transition\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\rag-to-agent-transition\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agent-vs-rag-vs-workflow/01-agent-vs-rag-vs-workflow-idea.png",
+      "promptFiles": [
+        "image\\agent-vs-rag-vs-workflow\\prompts\\01-agent-vs-rag-vs-workflow-idea.md"
+      ],
+      "image": "image\\agent-vs-rag-vs-workflow\\01-agent-vs-rag-vs-workflow-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agent-vs-rag-vs-workflow/02-agent-vs-rag-vs-workflow-flow.png",
+      "promptFiles": [
+        "image\\agent-vs-rag-vs-workflow\\prompts\\02-agent-vs-rag-vs-workflow-flow.md"
+      ],
+      "image": "image\\agent-vs-rag-vs-workflow\\02-agent-vs-rag-vs-workflow-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agent-vs-rag-vs-workflow/03-concept-map.png",
+      "promptFiles": [
+        "image\\agent-vs-rag-vs-workflow\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\agent-vs-rag-vs-workflow\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "when-not-to-use-agent/01-when-not-to-use-agent-idea.png",
+      "promptFiles": [
+        "image\\when-not-to-use-agent\\prompts\\01-when-not-to-use-agent-idea.md"
+      ],
+      "image": "image\\when-not-to-use-agent\\01-when-not-to-use-agent-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "when-not-to-use-agent/02-when-not-to-use-agent-flow.png",
+      "promptFiles": [
+        "image\\when-not-to-use-agent\\prompts\\02-when-not-to-use-agent-flow.md"
+      ],
+      "image": "image\\when-not-to-use-agent\\02-when-not-to-use-agent-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "when-not-to-use-agent/03-concept-map.png",
+      "promptFiles": [
+        "image\\when-not-to-use-agent\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\when-not-to-use-agent\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "enterprise-agent-architecture-overview/01-enterprise-agent-architectur-idea.png",
+      "promptFiles": [
+        "image\\enterprise-agent-architecture-overview\\prompts\\01-enterprise-agent-architectur-idea.md"
+      ],
+      "image": "image\\enterprise-agent-architecture-overview\\01-enterprise-agent-architectur-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "enterprise-agent-architecture-overview/02-enterprise-agent-architectur-flow.png",
+      "promptFiles": [
+        "image\\enterprise-agent-architecture-overview\\prompts\\02-enterprise-agent-architectur-flow.md"
+      ],
+      "image": "image\\enterprise-agent-architecture-overview\\02-enterprise-agent-architectur-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "enterprise-agent-architecture-overview/03-concept-map.png",
+      "promptFiles": [
+        "image\\enterprise-agent-architecture-overview\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\enterprise-agent-architecture-overview\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "tool-calling-basics/01-tool-calling-basics-idea.png",
+      "promptFiles": [
+        "image\\tool-calling-basics\\prompts\\01-tool-calling-basics-idea.md"
+      ],
+      "image": "image\\tool-calling-basics\\01-tool-calling-basics-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "tool-calling-basics/02-tool-calling-basics-flow.png",
+      "promptFiles": [
+        "image\\tool-calling-basics\\prompts\\02-tool-calling-basics-flow.md"
+      ],
+      "image": "image\\tool-calling-basics\\02-tool-calling-basics-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "tool-calling-basics/03-concept-map.png",
+      "promptFiles": [
+        "image\\tool-calling-basics\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\tool-calling-basics\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "tool-schema-design/01-tool-schema-design-idea.png",
+      "promptFiles": [
+        "image\\tool-schema-design\\prompts\\01-tool-schema-design-idea.md"
+      ],
+      "image": "image\\tool-schema-design\\01-tool-schema-design-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "tool-schema-design/02-tool-schema-design-flow.png",
+      "promptFiles": [
+        "image\\tool-schema-design\\prompts\\02-tool-schema-design-flow.md"
+      ],
+      "image": "image\\tool-schema-design\\02-tool-schema-design-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "tool-schema-design/03-concept-map.png",
+      "promptFiles": [
+        "image\\tool-schema-design\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\tool-schema-design\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "tool-parameter-validation/01-tool-parameter-validation-idea.png",
+      "promptFiles": [
+        "image\\tool-parameter-validation\\prompts\\01-tool-parameter-validation-idea.md"
+      ],
+      "image": "image\\tool-parameter-validation\\01-tool-parameter-validation-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "tool-parameter-validation/02-tool-parameter-validation-flow.png",
+      "promptFiles": [
+        "image\\tool-parameter-validation\\prompts\\02-tool-parameter-validation-flow.md"
+      ],
+      "image": "image\\tool-parameter-validation\\02-tool-parameter-validation-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "tool-parameter-validation/03-concept-map.png",
+      "promptFiles": [
+        "image\\tool-parameter-validation\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\tool-parameter-validation\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "tool-result-normalization/01-tool-result-normalization-idea.png",
+      "promptFiles": [
+        "image\\tool-result-normalization\\prompts\\01-tool-result-normalization-idea.md"
+      ],
+      "image": "image\\tool-result-normalization\\01-tool-result-normalization-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "tool-result-normalization/02-tool-result-normalization-flow.png",
+      "promptFiles": [
+        "image\\tool-result-normalization\\prompts\\02-tool-result-normalization-flow.md"
+      ],
+      "image": "image\\tool-result-normalization\\02-tool-result-normalization-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "tool-result-normalization/03-concept-map.png",
+      "promptFiles": [
+        "image\\tool-result-normalization\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\tool-result-normalization\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "tool-error-timeout-retry/01-tool-error-timeout-retry-idea.png",
+      "promptFiles": [
+        "image\\tool-error-timeout-retry\\prompts\\01-tool-error-timeout-retry-idea.md"
+      ],
+      "image": "image\\tool-error-timeout-retry\\01-tool-error-timeout-retry-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "tool-error-timeout-retry/02-tool-error-timeout-retry-flow.png",
+      "promptFiles": [
+        "image\\tool-error-timeout-retry\\prompts\\02-tool-error-timeout-retry-flow.md"
+      ],
+      "image": "image\\tool-error-timeout-retry\\02-tool-error-timeout-retry-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "tool-error-timeout-retry/03-concept-map.png",
+      "promptFiles": [
+        "image\\tool-error-timeout-retry\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\tool-error-timeout-retry\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "idempotent-agent-tools/01-idempotent-agent-tools-idea.png",
+      "promptFiles": [
+        "image\\idempotent-agent-tools\\prompts\\01-idempotent-agent-tools-idea.md"
+      ],
+      "image": "image\\idempotent-agent-tools\\01-idempotent-agent-tools-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "idempotent-agent-tools/02-idempotent-agent-tools-flow.png",
+      "promptFiles": [
+        "image\\idempotent-agent-tools\\prompts\\02-idempotent-agent-tools-flow.md"
+      ],
+      "image": "image\\idempotent-agent-tools\\02-idempotent-agent-tools-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "idempotent-agent-tools/03-concept-map.png",
+      "promptFiles": [
+        "image\\idempotent-agent-tools\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\idempotent-agent-tools\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "human-in-the-loop-agent/01-human-in-the-loop-agent-idea.png",
+      "promptFiles": [
+        "image\\human-in-the-loop-agent\\prompts\\01-human-in-the-loop-agent-idea.md"
+      ],
+      "image": "image\\human-in-the-loop-agent\\01-human-in-the-loop-agent-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "human-in-the-loop-agent/02-human-in-the-loop-agent-flow.png",
+      "promptFiles": [
+        "image\\human-in-the-loop-agent\\prompts\\02-human-in-the-loop-agent-flow.md"
+      ],
+      "image": "image\\human-in-the-loop-agent\\02-human-in-the-loop-agent-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "human-in-the-loop-agent/03-concept-map.png",
+      "promptFiles": [
+        "image\\human-in-the-loop-agent\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\human-in-the-loop-agent\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agent-tool-permission-boundary/01-agent-tool-permission-bounda-idea.png",
+      "promptFiles": [
+        "image\\agent-tool-permission-boundary\\prompts\\01-agent-tool-permission-bounda-idea.md"
+      ],
+      "image": "image\\agent-tool-permission-boundary\\01-agent-tool-permission-bounda-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agent-tool-permission-boundary/02-agent-tool-permission-bounda-flow.png",
+      "promptFiles": [
+        "image\\agent-tool-permission-boundary\\prompts\\02-agent-tool-permission-bounda-flow.md"
+      ],
+      "image": "image\\agent-tool-permission-boundary\\02-agent-tool-permission-bounda-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agent-tool-permission-boundary/03-concept-map.png",
+      "promptFiles": [
+        "image\\agent-tool-permission-boundary\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\agent-tool-permission-boundary\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agent-loop-observe-think-act/01-agent-loop-observe-think-act-idea.png",
+      "promptFiles": [
+        "image\\agent-loop-observe-think-act\\prompts\\01-agent-loop-observe-think-act-idea.md"
+      ],
+      "image": "image\\agent-loop-observe-think-act\\01-agent-loop-observe-think-act-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agent-loop-observe-think-act/02-agent-loop-observe-think-act-flow.png",
+      "promptFiles": [
+        "image\\agent-loop-observe-think-act\\prompts\\02-agent-loop-observe-think-act-flow.md"
+      ],
+      "image": "image\\agent-loop-observe-think-act\\02-agent-loop-observe-think-act-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agent-loop-observe-think-act/03-concept-map.png",
+      "promptFiles": [
+        "image\\agent-loop-observe-think-act\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\agent-loop-observe-think-act\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "react-agent-pattern/01-react-agent-pattern-idea.png",
+      "promptFiles": [
+        "image\\react-agent-pattern\\prompts\\01-react-agent-pattern-idea.md"
+      ],
+      "image": "image\\react-agent-pattern\\01-react-agent-pattern-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "react-agent-pattern/02-react-agent-pattern-flow.png",
+      "promptFiles": [
+        "image\\react-agent-pattern\\prompts\\02-react-agent-pattern-flow.md"
+      ],
+      "image": "image\\react-agent-pattern\\02-react-agent-pattern-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "react-agent-pattern/03-concept-map.png",
+      "promptFiles": [
+        "image\\react-agent-pattern\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\react-agent-pattern\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "plan-and-execute-agent/01-plan-and-execute-agent-idea.png",
+      "promptFiles": [
+        "image\\plan-and-execute-agent\\prompts\\01-plan-and-execute-agent-idea.md"
+      ],
+      "image": "image\\plan-and-execute-agent\\01-plan-and-execute-agent-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "plan-and-execute-agent/02-plan-and-execute-agent-flow.png",
+      "promptFiles": [
+        "image\\plan-and-execute-agent\\prompts\\02-plan-and-execute-agent-flow.md"
+      ],
+      "image": "image\\plan-and-execute-agent\\02-plan-and-execute-agent-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "plan-and-execute-agent/03-concept-map.png",
+      "promptFiles": [
+        "image\\plan-and-execute-agent\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\plan-and-execute-agent\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "reflection-agent-pattern/01-reflection-agent-pattern-idea.png",
+      "promptFiles": [
+        "image\\reflection-agent-pattern\\prompts\\01-reflection-agent-pattern-idea.md"
+      ],
+      "image": "image\\reflection-agent-pattern\\01-reflection-agent-pattern-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "reflection-agent-pattern/02-reflection-agent-pattern-flow.png",
+      "promptFiles": [
+        "image\\reflection-agent-pattern\\prompts\\02-reflection-agent-pattern-flow.md"
+      ],
+      "image": "image\\reflection-agent-pattern\\02-reflection-agent-pattern-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "reflection-agent-pattern/03-concept-map.png",
+      "promptFiles": [
+        "image\\reflection-agent-pattern\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\reflection-agent-pattern\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "task-decomposition-agent/01-task-decomposition-agent-idea.png",
+      "promptFiles": [
+        "image\\task-decomposition-agent\\prompts\\01-task-decomposition-agent-idea.md"
+      ],
+      "image": "image\\task-decomposition-agent\\01-task-decomposition-agent-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "task-decomposition-agent/02-task-decomposition-agent-flow.png",
+      "promptFiles": [
+        "image\\task-decomposition-agent\\prompts\\02-task-decomposition-agent-flow.md"
+      ],
+      "image": "image\\task-decomposition-agent\\02-task-decomposition-agent-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "task-decomposition-agent/03-concept-map.png",
+      "promptFiles": [
+        "image\\task-decomposition-agent\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\task-decomposition-agent\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agent-stop-condition/01-agent-stop-condition-idea.png",
+      "promptFiles": [
+        "image\\agent-stop-condition\\prompts\\01-agent-stop-condition-idea.md"
+      ],
+      "image": "image\\agent-stop-condition\\01-agent-stop-condition-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agent-stop-condition/02-agent-stop-condition-flow.png",
+      "promptFiles": [
+        "image\\agent-stop-condition\\prompts\\02-agent-stop-condition-flow.md"
+      ],
+      "image": "image\\agent-stop-condition\\02-agent-stop-condition-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agent-stop-condition/03-concept-map.png",
+      "promptFiles": [
+        "image\\agent-stop-condition\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\agent-stop-condition\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agent-memory-types/01-agent-memory-types-idea.png",
+      "promptFiles": [
+        "image\\agent-memory-types\\prompts\\01-agent-memory-types-idea.md"
+      ],
+      "image": "image\\agent-memory-types\\01-agent-memory-types-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agent-memory-types/02-agent-memory-types-flow.png",
+      "promptFiles": [
+        "image\\agent-memory-types\\prompts\\02-agent-memory-types-flow.md"
+      ],
+      "image": "image\\agent-memory-types\\02-agent-memory-types-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agent-memory-types/03-concept-map.png",
+      "promptFiles": [
+        "image\\agent-memory-types\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\agent-memory-types\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "short-term-agent-memory/01-short-term-agent-memory-idea.png",
+      "promptFiles": [
+        "image\\short-term-agent-memory\\prompts\\01-short-term-agent-memory-idea.md"
+      ],
+      "image": "image\\short-term-agent-memory\\01-short-term-agent-memory-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "short-term-agent-memory/02-short-term-agent-memory-flow.png",
+      "promptFiles": [
+        "image\\short-term-agent-memory\\prompts\\02-short-term-agent-memory-flow.md"
+      ],
+      "image": "image\\short-term-agent-memory\\02-short-term-agent-memory-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "short-term-agent-memory/03-concept-map.png",
+      "promptFiles": [
+        "image\\short-term-agent-memory\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\short-term-agent-memory\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "long-term-agent-memory/01-long-term-agent-memory-idea.png",
+      "promptFiles": [
+        "image\\long-term-agent-memory\\prompts\\01-long-term-agent-memory-idea.md"
+      ],
+      "image": "image\\long-term-agent-memory\\01-long-term-agent-memory-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "long-term-agent-memory/02-long-term-agent-memory-flow.png",
+      "promptFiles": [
+        "image\\long-term-agent-memory\\prompts\\02-long-term-agent-memory-flow.md"
+      ],
+      "image": "image\\long-term-agent-memory\\02-long-term-agent-memory-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "long-term-agent-memory/03-concept-map.png",
+      "promptFiles": [
+        "image\\long-term-agent-memory\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\long-term-agent-memory\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "memory-write-policy/01-memory-write-policy-idea.png",
+      "promptFiles": [
+        "image\\memory-write-policy\\prompts\\01-memory-write-policy-idea.md"
+      ],
+      "image": "image\\memory-write-policy\\01-memory-write-policy-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "memory-write-policy/02-memory-write-policy-flow.png",
+      "promptFiles": [
+        "image\\memory-write-policy\\prompts\\02-memory-write-policy-flow.md"
+      ],
+      "image": "image\\memory-write-policy\\02-memory-write-policy-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "memory-write-policy/03-concept-map.png",
+      "promptFiles": [
+        "image\\memory-write-policy\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\memory-write-policy\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "memory-retrieval-policy/01-memory-retrieval-policy-idea.png",
+      "promptFiles": [
+        "image\\memory-retrieval-policy\\prompts\\01-memory-retrieval-policy-idea.md"
+      ],
+      "image": "image\\memory-retrieval-policy\\01-memory-retrieval-policy-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "memory-retrieval-policy/02-memory-retrieval-policy-flow.png",
+      "promptFiles": [
+        "image\\memory-retrieval-policy\\prompts\\02-memory-retrieval-policy-flow.md"
+      ],
+      "image": "image\\memory-retrieval-policy\\02-memory-retrieval-policy-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "memory-retrieval-policy/03-concept-map.png",
+      "promptFiles": [
+        "image\\memory-retrieval-policy\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\memory-retrieval-policy\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "memory-privacy-deletion/01-memory-privacy-deletion-idea.png",
+      "promptFiles": [
+        "image\\memory-privacy-deletion\\prompts\\01-memory-privacy-deletion-idea.md"
+      ],
+      "image": "image\\memory-privacy-deletion\\01-memory-privacy-deletion-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "memory-privacy-deletion/02-memory-privacy-deletion-flow.png",
+      "promptFiles": [
+        "image\\memory-privacy-deletion\\prompts\\02-memory-privacy-deletion-flow.md"
+      ],
+      "image": "image\\memory-privacy-deletion\\02-memory-privacy-deletion-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "memory-privacy-deletion/03-concept-map.png",
+      "promptFiles": [
+        "image\\memory-privacy-deletion\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\memory-privacy-deletion\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agentic-rag-architecture/01-agentic-rag-architecture-idea.png",
+      "promptFiles": [
+        "image\\agentic-rag-architecture\\prompts\\01-agentic-rag-architecture-idea.md"
+      ],
+      "image": "image\\agentic-rag-architecture\\01-agentic-rag-architecture-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agentic-rag-architecture/02-agentic-rag-architecture-flow.png",
+      "promptFiles": [
+        "image\\agentic-rag-architecture\\prompts\\02-agentic-rag-architecture-flow.md"
+      ],
+      "image": "image\\agentic-rag-architecture\\02-agentic-rag-architecture-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agentic-rag-architecture/03-concept-map.png",
+      "promptFiles": [
+        "image\\agentic-rag-architecture\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\agentic-rag-architecture\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "query-planning-rag-agent/01-query-planning-rag-agent-idea.png",
+      "promptFiles": [
+        "image\\query-planning-rag-agent\\prompts\\01-query-planning-rag-agent-idea.md"
+      ],
+      "image": "image\\query-planning-rag-agent\\01-query-planning-rag-agent-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "query-planning-rag-agent/02-query-planning-rag-agent-flow.png",
+      "promptFiles": [
+        "image\\query-planning-rag-agent\\prompts\\02-query-planning-rag-agent-flow.md"
+      ],
+      "image": "image\\query-planning-rag-agent\\02-query-planning-rag-agent-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "query-planning-rag-agent/03-concept-map.png",
+      "promptFiles": [
+        "image\\query-planning-rag-agent\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\query-planning-rag-agent\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "multi-step-retrieval-agent/01-multi-step-retrieval-agent-idea.png",
+      "promptFiles": [
+        "image\\multi-step-retrieval-agent\\prompts\\01-multi-step-retrieval-agent-idea.md"
+      ],
+      "image": "image\\multi-step-retrieval-agent\\01-multi-step-retrieval-agent-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "multi-step-retrieval-agent/02-multi-step-retrieval-agent-flow.png",
+      "promptFiles": [
+        "image\\multi-step-retrieval-agent\\prompts\\02-multi-step-retrieval-agent-flow.md"
+      ],
+      "image": "image\\multi-step-retrieval-agent\\02-multi-step-retrieval-agent-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "multi-step-retrieval-agent/03-concept-map.png",
+      "promptFiles": [
+        "image\\multi-step-retrieval-agent\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\multi-step-retrieval-agent\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "tool-augmented-rag/01-tool-augmented-rag-idea.png",
+      "promptFiles": [
+        "image\\tool-augmented-rag\\prompts\\01-tool-augmented-rag-idea.md"
+      ],
+      "image": "image\\tool-augmented-rag\\01-tool-augmented-rag-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "tool-augmented-rag/02-tool-augmented-rag-flow.png",
+      "promptFiles": [
+        "image\\tool-augmented-rag\\prompts\\02-tool-augmented-rag-flow.md"
+      ],
+      "image": "image\\tool-augmented-rag\\02-tool-augmented-rag-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "tool-augmented-rag/03-concept-map.png",
+      "promptFiles": [
+        "image\\tool-augmented-rag\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\tool-augmented-rag\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "rag-agent-citation-verification/01-rag-agent-citation-verificat-idea.png",
+      "promptFiles": [
+        "image\\rag-agent-citation-verification\\prompts\\01-rag-agent-citation-verificat-idea.md"
+      ],
+      "image": "image\\rag-agent-citation-verification\\01-rag-agent-citation-verificat-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "rag-agent-citation-verification/02-rag-agent-citation-verificat-flow.png",
+      "promptFiles": [
+        "image\\rag-agent-citation-verification\\prompts\\02-rag-agent-citation-verificat-flow.md"
+      ],
+      "image": "image\\rag-agent-citation-verification\\02-rag-agent-citation-verificat-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "rag-agent-citation-verification/03-concept-map.png",
+      "promptFiles": [
+        "image\\rag-agent-citation-verification\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\rag-agent-citation-verification\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "rag-agent-bad-case-debugging/01-rag-agent-bad-case-debugging-idea.png",
+      "promptFiles": [
+        "image\\rag-agent-bad-case-debugging\\prompts\\01-rag-agent-bad-case-debugging-idea.md"
+      ],
+      "image": "image\\rag-agent-bad-case-debugging\\01-rag-agent-bad-case-debugging-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "rag-agent-bad-case-debugging/02-rag-agent-bad-case-debugging-flow.png",
+      "promptFiles": [
+        "image\\rag-agent-bad-case-debugging\\prompts\\02-rag-agent-bad-case-debugging-flow.md"
+      ],
+      "image": "image\\rag-agent-bad-case-debugging\\02-rag-agent-bad-case-debugging-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "rag-agent-bad-case-debugging/03-concept-map.png",
+      "promptFiles": [
+        "image\\rag-agent-bad-case-debugging\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\rag-agent-bad-case-debugging\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agent-workflow-patterns/01-agent-workflow-patterns-idea.png",
+      "promptFiles": [
+        "image\\agent-workflow-patterns\\prompts\\01-agent-workflow-patterns-idea.md"
+      ],
+      "image": "image\\agent-workflow-patterns\\01-agent-workflow-patterns-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agent-workflow-patterns/02-agent-workflow-patterns-flow.png",
+      "promptFiles": [
+        "image\\agent-workflow-patterns\\prompts\\02-agent-workflow-patterns-flow.md"
+      ],
+      "image": "image\\agent-workflow-patterns\\02-agent-workflow-patterns-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agent-workflow-patterns/03-concept-map.png",
+      "promptFiles": [
+        "image\\agent-workflow-patterns\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\agent-workflow-patterns\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "state-machine-agent/01-state-machine-agent-idea.png",
+      "promptFiles": [
+        "image\\state-machine-agent\\prompts\\01-state-machine-agent-idea.md"
+      ],
+      "image": "image\\state-machine-agent\\01-state-machine-agent-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "state-machine-agent/02-state-machine-agent-flow.png",
+      "promptFiles": [
+        "image\\state-machine-agent\\prompts\\02-state-machine-agent-flow.md"
+      ],
+      "image": "image\\state-machine-agent\\02-state-machine-agent-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "state-machine-agent/03-concept-map.png",
+      "promptFiles": [
+        "image\\state-machine-agent\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\state-machine-agent\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agent-checkpoint-resume/01-agent-checkpoint-resume-idea.png",
+      "promptFiles": [
+        "image\\agent-checkpoint-resume\\prompts\\01-agent-checkpoint-resume-idea.md"
+      ],
+      "image": "image\\agent-checkpoint-resume\\01-agent-checkpoint-resume-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agent-checkpoint-resume/02-agent-checkpoint-resume-flow.png",
+      "promptFiles": [
+        "image\\agent-checkpoint-resume\\prompts\\02-agent-checkpoint-resume-flow.md"
+      ],
+      "image": "image\\agent-checkpoint-resume\\02-agent-checkpoint-resume-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agent-checkpoint-resume/03-concept-map.png",
+      "promptFiles": [
+        "image\\agent-checkpoint-resume\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\agent-checkpoint-resume\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "durable-agent-execution/01-durable-agent-execution-idea.png",
+      "promptFiles": [
+        "image\\durable-agent-execution\\prompts\\01-durable-agent-execution-idea.md"
+      ],
+      "image": "image\\durable-agent-execution\\01-durable-agent-execution-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "durable-agent-execution/02-durable-agent-execution-flow.png",
+      "promptFiles": [
+        "image\\durable-agent-execution\\prompts\\02-durable-agent-execution-flow.md"
+      ],
+      "image": "image\\durable-agent-execution\\02-durable-agent-execution-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "durable-agent-execution/03-concept-map.png",
+      "promptFiles": [
+        "image\\durable-agent-execution\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\durable-agent-execution\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agent-background-job/01-agent-background-job-idea.png",
+      "promptFiles": [
+        "image\\agent-background-job\\prompts\\01-agent-background-job-idea.md"
+      ],
+      "image": "image\\agent-background-job\\01-agent-background-job-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agent-background-job/02-agent-background-job-flow.png",
+      "promptFiles": [
+        "image\\agent-background-job\\prompts\\02-agent-background-job-flow.md"
+      ],
+      "image": "image\\agent-background-job\\02-agent-background-job-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agent-background-job/03-concept-map.png",
+      "promptFiles": [
+        "image\\agent-background-job\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\agent-background-job\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agent-event-driven-architecture/01-agent-event-driven-architect-idea.png",
+      "promptFiles": [
+        "image\\agent-event-driven-architecture\\prompts\\01-agent-event-driven-architect-idea.md"
+      ],
+      "image": "image\\agent-event-driven-architecture\\01-agent-event-driven-architect-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agent-event-driven-architecture/02-agent-event-driven-architect-flow.png",
+      "promptFiles": [
+        "image\\agent-event-driven-architecture\\prompts\\02-agent-event-driven-architect-flow.md"
+      ],
+      "image": "image\\agent-event-driven-architecture\\02-agent-event-driven-architect-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "agent-event-driven-architecture/03-concept-map.png",
+      "promptFiles": [
+        "image\\agent-event-driven-architecture\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\agent-event-driven-architecture\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "build-knowledge-base-agent/01-build-knowledge-base-agent-idea.png",
+      "promptFiles": [
+        "image\\build-knowledge-base-agent\\prompts\\01-build-knowledge-base-agent-idea.md"
+      ],
+      "image": "image\\build-knowledge-base-agent\\01-build-knowledge-base-agent-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "build-knowledge-base-agent/02-build-knowledge-base-agent-flow.png",
+      "promptFiles": [
+        "image\\build-knowledge-base-agent\\prompts\\02-build-knowledge-base-agent-flow.md"
+      ],
+      "image": "image\\build-knowledge-base-agent\\02-build-knowledge-base-agent-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "build-knowledge-base-agent/03-concept-map.png",
+      "promptFiles": [
+        "image\\build-knowledge-base-agent\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\build-knowledge-base-agent\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "build-research-agent/01-build-research-agent-idea.png",
+      "promptFiles": [
+        "image\\build-research-agent\\prompts\\01-build-research-agent-idea.md"
+      ],
+      "image": "image\\build-research-agent\\01-build-research-agent-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "build-research-agent/02-build-research-agent-flow.png",
+      "promptFiles": [
+        "image\\build-research-agent\\prompts\\02-build-research-agent-flow.md"
+      ],
+      "image": "image\\build-research-agent\\02-build-research-agent-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "build-research-agent/03-concept-map.png",
+      "promptFiles": [
+        "image\\build-research-agent\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\build-research-agent\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "build-customer-support-agent/01-build-customer-support-agent-idea.png",
+      "promptFiles": [
+        "image\\build-customer-support-agent\\prompts\\01-build-customer-support-agent-idea.md"
+      ],
+      "image": "image\\build-customer-support-agent\\01-build-customer-support-agent-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "build-customer-support-agent/02-build-customer-support-agent-flow.png",
+      "promptFiles": [
+        "image\\build-customer-support-agent\\prompts\\02-build-customer-support-agent-flow.md"
+      ],
+      "image": "image\\build-customer-support-agent\\02-build-customer-support-agent-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "build-customer-support-agent/03-concept-map.png",
+      "promptFiles": [
+        "image\\build-customer-support-agent\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\build-customer-support-agent\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "build-code-review-agent/01-build-code-review-agent-idea.png",
+      "promptFiles": [
+        "image\\build-code-review-agent\\prompts\\01-build-code-review-agent-idea.md"
+      ],
+      "image": "image\\build-code-review-agent\\01-build-code-review-agent-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "build-code-review-agent/02-build-code-review-agent-flow.png",
+      "promptFiles": [
+        "image\\build-code-review-agent\\prompts\\02-build-code-review-agent-flow.md"
+      ],
+      "image": "image\\build-code-review-agent\\02-build-code-review-agent-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "build-code-review-agent/03-concept-map.png",
+      "promptFiles": [
+        "image\\build-code-review-agent\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\build-code-review-agent\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "build-admin-ops-agent/01-build-admin-ops-agent-idea.png",
+      "promptFiles": [
+        "image\\build-admin-ops-agent\\prompts\\01-build-admin-ops-agent-idea.md"
+      ],
+      "image": "image\\build-admin-ops-agent\\01-build-admin-ops-agent-idea.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "build-admin-ops-agent/02-build-admin-ops-agent-flow.png",
+      "promptFiles": [
+        "image\\build-admin-ops-agent\\prompts\\02-build-admin-ops-agent-flow.md"
+      ],
+      "image": "image\\build-admin-ops-agent\\02-build-admin-ops-agent-flow.png",
+      "ar": "16:9",
+      "quality": "2k"
+    },
+    {
+      "id": "build-admin-ops-agent/03-concept-map.png",
+      "promptFiles": [
+        "image\\build-admin-ops-agent\\prompts\\03-concept-map.md"
+      ],
+      "image": "image\\build-admin-ops-agent\\03-concept-map.png",
+      "ar": "16:9",
+      "quality": "2k"
+    }
+  ]
+}
