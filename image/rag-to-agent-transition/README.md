@@ -1,11 +1,11 @@
-# rag-to-agent-transition image plan
+# 从 RAG 走向 Agent信息图（AI Agent 工程 #214）
 
-Purpose: one core teaching visual for `214.rag-to-agent-transition-tutorial.md`.
+| 文件 | 布局 | 插入位置 |
+|------|------|----------|
+| `01-rag-to-agent-transition-idea.png` | binary-comparison | §它解决什么问题 |
+| `02-rag-to-agent-transition-flow.png` | linear-progression | §最小示例 |
+| `03-concept-map.png` | bento-grid | §下一步 |
 
-Required visual:
+风格：hand-drawn-edu · 16:9 · 中文
 
-- Type: architecture comparison diagram
-- Content: RAG question-answer flow versus Agent task-execution flow
-- Style: consistent with existing Wxw-Blog tutorial images
-- Text language: Chinese
-- Output path: `image/rag-to-agent-transition/rag-to-agent-transition.png`
+Prompt 见 `prompts/`。

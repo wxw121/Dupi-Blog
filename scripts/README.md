@@ -47,6 +47,18 @@ $env:BLOG_ASSETS_DIR = "路径\到\你的\生成图目录"
 | `fix-markdown-image-paths.py` | 修正 MD 与 inventory 中的 `img_path`、alt |
 | `align-paths.py` | inventory / manifest / MD 三方路径对齐 |
 | `dedupe-markdown-images.py` | 清理 `1–9.*.md` 中重复或错误图片行 |
+| `scaffold_agent_infographics_214_254.py` | 为 AI Agent 教程 214–254 生成 README、prompts、PNG 并插入正文引用 |
+| `render_hand_drawn_infographic.py` | 从 `prompts/*.md` 渲染 hand-drawn-edu 风格 PNG（1536×1024） |
+
+## AI Agent 系列（214–254）配图
+
+```bash
+# 一键：生成 prompts + PNG + 正文引用
+python scripts/scaffold_agent_infographics_214_254.py
+
+# 仅重绘某个 slug 的 PNG
+python scripts/render_hand_drawn_infographic.py --slug rag-to-agent-transition
+```
 
 ## 单张流程图（非教程流水线）
 

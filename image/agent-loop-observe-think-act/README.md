@@ -1,11 +1,11 @@
-# agent-loop-observe-think-act image plan
+# Agent 循环——观察-思考-行动信息图（AI Agent 工程 #226）
 
-Purpose: one core teaching visual for `226.agent-loop-observe-think-act-tutorial.md`.
+| 文件 | 布局 | 插入位置 |
+|------|------|----------|
+| `01-agent-loop-observe-think-act-idea.png` | binary-comparison | §它解决什么问题 |
+| `02-agent-loop-observe-think-act-flow.png` | linear-progression | §最小示例 |
+| `03-concept-map.png` | bento-grid | §下一步 |
 
-Required visual:
+风格：hand-drawn-edu · 16:9 · 中文
 
-- Type: state loop diagram
-- Content: Observe, Decide, Validate, Act, Check Stop
-- Style: consistent with existing Wxw-Blog tutorial images
-- Text language: Chinese
-- Output path: `image/agent-loop-observe-think-act/agent-loop-observe-think-act.png`
+Prompt 见 `prompts/`。

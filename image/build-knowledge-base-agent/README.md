@@ -1,11 +1,11 @@
-# build-knowledge-base-agent image plan
+# 构建知识库管理 Agent信息图（AI Agent 工程 #250）
 
-Purpose: one core teaching visual for `250.build-knowledge-base-agent-tutorial.md`.
+| 文件 | 布局 | 插入位置 |
+|------|------|----------|
+| `01-build-knowledge-base-agent-idea.png` | binary-comparison | §它解决什么问题 |
+| `02-build-knowledge-base-agent-flow.png` | linear-progression | §最小示例 |
+| `03-concept-map.png` | bento-grid | §下一步 |
 
-Required visual:
+风格：hand-drawn-edu · 16:9 · 中文
 
-- Type: full project architecture diagram
-- Content: UI, API, Router, Orchestrator, RAG, Tool Registry, Approval, Checkpoint, Trace
-- Style: consistent with existing Wxw-Blog tutorial images
-- Text language: Chinese
-- Output path: `image/build-knowledge-base-agent/build-knowledge-base-agent.png`
+Prompt 见 `prompts/`。

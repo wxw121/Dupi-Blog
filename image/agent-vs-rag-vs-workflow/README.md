@@ -1,11 +1,11 @@
-# agent-vs-rag-vs-workflow image plan
+# Agent、RAG 与 Workflow 怎么选信息图（AI Agent 工程 #215）
 
-Purpose: one core teaching visual for `215.agent-vs-rag-vs-workflow-tutorial.md`.
+| 文件 | 布局 | 插入位置 |
+|------|------|----------|
+| `01-agent-vs-rag-vs-workflow-idea.png` | binary-comparison | §它解决什么问题 |
+| `02-agent-vs-rag-vs-workflow-flow.png` | linear-progression | §最小示例 |
+| `03-concept-map.png` | bento-grid | §下一步 |
 
-Required visual:
+风格：hand-drawn-edu · 16:9 · 中文
 
-- Type: decision tree
-- Content: choose API, RAG, Workflow, or Agent by uncertainty and action needs
-- Style: consistent with existing Wxw-Blog tutorial images
-- Text language: Chinese
-- Output path: `image/agent-vs-rag-vs-workflow/agent-vs-rag-vs-workflow.png`
+Prompt 见 `prompts/`。

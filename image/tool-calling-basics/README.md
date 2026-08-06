@@ -1,11 +1,11 @@
-# tool-calling-basics image plan
+# 工具调用基础信息图（AI Agent 工程 #218）
 
-Purpose: one core teaching visual for `218.tool-calling-basics-tutorial.md`.
+| 文件 | 布局 | 插入位置 |
+|------|------|----------|
+| `01-tool-calling-basics-idea.png` | binary-comparison | §它解决什么问题 |
+| `02-tool-calling-basics-flow.png` | linear-progression | §最小示例 |
+| `03-concept-map.png` | bento-grid | §下一步 |
 
-Required visual:
+风格：hand-drawn-edu · 16:9 · 中文
 
-- Type: sequence diagram
-- Content: model suggestion, schema validation, permission check, tool execution, normalized observation
-- Style: consistent with existing Wxw-Blog tutorial images
-- Text language: Chinese
-- Output path: `image/tool-calling-basics/tool-calling-basics.png`
+Prompt 见 `prompts/`。

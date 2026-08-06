@@ -1,11 +1,11 @@
-# agentic-rag-architecture image plan
+# Agentic RAG 生产架构信息图（AI Agent 工程 #238）
 
-Purpose: one core teaching visual for `238.agentic-rag-architecture-tutorial.md`.
+| 文件 | 布局 | 插入位置 |
+|------|------|----------|
+| `01-agentic-rag-architecture-idea.png` | binary-comparison | §是什么：Agentic RAG 到底在做什么 |
+| `02-agentic-rag-architecture-flow.png` | linear-progression | §怎么做：四个核心组件的工程实现 |
+| `03-concept-map.png` | bento-grid | §下一步 |
 
-Required visual:
+风格：hand-drawn-edu · 16:9 · 中文
 
-- Type: architecture diagram
-- Content: Query Planning, Retrieval Tool, Evidence Store, Citation Verification, Bad Case Debugging
-- Style: consistent with existing Wxw-Blog tutorial images
-- Text language: Chinese
-- Output path: `image/agentic-rag-architecture/agentic-rag-architecture.png`
+Prompt 见 `prompts/`。
