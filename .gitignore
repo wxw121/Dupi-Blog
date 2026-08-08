@@ -10,6 +10,19 @@ venv/
 # 本地配图暂存（AI 生成后由 scripts 复制到 image/，勿提交）
 assets/
 
+# 脚本生成报告与审计 JSON（可本地重跑，勿提交）
+scripts/reports/audit/
+scripts/reports/*.txt
+scripts/reports/body-term-first-use-scan.md
+
+# 配图/批处理脚本的本地 manifest（运行脚本时再生）
+scripts/_*.json
+
+# 根目录历史散落产物（已迁至 scripts/reports/，防止再次生成到根目录）
+/audit-*.json
+scan_61plus_result.txt
+.batch-*.md
+
 # OS / IDE
 .DS_Store
 Thumbs.db

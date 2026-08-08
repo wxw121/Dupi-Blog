@@ -2,7 +2,9 @@
 import json
 import re
 
-root = Path('.')
+root = Path(__file__).resolve().parents[1]
+report_dir = root / "scripts" / "reports" / "audit"
+report_dir.mkdir(parents=True, exist_ok=True)
 image_root = root / 'image'
 image_exts = {'.png', '.jpg', '.jpeg', '.webp', '.gif', '.svg'}
 
@@ -72,7 +74,8 @@ report = {
     'hasGeneratedImagesButNoMarkdownReference': has_generated_but_not_referenced,
     'referencesImageDirButNoGeneratedImages': references_image_dir_but_no_generated,
 }
-Path('audit-image-usage-report-rerun.json').write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf-8')
+report_path = report_dir / 'audit-image-usage-report-rerun.json'
+report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf-8')
 
 print(f'totalMarkdownDocs={len(rows)}')
 print(f'noImageDirReferenceCount={len(no_image_dir_reference)}')
@@ -81,7 +84,7 @@ print(f'missingImageDirCount={len(missing_image_dir)}')
 print(f'emptyImageDirCount={len(empty_image_dir)}')
 print(f'hasGeneratedImagesButNoMarkdownReferenceCount={len(has_generated_but_not_referenced)}')
 print(f'referencesImageDirButNoGeneratedImagesCount={len(references_image_dir_but_no_generated)}')
-print('report=audit-image-usage-report-rerun.json')
+print(f'report={report_path.relative_to(root)}')
 
 print('\n## generated images exist but markdown does not reference image/')
 for r in has_generated_but_not_referenced:

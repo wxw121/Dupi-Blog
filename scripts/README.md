@@ -53,6 +53,10 @@ $env:BLOG_ASSETS_DIR = "路径\到\你的\生成图目录"
 | `apply_gen_images.py` | 将 `assets/` 中生成的 PNG 复制到 `image/{slug}/`（支持 `index:filename` 批量参数） |
 | `status_agent_infographics.py` | 检查 214–254 系列 AI 图 vs 占位图进度 |
 | `render_hand_drawn_infographic.py` | **已废弃占位渲染**（Pillow 色块，非 hand-drawn-edu） |
+| `scan_body_term_first_use.py` | Agent 214–254 正文首现术语扫描 → `scripts/reports/` |
+| `spot_check_agent_tutorials.py` | Agent 教程结构/术语/02-flow 一键验收 |
+
+生成报告与本地 manifest 默认不提交，见 [`reports/README.md`](reports/README.md) 与根目录 `.gitignore`。
 
 ## AI Agent 系列（214–254）配图
 

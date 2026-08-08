@@ -2,7 +2,9 @@
 import json
 import re
 
-ROOT = Path('.')
+ROOT = Path(__file__).resolve().parents[1]
+REPORT_DIR = ROOT / "scripts" / "reports" / "audit"
+REPORT_DIR.mkdir(parents=True, exist_ok=True)
 NUM_RE = re.compile(r'^(\d+)\.')
 STRICT_MARKER_RE = re.compile(r'<!--\s*topup-batch|TODO|TBD|待补|待重制|图片 prompt|替换正文占位|等待生成 PNG|生成 PNG 后|全系列配图约定|系列配图 prompts 已就绪|请完成本篇|配图 prompts 已就绪', re.I)
 HEADING_RE = re.compile(r'^(#{2,6})\s+(.+)$')
@@ -120,7 +122,8 @@ def scan(path):
 files=sorted([p for p in ROOT.glob('*.md') if NUM_RE.match(p.name) and article_number(p) >= 50], key=article_number)
 rows=[r for p in files if (r:=scan(p))]
 rows.sort(key=lambda r:(-r['score'], r['file']))
-Path('audit-round7-refined-report.json').write_text(json.dumps({'file_count':len(files), 'issue_count':len(rows), 'top':rows[:120]}, ensure_ascii=False, indent=2), encoding='utf-8')
+report_path = REPORT_DIR / 'audit-round7-refined-report.json'
+report_path.write_text(json.dumps({'file_count':len(files), 'issue_count':len(rows), 'top':rows[:120]}, ensure_ascii=False, indent=2), encoding='utf-8')
 for r in rows[:50]:
     print(f"{r['score']:>2} {r['file']} :: {','.join(r['flags'])}")
     for k in ('markers','emptySections','weakHeadings','duplicateParagraphs','codeNoIntro','codeNoAfter'):
