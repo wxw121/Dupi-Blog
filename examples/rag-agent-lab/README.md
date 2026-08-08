@@ -41,4 +41,4 @@ python temporal_minimal.py
 
 239 → 240 → 241 → 242 → 243 → 244（检索链 → 多步 → 工具 → 引用 → 调试 → 编排）
 
-系列总览见 [`agent-rag-series-239-248.md`](../../src/posts/ai-ml/agent-rag-series-239-248.md)。
+系列总览见 [`agent-rag-series-238-254.md`](../../src/posts/ai-ml/agent-rag-series-238-254.md)（已扩展至 238–254；Part 7 见 [`../agent-platform/`](../agent-platform/)）。

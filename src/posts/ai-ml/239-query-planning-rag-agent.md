@@ -52,7 +52,7 @@ pip install openai
 | 4 | §常见失败模式 | 识别分解过细、改写过度、忽略时间 3 类问题 |
 | 5 | §生产环境考量 | 知道何时跳过规划以控制延迟 |
 
-> **系列导读**：[agent-rag-series-239-248](agent-rag-series-239-248) | **可运行代码**：[`examples/rag-agent-lab/`](../../../examples/rag-agent-lab/) → `python main.py 239`
+> **系列导读**：[agent-rag-series-238-254](agent-rag-series-238-254) | **可运行代码**：[`examples/rag-agent-lab/`](../../../examples/rag-agent-lab/) → `python main.py 239`
 
 ## 为什么需要查询规划
 

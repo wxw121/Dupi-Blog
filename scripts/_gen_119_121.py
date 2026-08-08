@@ -96,7 +96,7 @@ EXPANSION_BLOCKS = {
         "### 14.41 最终收束\n\n**会话级指代消解 = embed 前把「它」变成「实体名」**——记住这一句，**80% 面试题** 能答。",
         "### 14.42 与 [109 会话增强](109.conversation-query-enhancement-tutorial.md) 代码接口\n\n```python\ndef enhance_query(query, history, summary):\n    q1 = resolve_coref(query, history, summary)\n    q2 = rewrite_query(q1)  # 100 篇，可选\n    return q2\n```\n\n**接口分层** 便于 **单测** 与 **ablation**。",
         "### 14.43 夜间 job\n\n从 **生产日志** 采样 **低 conf resolve** 进 **人工标注队列**——**飞轮** 改进 **规则表**，**了解篇** 也要 **运营**。",
-        "### 14.44 与 [120] 自引用\n\n本文 filename **120.coreference-resolution-tutorial.md** 路线图 **137**——**编号** 与 **路线图序号** **不一致** 时 **以 mapping 表为准**（`.batch-77-127-mapping.md`）。",
+        "### 14.44 与 [120] 自引用\n\n本文 filename **120.coreference-resolution-tutorial.md** 路线图 **137**——**编号** 与 **路线图序号** **不一致** 时 **以 mapping 表为准**（`scripts/archive/batch-mappings/.batch-77-127-mapping.md`）。",
         "### 14.45 对比表格：不解消解 vs 消解\n\n| 指标 | 不解 | 消解 |\n|------|------|------|\n| 第3轮 Recall | 低 | 高 |\n| 延迟 | 低 | 略增 |\n| 工程复杂度 | 低 | 中 |\n\n**多轮产品** **几乎必选** 消解 **或** 109 **等价能力**。",
         "### 14.46 给学生的实验课\n\n**2 学时**：改 §9 `entity_stack` 顺序 + **写 3 条金标** + **演示 Recall 变化**——**了解** 不等于 **不用动手**。",
         "### 14.47 常见面试题\n\n「多轮 RAG 第三轮检索变差怎么办？」答：**指代消解 + summary + query 增强**，**不要** 只说 **换更大窗口**。",
