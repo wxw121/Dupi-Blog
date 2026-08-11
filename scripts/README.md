@@ -55,6 +55,8 @@ $env:BLOG_ASSETS_DIR = "路径\到\你的\生成图目录"
 | `render_hand_drawn_infographic.py` | **已废弃占位渲染**（Pillow 色块，非 hand-drawn-edu） |
 | `scan_body_term_first_use.py` | Agent 214–254 正文首现术语扫描 → `scripts/reports/` |
 | `spot_check_agent_tutorials.py` | Agent 教程结构/术语/02-flow 一键验收 |
+| `generate_interview_questions.py` | 从教程技术内容生成 `docs/interview/*` **开发向**面试题 |
+| `interview_question_config.py` | 面试题热点篇目与题量配置 |
 
 生成报告与本地 manifest 默认不提交，见 [`reports/README.md`](reports/README.md) 与根目录 `.gitignore`。
 
