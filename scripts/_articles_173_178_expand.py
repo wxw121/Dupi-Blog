@@ -36,7 +36,7 @@ EXPANSION_173 = r'''
 
 | # | 检查项 | 通过标准 |
 |---|--------|----------|
-| 1 | 与 [172 Markdown](172.markdown-render-rag-tutorial.md) sanitize 共存 | 无 script 执行 |
+| 1 | 与 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) sanitize 共存 | 无 script 执行 |
 | 2 | 行内 code 与块级分离 | 行内无 hljs 整块背景 |
 | 3 | 流式未闭合围栏 | 灰底不闪 |
 | 4 | done 后高亮 | 颜色完整 |
@@ -46,7 +46,7 @@ EXPANSION_173 = r'''
 | 8 | 移动双指滚动 | 不触发页面横向乱滚 |
 | 9 | 语言未知 | fallback text |
 | 10 | 空代码块 | 不渲染 0 高度 |
-| 11 | 与 [174 打字机](174.streaming-typewriter-ui-tutorial.md) 状态 | streaming 策略一致 |
+| 11 | 与 [174 打字机](174.streaming-typewriter-ui-tutorial（front-end）.md) 状态 | streaming 策略一致 |
 | 12 | 打印样式 | 浅色可读 |
 | 13 | SSR hydration | 无水合闪动 |
 | 14 | 包体积 | hljs 按需 registerLanguage |
@@ -127,7 +127,7 @@ EXPANSION_174 = r'''
 
 **场景**：五千字政策解读，每个 delta setState 导致输入框掉帧。
 
-**处理**：rAF 合并 + [172](172.markdown-render-rag-tutorial.md) done 后一次 Markdown。
+**处理**：rAF 合并 + [172](172.markdown-render-rag-tutorial（front-end）.md) done 后一次 Markdown。
 
 ### A.3 引用提前可点
 
@@ -165,7 +165,7 @@ function safeJsonParse(line: string): unknown | null {
 
 [路线图 A.22](ENTERPRISE_RAG_ROADMAP.md)：流式 UI 渲染（逐字显示、中断）。
 
-| 能力 | 本篇 | [175](175.abort-controller-stream-tutorial.md) |
+| 能力 | 本篇 | [175](175.abort-controller-stream-tutorial（front-end）.md) |
 |------|------|--------------------------------------------------|
 | 逐字显示 | ✅ rAF | — |
 | 中断 | 预留 stop | ✅ abort |
@@ -213,7 +213,7 @@ export async function* mockRagStream(): AsyncGenerator<RagStreamEvent> {
 }
 ```
 
-无后端时先跑通 [171](171.chat-message-list-ui-tutorial.md) 布局。
+无后端时先跑通 [171](171.chat-message-list-ui-tutorial（front-end）.md) 布局。
 
 ---
 
@@ -361,7 +361,7 @@ EXPANSION_176 = r'''
 
 **场景**：采购问「三个供应商付款条款差异」。
 
-**处理**：卡片列表并排三 doc title + excerpt，点击分别开 [177 侧栏](177.source-preview-sidebar-tutorial.md)。
+**处理**：卡片列表并排三 doc title + excerpt，点击分别开 [177 侧栏](177.source-preview-sidebar-tutorial（front-end）.md)。
 
 ### A.2 弱相关灰显
 
@@ -430,7 +430,7 @@ onCitationClick={(idx) => setActiveIndex(idx)}
 | 索引字号 | 14px mono |
 | 间距 | 8px gap |
 
-与 [171](171.chat-message-list-ui-tutorial.md) 气泡内边距对齐。
+与 [171](171.chat-message-list-ui-tutorial（front-end）.md) 气泡内边距对齐。
 
 ---
 
@@ -533,7 +533,7 @@ const [width, setWidth] = useState(45); // percent
 
 ---
 
-## 附录 E：与 [178 PDF](178.pdf-highlight-locate-tutorial.md) 接口
+## 附录 E：与 [178 PDF](178.pdf-highlight-locate-tutorial（front-end）.md) 接口
 
 ```tsx
 <PdfPreview
@@ -677,11 +677,11 @@ PDF 文本层常有奇怪空白。
 
 | 后端 | 前端 | 数据契约 |
 |------|------|----------|
-| [156 FastAPI 结构](156.fastapi-project-structure-tutorial.md) | [171 列表](171.chat-message-list-ui-tutorial.md) | messages[] |
-| [116 SSE](116.sse-rag-streaming-tutorial.md) | [174 打字机](174.streaming-typewriter-ui-tutorial.md) | delta/citations |
-| [167 OpenAI 封装](167.openai-api-wrapper-tutorial.md) | [175 中断](175.abort-controller-stream-tutorial.md) | disconnect |
-| 检索 metadata | [176 卡片](176.citation-card-ui-tutorial.md) | citations |
-| [115 导航](115.source-document-navigation-tutorial.md) | [177 侧栏](177.source-preview-sidebar-tutorial.md) | preview-url |
+| [156 FastAPI 结构](156.fastapi-project-structure-tutorial.md) | [171 列表](171.chat-message-list-ui-tutorial（front-end）.md) | messages[] |
+| [116 SSE](116.sse-rag-streaming-tutorial.md) | [174 打字机](174.streaming-typewriter-ui-tutorial（front-end）.md) | delta/citations |
+| [167 OpenAI 封装](167.openai-api-wrapper-tutorial.md) | [175 中断](175.abort-controller-stream-tutorial（front-end）.md) | disconnect |
+| 检索 metadata | [176 卡片](176.citation-card-ui-tutorial（front-end）.md) | citations |
+| [115 导航](115.source-document-navigation-tutorial.md) | [177 侧栏](177.source-preview-sidebar-tutorial（front-end）.md) | preview-url |
 | [52 page](52.metadata-source-page-tutorial.md) | 本篇 | page+highlight |
 
 ---
@@ -733,10 +733,10 @@ projects/04-fullstack-assistant/
 '''
 
 EXPANSIONS = {
-    "173.code-highlight-rag-tutorial.md": EXPANSION_173,
-    "174.streaming-typewriter-ui-tutorial.md": EXPANSION_174,
-    "175.abort-controller-stream-tutorial.md": EXPANSION_175,
-    "176.citation-card-ui-tutorial.md": EXPANSION_176,
-    "177.source-preview-sidebar-tutorial.md": EXPANSION_177,
-    "178.pdf-highlight-locate-tutorial.md": EXPANSION_178,
+    "173.code-highlight-rag-tutorial（front-end）.md": EXPANSION_173,
+    "174.streaming-typewriter-ui-tutorial（front-end）.md": EXPANSION_174,
+    "175.abort-controller-stream-tutorial（front-end）.md": EXPANSION_175,
+    "176.citation-card-ui-tutorial（front-end）.md": EXPANSION_176,
+    "177.source-preview-sidebar-tutorial（front-end）.md": EXPANSION_177,
+    "178.pdf-highlight-locate-tutorial（front-end）.md": EXPANSION_178,
 }

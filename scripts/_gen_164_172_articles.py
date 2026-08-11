@@ -1204,7 +1204,7 @@ async def rate_limit_middleware(request, call_next):
 }}
 ```
 
-前端 [171 聊天 UI](171.chat-message-list-ui-tutorial.md) 应 **展示友好文案** 而非 **裸 429**。
+前端 [171 聊天 UI](171.chat-message-list-ui-tutorial（front-end）.md) 应 **展示友好文案** 而非 **裸 429**。
 
 ---
 
@@ -1274,7 +1274,7 @@ def build_170() -> str:
     ], "14")
     return f'''# F 后端与 API（十五）：OpenAPI / Swagger 文档完全指南
 
-> 前端 [171 聊天 UI](171.chat-message-list-ui-tutorial.md) 要对接 `/rag/chat`——若只有 **口头约定**，字段一改 **联调地狱**。**OpenAPI**（原 Swagger 规范）用 **机器可读** 的 schema 描述 REST API；FastAPI **自动生成** `/openapi.json` 与 `/docs` Swagger UI。路线图 **187**，**F 轨了解篇**——**知道即可**，但 **PoC 就应启用**。
+> 前端 [171 聊天 UI](171.chat-message-list-ui-tutorial（front-end）.md) 要对接 `/rag/chat`——若只有 **口头约定**，字段一改 **联调地狱**。**OpenAPI**（原 Swagger 规范）用 **机器可读** 的 schema 描述 REST API；FastAPI **自动生成** `/openapi.json` 与 `/docs` Swagger UI。路线图 **187**，**F 轨了解篇**——**知道即可**，但 **PoC 就应启用**。
 
 ---
 
@@ -1460,8 +1460,8 @@ Checklist：
 ## 13. 总结与系列下一步
 
 1. **FastAPI 自带 OpenAPI**——别手写两套。  
-2. **了解篇也要 export**——前端 [171](171.chat-message-list-ui-tutorial.md) 依赖契约。  
-3. 进入 **G 轨前端**：[171 聊天列表](171.chat-message-list-ui-tutorial.md)。
+2. **了解篇也要 export**——前端 [171](171.chat-message-list-ui-tutorial（front-end）.md) 依赖契约。  
+3. 进入 **G 轨前端**：[171 聊天列表](171.chat-message-list-ui-tutorial（front-end）.md)。
 
 {SHARED_APPENDIX}
 '''
@@ -1473,18 +1473,18 @@ def build_171() -> str:
         ("streaming 直接 append 字符到 DOM", "性能差。", "增量更新最后一条 assistant。"),
         ("不区分 loading/error", "用户以为卡死。", "明确 pending/streaming/error 状态。"),
         ("滚动不跟新消息", "看不到最新回复。", "useEffect + scrollIntoView。"),
-        ("把 markdown 当 plain text", "表格列表丑。", "assistant 走 [172 Markdown](172.markdown-render-rag-tutorial.md) 组件。"),
+        ("把 markdown 当 plain text", "表格列表丑。", "assistant 走 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 组件。"),
     ], "10")
     faq = _faq([
         ("Next.js App 还是 Pages？", "App Router 为主；Server Component 取 session，Client 组件聊天。"),
         ("状态放哪？", "PoC：useState；生产：Zustand/Context + 服务端 session。"),
-        ("与 [174 打字机](174.streaming-typewriter-ui-tutorial.md)？", "174 专讲 stream 动画；本篇管 **列表结构**。"),
-        ("与 [176 引用卡片](176.citation-card-ui-tutorial.md)？", "citations 作 message 子 props 渲染。"),
+        ("与 [174 打字机](174.streaming-typewriter-ui-tutorial（front-end）.md)？", "174 专讲 stream 动画；本篇管 **列表结构**。"),
+        ("与 [176 引用卡片](176.citation-card-ui-tutorial（front-end）.md)？", "citations 作 message 子 props 渲染。"),
         ("虚拟列表必要吗？", "消息 <200 可不用；超长会话用 react-virtuoso。"),
     ], "14")
     return f'''# G 前端与体验（一）：聊天消息列表 UI 完全指南
 
-> 后端 [164 JWT](164.jwt-auth-rag-tutorial.md)、[170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 就绪后，用户 **第一眼** 看到的是 **聊天窗口**——不是 Swagger。**MessageList** 负责 **user/assistant/system** 消息渲染、**流式占位**、**错误重试**、**滚到底**。本篇用 **React + Next.js App Router** 示例，是 [企业 RAG 路线图](ENTERPRISE_RAG_ROADMAP.md) **G 轨主线篇**（路线图 **188**）。后续 [172 Markdown](172.markdown-render-rag-tutorial.md)、[174 流式打字机](174.streaming-typewriter-ui-tutorial.md)、[176 引用卡片](176.citation-card-ui-tutorial.md)。
+> 后端 [164 JWT](164.jwt-auth-rag-tutorial.md)、[170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 就绪后，用户 **第一眼** 看到的是 **聊天窗口**——不是 Swagger。**MessageList** 负责 **user/assistant/system** 消息渲染、**流式占位**、**错误重试**、**滚到底**。本篇用 **React + Next.js App Router** 示例，是 [企业 RAG 路线图](ENTERPRISE_RAG_ROADMAP.md) **G 轨主线篇**（路线图 **188**）。后续 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md)、[174 流式打字机](174.streaming-typewriter-ui-tutorial（front-end）.md)、[176 引用卡片](176.citation-card-ui-tutorial（front-end）.md)。
 
 ---
 
@@ -1510,10 +1510,10 @@ def build_171() -> str:
 
 ChatGPT 类产品心智：**左侧历史、中间消息流、底部输入框**。企业 RAG 复用同一模式，但要多：
 
-- **引用区** [113](113.inline-citation-tutorial.md) / [176 卡片](176.citation-card-ui-tutorial.md)；  
+- **引用区** [113](113.inline-citation-tutorial.md) / [176 卡片](176.citation-card-ui-tutorial（front-end）.md)；  
 - **鉴权** [164 JWT](164.jwt-auth-rag-tutorial.md) token 带头；  
 - **流式** [116 SSE](116.sse-rag-streaming-tutorial.md)；  
-- **Markdown** [172 篇](172.markdown-render-rag-tutorial.md) 渲染 assistant 回复。
+- **Markdown** [172 篇](172.markdown-render-rag-tutorial（front-end）.md) 渲染 assistant 回复。
 
 **MessageList（消息列表）**：按时间序渲染 **Message[]** 的容器组件。  
 通俗说：**微信聊天记录**——谁说的、什么样式、新消息 **滚到底**。
@@ -1593,7 +1593,7 @@ export function MessageBubble({{ message }}: {{ message: Message }}) {{
 }}
 ```
 
-`AssistantContent` 内嵌 [172 MarkdownRenderer](172.markdown-render-rag-tutorial.md)。
+`AssistantContent` 内嵌 [172 MarkdownRenderer](172.markdown-render-rag-tutorial（front-end）.md)。
 
 ---
 
@@ -1697,7 +1697,7 @@ export function ChatPage() {{
 | status | UI |
 |--------|-----|
 | pending | 发送中禁用输入 |
-| streaming | 光标闪烁；[174](174.streaming-typewriter-ui-tutorial.md) 增量改 content |
+| streaming | 光标闪烁；[174](174.streaming-typewriter-ui-tutorial（front-end）.md) 增量改 content |
 | done | 完整 Markdown |
 | error | 重试按钮；展示 [169 429](169.rate-limiting-api-tutorial.md) 文案 |
 
@@ -1752,7 +1752,7 @@ useEffect(() => {{
 
 1. **Message 稳定 id + status** 是核心模型。  
 2. **Next.js Client 组件** 管交互；API 对齐 OpenAPI。  
-3. 下一篇 [172 Markdown](172.markdown-render-rag-tutorial.md) **安全渲染** assistant 内容。
+3. 下一篇 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) **安全渲染** assistant 内容。
 
 {SHARED_APPENDIX}
 '''
@@ -1769,13 +1769,13 @@ def build_172() -> str:
     faq = _faq([
         ("react-markdown 还是 marked？", "React 生态优先 react-markdown；便于组件替换。"),
         ("与 [23 Self-Attention](23.self-attention-tutorial.md)？", "23 讲模型内部注意力；XSS 是 **渲染层** 安全，无关 transformer。"),
-        ("代码块怎么办？", "见 [173 代码高亮](173.code-highlight-rag-tutorial.md)；先 sanitize 再高亮。"),
+        ("代码块怎么办？", "见 [173 代码高亮](173.code-highlight-rag-tutorial（front-end）.md)；先 sanitize 再高亮。"),
         ("内网可以关 sanitize？", "不可以；LLM 输出不可信 + 库内文档可能含 HTML。"),
         ("CSP 还要吗？", "要；sanitize + CSP **纵深**。"),
     ], "14")
     return f'''# G 前端与体验（二）：Markdown 渲染与安全（react-markdown）完全指南
 
-> Assistant 回复常是 **Markdown**：标题、列表、表格、代码块。在 [171 消息列表](171.chat-message-list-ui-tutorial.md) 里若用 `dangerouslySetInnerHTML` 或 **不消毒的** HTML 插件，攻击者或 **被提示注入的模型** 可插入 `<script>`——**XSS**（Cross-Site Scripting）窃取 [164 JWT](164.jwt-auth-rag-tutorial.md)。本篇讲 **react-markdown + remark/rehype sanitize** 安全管线。路线图 **189**，**G 轨地基篇**。概念上勿与 [23 Self-Attention](23.self-attention-tutorial.md) 混淆——**23 是模型内部「互相看」**；**本篇是浏览器 DOM 安全**。
+> Assistant 回复常是 **Markdown**：标题、列表、表格、代码块。在 [171 消息列表](171.chat-message-list-ui-tutorial（front-end）.md) 里若用 `dangerouslySetInnerHTML` 或 **不消毒的** HTML 插件，攻击者或 **被提示注入的模型** 可插入 `<script>`——**XSS**（Cross-Site Scripting）窃取 [164 JWT](164.jwt-auth-rag-tutorial.md)。本篇讲 **react-markdown + remark/rehype sanitize** 安全管线。路线图 **189**，**G 轨地基篇**。概念上勿与 [23 Self-Attention](23.self-attention-tutorial.md) 混淆——**23 是模型内部「互相看」**；**本篇是浏览器 DOM 安全**。
 
 ---
 
@@ -1830,10 +1830,10 @@ def build_172() -> str:
 | 纯文本 | Markdown 渲染 |
 |--------|---------------|
 | 表格难读 | GFM 表格 |
-| 代码无高亮 | 接 [173 高亮](173.code-highlight-rag-tutorial.md) |
+| 代码无高亮 | 接 [173 高亮](173.code-highlight-rag-tutorial（front-end）.md) |
 | 列表一层 | 嵌套列表 |
 
-渲染发生在 **[171 MessageBubble](171.chat-message-list-ui-tutorial.md) assistant 分支**。
+渲染发生在 **[171 MessageBubble](171.chat-message-list-ui-tutorial（front-end）.md) assistant 分支**。
 
 ---
 
@@ -1905,7 +1905,7 @@ export function MarkdownRenderer({{ content }}: {{ content: string }}) {{
 
 - **链接**：`http/https/mailto` 白名单；`javascript:` **拒**；  
 - **图片**：可选 **禁 img** 或 **只允许 https + 域名白名单**；  
-- **代码块**：用 **自定义 `components.code`** 接 [173](173.code-highlight-rag-tutorial.md)，**高亮输入已是 sanitize 后 AST**。
+- **代码块**：用 **自定义 `components.code`** 接 [173](173.code-highlight-rag-tutorial（front-end）.md)，**高亮输入已是 sanitize 后 AST**。
 
 ---
 
@@ -1956,9 +1956,9 @@ test("strips script", () => {{
 | 篇 | 关系 |
 |----|------|
 | [23 Self-Attention](23.self-attention-tutorial.md) | 模型内部，非 XSS |
-| [171 聊天 UI](171.chat-message-list-ui-tutorial.md) | 挂载 Renderer |
+| [171 聊天 UI](171.chat-message-list-ui-tutorial（front-end）.md) | 挂载 Renderer |
 | [113 引用](113.inline-citation-tutorial.md) | 自定义组件 |
-| [173 高亮](173.code-highlight-rag-tutorial.md) | sanitize 后高亮 |
+| [173 高亮](173.code-highlight-rag-tutorial（front-end）.md) | sanitize 后高亮 |
 
 ---
 
@@ -1972,7 +1972,7 @@ test("strips script", () => {{
 
 1. **react-markdown + rehype-sanitize** 是 RAG 前端 **默认标配**。  
 2. **LLM 输出不可信**；与 [23](23.self-attention-tutorial.md) **正交**。  
-3. 下一篇 [173 代码高亮](173.code-highlight-rag-tutorial.md) 在 **安全 AST** 上高亮。
+3. 下一篇 [173 代码高亮](173.code-highlight-rag-tutorial（front-end）.md) 在 **安全 AST** 上高亮。
 
 {SHARED_APPENDIX}
 '''

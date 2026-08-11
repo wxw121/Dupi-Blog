@@ -170,12 +170,12 @@ EXPANSION_BLOCKS: dict[str, list[str]] = {
         "### 14.16 完结\n\n**187 OpenAPI** — **了解篇** 也要 **CI 校验**；**文档腐烂** = **集成事故**。",
     ],
     "chat-message-list-ui": [
-        "### 14.20 与 [174 打字机](174.streaming-typewriter-ui-tutorial.md)\n\nMessageList **只负责列表**；StreamingText **子组件** 消费 delta——**关注点分离**。",
-        "### 14.21 与 [176 引用卡片](176.citation-card-ui-tutorial.md)\n\nassistant 消息 **citations prop** 渲染 **底部卡片**——**别** 和 markdown **混一层**。",
+        "### 14.20 与 [174 打字机](174.streaming-typewriter-ui-tutorial（front-end）.md)\n\nMessageList **只负责列表**；StreamingText **子组件** 消费 delta——**关注点分离**。",
+        "### 14.21 与 [176 引用卡片](176.citation-card-ui-tutorial（front-end）.md)\n\nassistant 消息 **citations prop** 渲染 **底部卡片**——**别** 和 markdown **混一层**。",
         "### 14.22 完结\n\n**188 聊天 UI** — **messages 状态机** 是 **前端 RAG 心脏**。",
     ],
     "markdown-render-rag": [
-        "### 14.20 与 [173 代码高亮](173.code-highlight-rag-tutorial.md)\n\nsanitize **后再** highlight——**防** 高亮插件 **注入**。",
+        "### 14.20 与 [173 代码高亮](173.code-highlight-rag-tutorial（front-end）.md)\n\nsanitize **后再** highlight——**防** 高亮插件 **注入**。",
         "### 14.21 与 [23 Self-Attention](23.self-attention-tutorial.md)\n\n模型 **内部** 注意力 **≠** 用户可见 HTML——**XSS 是渲染层** 问题 **不是** transformer 问题。",
         "### 14.22 与 [113 引用](113.inline-citation-tutorial.md)\n\n`[1]` **自定义 component** **禁** `dangerouslySetInnerHTML`。",
         "### 14.23 完结\n\n**189 Markdown 渲染** — **sanitize 默认开**；**安全 review** **必含 XSS 用例**。",

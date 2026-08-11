@@ -43,7 +43,7 @@ README 链 SECURITY.md：申请 .env 流程、禁止 commit 列表、轮换联�
 
 ## 50. 与 180 索引任务区分
 
-用户问「为何搜不到」——先看 [180 索引进度](180.index-progress-ui-tutorial.md) task 是否 done，再看 api ready。ready 绿只表示 **问答依赖通**，不表示 **索引完成**。
+用户问「为何搜不到」——先看 [180 索引进度](180.index-progress-ui-tutorial（front-end）.md) task 是否 done，再看 api ready。ready 绿只表示 **问答依赖通**，不表示 **索引完成**。
 
 ## 51. 189 篇结业签字
 

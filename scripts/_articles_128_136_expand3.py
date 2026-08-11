@@ -114,7 +114,7 @@ SummaryIndex 仅适合短文 demo；TreeIndex 实验性层次检索；KeywordTab
 
 ## 19. 流式与引用
 
-`streaming=True` 对接 [116 SSE](116.sse-rag-streaming-tutorial.md)、[174 打字机](174.streaming-typewriter-ui-tutorial.md)。`source_nodes` 映射 [113-115 引用](113.inline-citation-tutorial.md)、[176 卡片](176.citation-card-ui-tutorial.md)。LC 从 retriever 手写 citations，产品行为一致。
+`streaming=True` 对接 [116 SSE](116.sse-rag-streaming-tutorial.md)、[174 打字机](174.streaming-typewriter-ui-tutorial（front-end）.md)。`source_nodes` 映射 [113-115 引用](113.inline-citation-tutorial.md)、[176 卡片](176.citation-card-ui-tutorial（front-end）.md)。LC 从 retriever 手写 citations，产品行为一致。
 
 ## 20. 选型与面试
 

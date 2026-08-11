@@ -79,10 +79,10 @@ Python 工程化、HTTP/REST、流式协议、数据库、DevOps 与前端基础
 | 10 | [NoSQL 与缓存入门：Redis、文档库、Cache-Aside 和 TTL 一文搞懂](docs/10.nosql-cache-tutorial.md) |
 | 11 | [Docker 镜像与容器 + Docker Compose 多服务编排：从「在我电脑上能跑」到一键起全套环境](docs/11.docker-compose-tutorial.md) |
 | 12 | [Linux 常用命令与日志排查：从「SSH 上去一脸懵」到能独立查故障](docs/12.linux-commands-log-tutorial.md) |
-| 13 | [从「JavaScript 加类型」到能读懂现代前端代码](docs/13.typescript-basics-tutorial.md) |
-| 14 | [从 useState 到 Zustand、Redux 与 Pinia](docs/14.frontend-state-management-tutorial.md) |
-| 15 | [流式 UI 渲染](docs/15.streaming-ui-rendering-tutorial.md) |
-| 16 | [Markdown 渲染与安全](docs/16.markdown-rendering-security-tutorial.md) |
+| 13 | [从「JavaScript 加类型」到能读懂现代前端代码](docs/13.typescript-basics-tutorial（front-end）.md) |
+| 14 | [从 useState 到 Zustand、Redux 与 Pinia](docs/14.frontend-state-management-tutorial（front-end）.md) |
+| 15 | [流式 UI 渲染](docs/15.streaming-ui-rendering-tutorial（front-end）.md) |
+| 16 | [Markdown 渲染与安全](docs/16.markdown-rendering-security-tutorial（front-end）.md) |
 
 ### B. NLP / IR / LLM 基础
 
@@ -314,20 +314,20 @@ FastAPI、任务队列、认证、多租户与 API 文档。
 
 | 序号 | 主题 |
 |------|------|
-| 171 | [聊天消息列表 UI](docs/171.chat-message-list-ui-tutorial.md) |
-| 172 | [RAG 答案的 Markdown 渲染与安全](docs/172.markdown-render-rag-tutorial.md) |
-| 173 | [RAG 答案代码高亮](docs/173.code-highlight-rag-tutorial.md) |
-| 174 | [流式打字机效果](docs/174.streaming-typewriter-ui-tutorial.md) |
-| 175 | [中断生成 AbortController](docs/175.abort-controller-stream-tutorial.md) |
-| 176 | [引用卡片 UI](docs/176.citation-card-ui-tutorial.md) |
-| 177 | [侧边栏原文预览](docs/177.source-preview-sidebar-tutorial.md) |
-| 178 | [PDF 高亮定位](docs/178.pdf-highlight-locate-tutorial.md) |
-| 179 | [知识库文档上传界面](docs/179.kb-doc-upload-ui-tutorial.md) |
-| 180 | [解析 / 索引进度展示](docs/180.index-progress-ui-tutorial.md) |
-| 181 | [重建索引操作](docs/181.reindex-ui-tutorial.md) |
-| 182 | [检索调试台](docs/182.retrieval-debug-console-tutorial.md) |
-| 183 | [管理后台用量统计](docs/183.admin-usage-dashboard-tutorial.md) |
-| 184 | [管理后台日志与评测看板](docs/184.admin-log-eval-dashboard-tutorial.md) |
+| 171 | [聊天消息列表 UI](docs/171.chat-message-list-ui-tutorial（front-end）.md) |
+| 172 | [RAG 答案的 Markdown 渲染与安全](docs/172.markdown-render-rag-tutorial（front-end）.md) |
+| 173 | [RAG 答案代码高亮](docs/173.code-highlight-rag-tutorial（front-end）.md) |
+| 174 | [流式打字机效果](docs/174.streaming-typewriter-ui-tutorial（front-end）.md) |
+| 175 | [中断生成 AbortController](docs/175.abort-controller-stream-tutorial（front-end）.md) |
+| 176 | [引用卡片 UI](docs/176.citation-card-ui-tutorial（front-end）.md) |
+| 177 | [侧边栏原文预览](docs/177.source-preview-sidebar-tutorial（front-end）.md) |
+| 178 | [PDF 高亮定位](docs/178.pdf-highlight-locate-tutorial（front-end）.md) |
+| 179 | [知识库文档上传界面](docs/179.kb-doc-upload-ui-tutorial（front-end）.md) |
+| 180 | [解析 / 索引进度展示](docs/180.index-progress-ui-tutorial（front-end）.md) |
+| 181 | [重建索引操作](docs/181.reindex-ui-tutorial（front-end）.md) |
+| 182 | [检索调试台](docs/182.retrieval-debug-console-tutorial（front-end）.md) |
+| 183 | [管理后台用量统计](docs/183.admin-usage-dashboard-tutorial（front-end）.md) |
+| 184 | [管理后台日志与评测看板](docs/184.admin-log-eval-dashboard-tutorial（front-end）.md) |
 
 ### G. 生产与云原生
 

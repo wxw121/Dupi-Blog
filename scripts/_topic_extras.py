@@ -5,7 +5,7 @@ from __future__ import annotations
 # Each list: subsections inserted before 「先错对对」; ~200+ hanzi per item
 
 EXTRAS: dict[str, list[str]] = {
-    "180.index-progress-ui-tutorial.md": [
+    "180.index-progress-ui-tutorial（front-end）.md": [
         "### 4.4 批量任务查询 API 设计\n\n列表页避免 N 次 GET，后端提供 `POST /index-tasks/batch`，body 为 `{\"ids\":[\"t1\",\"t2\"]}`，返回 `tasks[]`。未找到 id 可省略或显式 null，文档写清。批量接口要限流，单次最多五十个 id，防止被用作扫描接口。",
         "### 5.4 Skeleton 与乐观 UI\n\n首次加载用 Skeleton 占位，避免布局跳动。若上传接口已返回 `status: pending`，可乐观渲染 pending Badge，再以 GET 校正。乐观 UI 必须与后续轮询结果 reconcile，冲突时以后端为准。",
         "### 6.4 SSE 重连与 Last-Event-ID\n\n若采用 SSE，浏览器断线后应带 `Last-Event-ID` 重连，后端补发错过的状态迁移。Nginx 需关闭 proxy_buffering，否则事件积压。SSE 失败三次后降级轮询。",
@@ -13,19 +13,19 @@ EXTRAS: dict[str, list[str]] = {
         "### 10.7 与 185 Docker 多阶段构建\n\n前端镜像构建在 [185](185.docker-compose-fullstack-tutorial.md) 多阶段 Dockerfile 中，E2E 阶段镜像需安装 Playwright 浏览器。CI 跑 E2E 时 compose 必须起 worker，否则进度永远 pending，测试误报。",
         "### 10.8 客服深链格式\n\n工单系统支持 `https://admin.example/kb/tasks/{task_id}` 深链，打开即定位 IndexProgressPanel。URL 需鉴权，避免泄露任务状态给未登录用户。",
         "### 10.9 多语言 error_code 映射\n\n`ERROR_MESSAGES` 从 JSON locale 加载，键为 error_code。新增错误码时同步更新 zh-CN 与 en-US，后端枚举与前端词典 CI 校验一致。",
-        "### 10.10 与 192 成本无关但共享组件\n\n进度 Panel 与 [183 用量看板](183.admin-usage-dashboard-tutorial.md) 无数据耦合，但可复用 `StatusBadge` 设计 token，保持 F2 视觉一致。",
+        "### 10.10 与 192 成本无关但共享组件\n\n进度 Panel 与 [183 用量看板](183.admin-usage-dashboard-tutorial（front-end）.md) 无数据耦合，但可复用 `StatusBadge` 设计 token，保持 F2 视觉一致。",
     ],
-    "181.reindex-ui-tutorial.md": [
+    "181.reindex-ui-tutorial（front-end）.md": [
         "### 4.3 幂等键与 [162](162.idempotent-reindex-tutorial.md)\n\n重建按钮触发 `POST /documents/{doc_id}/reindex`，Header 带 `Idempotency-Key: uuid`。五分钟内相同 key 返回同一 `task_id`，防止运营双击产生 duplicate ingest。UI 在请求飞行中禁用按钮并显示「已提交」。",
         "### 5.3 全量 vs 增量选择器\n\n高级选项：「强制全量重建」勾选后传 `force_full=true`，跳过 [49 增量](49.incremental-update-tutorial.md) hash 检测。默认增量，文案解释「仅内容变化时重新嵌入」。",
         "### 6.3 pipeline_version 变更提示\n\n若服务端 `pipeline_version` 与上次不同，弹窗说明「切块策略已升级，建议重建」。确认后调用重建 API，与 [143 金标](143.golden-dataset-tutorial.md) 回归联动。",
         "### 7.3 危险操作二次确认\n\nModal 文案列后果：耗时、Embedding 费用（链 [192](192.embedding-batch-cost-tutorial.md)）、期间检索可能短暂不一致。输入 `doc_id` 末四位确认，防误点。",
         "### 9.2 重建历史表格\n\n展示每次重建的 task_id、操作者、耗时、结果。失败行可一键重试，生成新 Idempotency-Key。",
-        "### 10.3 与 180 进度 Panel 复用\n\n重建提交后跳转或内嵌 [180](180.index-progress-ui-tutorial.md) 同一 `IndexProgressPanel`，仅入口文案为「重建索引中」。",
+        "### 10.3 与 180 进度 Panel 复用\n\n重建提交后跳转或内嵌 [180](180.index-progress-ui-tutorial（front-end）.md) 同一 `IndexProgressPanel`，仅入口文案为「重建索引中」。",
         "### 10.4 ACL 与批量重建\n\n管理员批量重建需 `kb:reindex` 权限；普通编辑只能重建自己有写权限的 doc。后端批量接口返回每项独立 task_id。",
         "### 10.5 审计日志\n\n重建操作写 [196 审计](196.audit-log-rag-tutorial.md)：`actor, doc_id, force_full, task_id`。合规追溯必备。",
     ],
-    "182.retrieval-debug-console-tutorial.md": [
+    "182.retrieval-debug-console-tutorial（front-end）.md": [
         "### 4.3 查询表单字段\n\n调试台输入：`query`（必填）、`top_k`（默认 10）、`hybrid_alpha`（0～1）、`rerank`（bool）、`doc_id` 过滤、`collection`。与 [98 Top-K](98.top-k-retrieval-tutorial.md) 和 [93 混合检索](93.hybrid-search-tutorial.md) 参数一致，保存为「调试预设」。",
         "### 5.3 分数列可解释性\n\n结果表展示 `chunk_id, score_dense, score_sparse, score_rrf, score_rerank` 分列，帮助判断是向量弱还是 BM25 弱。点击行展开 chunk 原文与 metadata。",
         "### 6.3 混合检索对照实验\n\n同一 query 一键跑「仅向量 / 仅 BM25 / 混合 / 混合+重排」四列对比，耗时与 hit 列表并排。与 [95 交叉编码重排](95.cross-encoder-rerank-tutorial.md)、[96 BGE-Reranker](96.bge-reranker-tutorial.md) 衔接。",
@@ -35,17 +35,17 @@ EXTRAS: dict[str, list[str]] = {
         "### 10.3 延迟分解\n\n响应含 `embed_ms, search_ms, rerank_ms`，前端瀑布图展示瓶颈。与 [191 Prometheus](191.prometheus-metrics-rag-tutorial.md) histogram 对照。",
         "### 10.4 多租户隔离\n\n调试查询自动注入当前租户 filter，与 [53 ACL](53.metadata-acl-tutorial.md) 一致，禁止通过改 doc_id 越权。",
     ],
-    "183.admin-usage-dashboard-tutorial.md": [
+    "183.admin-usage-dashboard-tutorial（front-end）.md": [
         "### 4.3 计量维度定义\n\n**Tokens**：LLM prompt+completion 累计，来自 [27 Token 计费](27.token-counting-billing-tutorial.md) 日志字段。**Requests**：API 调用次数，含检索与聊天。**Storage**：对象存储字节 + 向量库条目估算。",
         "### 5.3 时间粒度与 rollup\n\n支持日/周/月聚合；大屏默认近三十天折线。时区按租户配置，默认 Asia/Shanghai。",
         "### 6.3 成本归因到 tenant / project\n\n`tenant_id` 为主键，可选 `project_id` 标签。账单导出 CSV 供财务，字段与合同 SLA 对齐。",
         "### 7.3 配额与告警阈值\n\n设置月 Token 上限，八十 percent 黄色、一百 percent 红色并可选停服。Webhook 通知运营，链 [191](191.prometheus-metrics-rag-tutorial.md) 告警。",
         "### 8.3 嵌入批次成本\n\n单独卡片展示 embed Token，与 [192](192.embedding-batch-cost-tutorial.md) 联动：批大小变化对费用曲线的影响可模拟。",
         "### 9.2 SQL 聚合示例\n\n```sql\nSELECT date_trunc('day', ts) AS d, sum(prompt_tokens+completion_tokens) AS tokens\nFROM usage_events WHERE tenant_id=$1 GROUP BY 1 ORDER BY 1;\n```",
-        "### 10.3 与 184 看板跳转\n\n用量异常时链接到 [184 日志评测看板](184.admin-log-eval-dashboard-tutorial.md) 查 bad case，闭环优化。",
+        "### 10.3 与 184 看板跳转\n\n用量异常时链接到 [184 日志评测看板](184.admin-log-eval-dashboard-tutorial（front-end）.md) 查 bad case，闭环优化。",
         "### 10.4 缓存命中不计费策略\n\n[68 嵌入缓存](68.embedding-cache-tutorial.md) 命中是否计费要在产品文档写清，看板区分 `embed_cache_hit` 与 `embed_api_call`。",
     ],
-    "184.admin-log-eval-dashboard-tutorial.md": [
+    "184.admin-log-eval-dashboard-tutorial（front-end）.md": [
         "### 4.3 日志流与 trace 对齐\n\n最近错误列表来自 [190 JSON 日志](190.structured-logging-rag-tutorial.md) 的 `outcome=error` 聚合。点击行跳转 Langfuse [148](148.langfuse-observability-tutorial.md) 或 [165](165.langfuse-advanced-tutorial.md) 同 trace_id。",
         "### 5.3 RAGAS 指标卡片\n\n展示 [141～148 RAGAS](141.ragas-overview-tutorial.md) 批跑结果：Faithfulness、Answer Relevancy、Context Precision 趋势。低于阈值标红，链 [143 金标](143.golden-dataset-tutorial.md)。",
         "### 6.3 LangSmith 实验对比\n\n若团队用 [147 LangSmith](147.langsmith-evaluation-tutorial.md)，嵌入 iframe 或 API 拉取 experiment 列表，与本次 prompt 版本 [154](154.prompt-versioning-tutorial.md) 关联。",
@@ -53,11 +53,11 @@ EXTRAS: dict[str, list[str]] = {
         "### 8.3 Bad case 工单流\n\n一键创建工单：附 `trace_id, query, retrieved_ids, answer`。指派给检索或 Prompt 负责人。",
         "### 9.2 评测批跑触发\n\n按钮触发 CI 或 Argo 跑 RAGAS，结果回写看板。与 [186 Compose](186.docker-compose-fullstack-tutorial.md) 评测 profile 一致。",
         "### 10.3 权限分级\n\n普通运营只看聚合；工程师可看 chunk 文本；PII 环境需 [195 脱敏](195.pii-redaction-rag-tutorial.md)。",
-        "### 10.4 与 183 用量交叉\n\n高 Token 日叠加 Faithfulness 下跌，提示「可能是模型或检索退化」，引导看 [182 调试台](182.retrieval-debug-console-tutorial.md)。",
+        "### 10.4 与 183 用量交叉\n\n高 Token 日叠加 Faithfulness 下跌，提示「可能是模型或检索退化」，引导看 [182 调试台](182.retrieval-debug-console-tutorial（front-end）.md)。",
     ],
     "190.structured-logging-rag-tutorial.md": [
         "### 5.2 event 枚举治理\n\n在仓库 `docs/log-events.md` 维护 event 列表与 owner。新增 event 需 PR 评审，防止拼写漂移。Breaking change 走 ADR。",
-        "### 6.2 Worker 子阶段日志\n\nparse/chunk/embed/index 各打 `stage_done` 子事件，带 `latency_ms` 与 `item_count`，支撑 [180 进度 UI](180.index-progress-ui-tutorial.md) 对账。",
+        "### 6.2 Worker 子阶段日志\n\nparse/chunk/embed/index 各打 `stage_done` 子事件，带 `latency_ms` 与 `item_count`，支撑 [180 进度 UI](180.index-progress-ui-tutorial（front-end）.md) 对账。",
         "### 7.2 trace_id 与 W3C traceparent\n\n可选对接 OpenTelemetry：`trace_id` 与 `traceparent` header 互转，方便接入 Jaeger。",
         "### 8.2 日志采样策略\n\n成功 `rag_query` 百分之一采样详细 `chunk_ids`；错误百分之百。采样率环境变量 `LOG_SAMPLE_RATE`。",
         "### 9.2 与 Loki 标签\n\nPromtail 提取 `tenant_id, event, outcome` 作 label，禁止高基数 label（如 user_id 全量）。",
@@ -69,7 +69,7 @@ EXTRAS: dict[str, list[str]] = {
         "### 4.3 Histogram 桶设置\n\n`rag_retrieval_seconds` 桶建议 `0.05,0.1,0.25,0.5,1,2,5`；`llm_ttft_seconds` 单独 histogram。桶变更会断 series，用新 metric 名版本化。",
         "### 5.3 RED 方法\n\nRate：`http_requests_total`；Errors：`5xx` ratio；Duration：P95 latency。RAG 再加 `retrieve_errors_total`。",
         "### 6.3 /metrics 安全\n\n生产 `/metrics` 不对公网，仅内网或 auth sidecar。勿暴露高基数 label。",
-        "### 7.3 Grafana 大盘模板\n\n导入 JSON：上传量、索引队列深度、检索 P95、LLM Token rate。与 [183 用量](183.admin-usage-dashboard-tutorial.md) 数字交叉验证。",
+        "### 7.3 Grafana 大盘模板\n\n导入 JSON：上传量、索引队列深度、检索 P95、LLM Token rate。与 [183 用量](183.admin-usage-dashboard-tutorial（front-end）.md) 数字交叉验证。",
         "### 8.3 告警规则示例\n\n`rate(rag_query_errors[5m]) > 0.05` 页 on-call；`celery_queue_length > 100` 扩 worker。",
         "### 9.2 Python prometheus_client\n\n```python\nfrom prometheus_client import Histogram\nRETRIEVAL = Histogram('rag_retrieval_seconds', 'Retrieve latency', ['tenant'])\n```",
         "### 10.3 与 190 日志关联\n\n同一 trace_id 在日志与 exemplar 对齐，缩短 MTTR。",
@@ -112,14 +112,14 @@ EXTRAS: dict[str, list[str]] = {
         "### 7.3 训练评估器\n\n可用检索金标 + 人工标「是否够用」训练小模型，不必端到端 RL。",
         "### 8.3 延迟预算\n\n多一轮评估 + 可能 Web 搜索，P95 上升；需 [191](191.prometheus-metrics-rag-tutorial.md) 监控。",
         "### 9.2 伪代码路由\n\n```python\nlabel = evaluator(query, docs)\nif label == 'incorrect': docs = web_search(query)\nelif label == 'ambiguous': docs = retrieve(rewrite(query))\nreturn generate(query, docs)\n```",
-        "### 10.3 企业落地建议\n\n先 **规则+分数阈值** 模拟 CRAG，再 ML 化；与 [182 调试台](182.retrieval-debug-console-tutorial.md) 共用分数。",
+        "### 10.3 企业落地建议\n\n先 **规则+分数阈值** 模拟 CRAG，再 ML 化；与 [182 调试台](182.retrieval-debug-console-tutorial（front-end）.md) 共用分数。",
         "### 10.4 与 [206 Adaptive](206.adaptive-rag-tutorial.md)\n\nAdaptive 在「检不检」；CRAG 在「检得好不好」。可串联。",
     ],
     "206.adaptive-rag-tutorial.md": [
         "### 4.3 查询路由四类\n\n无需检索（闲聊）、单跳检索、多跳、直接 Web。路由器可用小 LLM 或分类器。",
         "### 5.3 特征输入\n\n问题长度、是否含「总结」「对比」、会话轮次、知识库覆盖率估计。",
         "### 6.3 与 [201 Agentic RAG](201.agentic-rag-tutorial.md)\n\nAgentic 多步工具；Adaptive 是 **第一步是否检索** 的策略层，可组合。",
-        "### 7.3 成本节省\n\n三十 percent 闲聊不走检索，embed 与向量 QPS 下降，[183 看板](183.admin-usage-dashboard-tutorial.md) 可见。",
+        "### 7.3 成本节省\n\n三十 percent 闲聊不走检索，embed 与向量 QPS 下降，[183 看板](183.admin-usage-dashboard-tutorial（front-end）.md) 可见。",
         "### 8.3 路由错误代价\n\n该检不检 → 幻觉；不该检硬检 → 噪音。用 [143 金标](143.golden-dataset-tutorial.md) 评路由准确率。",
         "### 9.2 路由 prompt 示例\n\n输出 JSON：`{\"route\":\"retrieve|no_retrieve|multi_hop\"}`，温度 0。",
         "### 10.3 与 [205 CRAG](205.crag-corrective-rag-tutorial.md)\n\nAdaptive 决定走哪条路；CRAG 在检索后纠错。",

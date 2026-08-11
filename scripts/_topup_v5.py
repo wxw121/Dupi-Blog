@@ -77,7 +77,7 @@ V5["204.self-rag-tutorial.md"] = ("V5-204", """
 V5["208.refine-summarization-tutorial.md"] = ("V5-208", """
 ## 18. Refine 与索引任务状态
 
-ingest Refine 任务暴露 `refine_progress={k,n}` 给 [180 进度 UI](180.index-progress-ui-tutorial.md)。失败保留 checkpoint 路径供 [181 重建](181.reindex-ui-tutorial.md) 重跑。
+ingest Refine 任务暴露 `refine_progress={k,n}` 给 [180 进度 UI](180.index-progress-ui-tutorial（front-end）.md)。失败保留 checkpoint 路径供 [181 重建](181.reindex-ui-tutorial（front-end）.md) 重跑。
 
 ## 19. 数字守恒 prompt 片段
 
@@ -105,7 +105,7 @@ worker 构建树时 `memory limit 8Gi` 起；OOM 时 **减小 k 或分批聚类*
 V5["210.multimodal-rag-tutorial.md"] = ("V5-210", """
 ## 18. rasterize DPI 选择
 
-150 DPI 平衡体积与 OCR/CLIP 质量；300 DPI 扫描件。单页 PNG **>5MB** 拒绝入库（[179 上传](179.kb-doc-upload-ui-tutorial.md) 对齐）。
+150 DPI 平衡体积与 OCR/CLIP 质量；300 DPI 扫描件。单页 PNG **>5MB** 拒绝入库（[179 上传](179.kb-doc-upload-ui-tutorial（front-end）.md) 对齐）。
 
 ## 19. 双通道分合并
 

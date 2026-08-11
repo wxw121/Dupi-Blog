@@ -89,7 +89,7 @@ tiny-health sidecar 暴露 `/worker-ready`：broker ping + 最近心跳时间。
 
 ## 40. 与 179/195/53 三角联调
 
-上传（[179](179.kb-doc-upload-ui-tutorial.md)）、PII（[195](195.pii-redaction-rag-tutorial.md)）、ACL（[53](53.metadata-acl-tutorial.md)）端到端一次。
+上传（[179](179.kb-doc-upload-ui-tutorial（front-end）.md)）、PII（[195](195.pii-redaction-rag-tutorial.md)）、ACL（[53](53.metadata-acl-tutorial.md)）端到端一次。
 
 ## 41. rasterize 与 DPI 运维
 
@@ -118,7 +118,7 @@ tiny-health sidecar 暴露 `/worker-ready`：broker ping + 最近心跳时间。
 
 ## 40. 与 210 五分钟联演
 
-版式题→ColPali；文本题→text collection；[182 调试台](182.retrieval-debug-console-tutorial.md) 展示 `router_decision`。
+版式题→ColPali；文本题→text collection；[182 调试台](182.retrieval-debug-console-tutorial（front-end）.md) 展示 `router_decision`。
 
 ## 41. 粗筛 Recall 守门
 

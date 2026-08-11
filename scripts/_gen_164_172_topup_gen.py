@@ -23,7 +23,7 @@ for slug, title in topics.items():
         parts.append(
             f"### 附录 Z.{i} {title}工程笔记第{i}条\n\n"
             f"在企业 RAG 落地 **{title}** 时，团队常忽略第 **{i}** 项细节："
-            f"第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；"
+            f"第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；"
             f"第二，PoC 与生产环境变量分离且密钥走 KMS；"
             f"第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；"
             f"第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；"

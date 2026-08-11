@@ -86,7 +86,7 @@ B["210.multimodal-rag-tutorial.md"] = ("V8-210", """
 
 ## 36. ingest 失败态
 
-rasterize 失败→记 `image_ingest_failed` 仍保留文本支路。OCR 空→标 `ocr_empty` 降权 image 通道。运营可见任务详情（[180](180.index-progress-ui-tutorial.md)）。
+rasterize 失败→记 `image_ingest_failed` 仍保留文本支路。OCR 空→标 `ocr_empty` 降权 image 通道。运营可见任务详情（[180](180.index-progress-ui-tutorial（front-end）.md)）。
 
 ## 37. 成本看板四列
 
@@ -94,7 +94,7 @@ rasterize 失败→记 `image_ingest_failed` 仍保留文本支路。OCR 空→�
 
 ## 38. 安全复审清单
 
-EXIF、像素炸弹、PII 扫 OCR、上传大小（[179](179.kb-doc-upload-ui-tutorial.md)）。每季度复审一次。
+EXIF、像素炸弹、PII 扫 OCR、上传大小（[179](179.kb-doc-upload-ui-tutorial（front-end）.md)）。每季度复审一次。
 """)
 
 B["211.colpali-rag-tutorial.md"] = ("V8-211", """

@@ -99,7 +99,7 @@ S0：`summary=""`，队列 Q 含按序 chunk。循环：弹 c→`summary'=LLM(su
 
 ## 25. 在线证据压缩路径
 
-top-12 chunk 按 **原文顺序** Refine 至 ~800 token→主模型作答。金标：数字题降幅≤2%。UI「整理证据 k/n」；勿流式展示中间 rolling summary（[174](174.streaming-typewriter-ui-tutorial.md) 仅用于最终问答）。
+top-12 chunk 按 **原文顺序** Refine 至 ~800 token→主模型作答。金标：数字题降幅≤2%。UI「整理证据 k/n」；勿流式展示中间 rolling summary（[174](174.streaming-typewriter-ui-tutorial（front-end）.md) 仅用于最终问答）。
 
 ## 26. 陷阱段、toc、人工纪要
 

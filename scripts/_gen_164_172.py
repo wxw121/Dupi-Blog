@@ -257,7 +257,7 @@ def login(form: OAuth2PasswordRequestForm = Depends()):
     return {{"access_token": access, "refresh_token": refresh, "token_type": "bearer"}}
 ```
 
-生产 refresh 建议 **Set-Cookie HttpOnly Secure SameSite=Lax**；SPA 若纯 Bearer，**必须** 配合 **短 access + CSP**（见 [172 Markdown XSS](172.markdown-render-rag-tutorial.md) 同轨前端安全）。
+生产 refresh 建议 **Set-Cookie HttpOnly Secure SameSite=Lax**；SPA 若纯 Bearer，**必须** 配合 **短 access + CSP**（见 [172 Markdown XSS](172.markdown-render-rag-tutorial（front-end）.md) 同轨前端安全）。
 
 ---
 
@@ -411,8 +411,8 @@ BUILDERS = {
     "168.multi-model-routing-tutorial.md": ("multi-model-routing", build_168),
     "169.rate-limiting-api-tutorial.md": ("rate-limiting-api", build_169),
     "170.openapi-swagger-docs-tutorial.md": ("openapi-swagger-docs", build_170),
-    "171.chat-message-list-ui-tutorial.md": ("chat-message-list-ui", build_171),
-    "172.markdown-render-rag-tutorial.md": ("markdown-render-rag", build_172),
+    "171.chat-message-list-ui-tutorial（front-end）.md": ("chat-message-list-ui", build_171),
+    "172.markdown-render-rag-tutorial（front-end）.md": ("markdown-render-rag", build_172),
 }
 
 

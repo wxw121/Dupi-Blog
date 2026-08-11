@@ -78,7 +78,7 @@ Query Engine 黑盒在 `query()` 内完成 retrieve + synthesize；LCEL 每步�
 
 ### 20.2 source_nodes 与 [113] 引用
 
-无论 LI 还是 LC，前端 [171 聊天 UI](171.chat-message-list-ui-tutorial.md) 需要 **稳定 citation id**。Query Engine 的 `source_nodes` 映射到 [113 行内引用](113.inline-citation-tutorial.md) 与 [176 卡片](176.citation-card-ui-tutorial.md)。协议设计时 **统一 JSON 字段**：`chunk_id, score, source, page`。
+无论 LI 还是 LC，前端 [171 聊天 UI](171.chat-message-list-ui-tutorial（front-end）.md) 需要 **稳定 citation id**。Query Engine 的 `source_nodes` 映射到 [113 行内引用](113.inline-citation-tutorial.md) 与 [176 卡片](176.citation-card-ui-tutorial（front-end）.md)。协议设计时 **统一 JSON 字段**：`chunk_id, score, source, page`。
 
 ### 20.3 流式 [116] 与 Query Engine
 

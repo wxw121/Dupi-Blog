@@ -376,7 +376,7 @@ fine = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=60)
 chunks = fine.split_documents(sections)
 ```
 
-`metadata` 继承 `h1/h2/h3`，利于 [88 元数据过滤](88.metadata-filter-retrieval-tutorial.md)（只搜某产品章节）。代码块、表格应尽量 **整块保留**——若 Markdown AST 检测 fenced code，可先按块类型路由：prose 走递归切，code 走 [173 代码高亮](173.code-highlight-rag-tutorial.md) 专用策略。
+`metadata` 继承 `h1/h2/h3`，利于 [88 元数据过滤](88.metadata-filter-retrieval-tutorial.md)（只搜某产品章节）。代码块、表格应尽量 **整块保留**——若 Markdown AST 检测 fenced code，可先按块类型路由：prose 走递归切，code 走 [173 代码高亮](173.code-highlight-rag-tutorial（front-end）.md) 专用策略。
 
 ### 15.4 与 [64 HTML DOM](64.html-dom-chunking-tutorial.md)、[65 Parent](65.parent-document-retriever-tutorial.md) 的边界
 
@@ -455,7 +455,7 @@ overlap 高时用 [106 去重](106.retrieval-dedup-tutorial.md) 或 [105 MMR](10
 
 ### 17.10 FAQ 与 LangChain 版本锁定
 
-chunk_size 用字符还是 token？中文常字符，OpenAI embed 用 token，见 [27 计费](27.token-counting-billing-tutorial.md)。代码块尽量整块，见 [173 代码 RAG](173.code-highlight-rag-tutorial.md)。overlap 不是越大越好。锁定 langchain-text-splitters 版本，升级后跑回归，防 silently 改边界。向产品展示无 overlap 时证据被切成两半的示意图。
+chunk_size 用字符还是 token？中文常字符，OpenAI embed 用 token，见 [27 计费](27.token-counting-billing-tutorial.md)。代码块尽量整块，见 [173 代码 RAG](173.code-highlight-rag-tutorial（front-end）.md)。overlap 不是越大越好。锁定 langchain-text-splitters 版本，升级后跑回归，防 silently 改边界。向产品展示无 overlap 时证据被切成两半的示意图。
 
 
 对 [62 结构感知](62.structure-aware-chunking-tutorial.md) 手册，可先用 MarkdownHeader 产出 section 级 chunk 做目录检索，再对超长 section 递归细切，形成两级索引策略，metadata 写 section_level=1 或 2。

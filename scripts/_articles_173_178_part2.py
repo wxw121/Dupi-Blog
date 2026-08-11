@@ -4,8 +4,8 @@
 FOOTER_F2 = """
 ### 13.4 30 分钟动手作业
 
-1. 把 §9 组件接到你 [171 聊天列表](171.chat-message-list-ui-tutorial.md) 的消息气泡里；  
-2. 与 [172 Markdown 渲染](172.markdown-render-rag-tutorial.md) 联调，确认 XSS 策略仍生效；  
+1. 把 §9 组件接到你 [171 聊天列表](171.chat-message-list-ui-tutorial（front-end）.md) 的消息气泡里；  
+2. 与 [172 Markdown 渲染](172.markdown-render-rag-tutorial（front-end）.md) 联调，确认 XSS 策略仍生效；  
 3. 用浏览器 DevTools 录一段 **3 分钟演示视频** 给产品；  
 4. 写 wiki 一段：**本文 UI 在 F2 前端链路中的位置**。
 
@@ -26,17 +26,17 @@ FOOTER_178 = """
 
 [企业 RAG 路线图](ENTERPRISE_RAG_ROADMAP.md) **阶段 4：全栈产品** 要求交付 **企业知识库助手**：聊天 + 引用溯源 + 管理台。验收标准：**多用户隔离**；可演示 **上传 → 问答 → 看引用** 完整业务流。目录：[`projects/04-fullstack-assistant/`](projects/04-fullstack-assistant/)。
 
-本篇（195 PDF 高亮）与 [188～194](171.chat-message-list-ui-tutorial.md) 共同构成 F2 前端 **对话与溯源** 闭环：
+本篇（195 PDF 高亮）与 [188～194](171.chat-message-list-ui-tutorial（front-end）.md) 共同构成 F2 前端 **对话与溯源** 闭环：
 
 | 路线图 | 教程 | 在阶段 4 中的角色 |
 |--------|------|-------------------|
-| 188 | [171 消息列表](171.chat-message-list-ui-tutorial.md) | 对话主界面 |
-| 189 | [172 Markdown](172.markdown-render-rag-tutorial.md) | 答案渲染 |
-| 190 | [173 代码高亮](173.code-highlight-rag-tutorial.md) | 技术文档可读性 |
-| 191 | [174 打字机](174.streaming-typewriter-ui-tutorial.md) | 流式体验 |
-| 192 | [175 中断](175.abort-controller-stream-tutorial.md) | 可控生成 |
-| 193 | [176 引用卡片](176.citation-card-ui-tutorial.md) | 依据展示 |
-| 194 | [177 侧栏预览](177.source-preview-sidebar-tutorial.md) | 原文对照 |
+| 188 | [171 消息列表](171.chat-message-list-ui-tutorial（front-end）.md) | 对话主界面 |
+| 189 | [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) | 答案渲染 |
+| 190 | [173 代码高亮](173.code-highlight-rag-tutorial（front-end）.md) | 技术文档可读性 |
+| 191 | [174 打字机](174.streaming-typewriter-ui-tutorial（front-end）.md) | 流式体验 |
+| 192 | [175 中断](175.abort-controller-stream-tutorial（front-end）.md) | 可控生成 |
+| 193 | [176 引用卡片](176.citation-card-ui-tutorial（front-end）.md) | 依据展示 |
+| 194 | [177 侧栏预览](177.source-preview-sidebar-tutorial（front-end）.md) | 原文对照 |
 | 195 | 本篇 PDF 高亮 | 可审计跳页 |
 
 **下一阶段（F2 续 + 阶段 5）**：196 上传界面、197 索引进度、Langfuse 追踪——见路线图 **196+** 与 **阶段 5 生产化**。
@@ -59,7 +59,7 @@ FOOTER_178 = """
 
 ARTICLE_174 = r'''# F2 前端（四）：流式打字机效果完全指南
 
-> ChatGPT 把 **逐字流出** 变成用户心智里的「AI 在思考」。RAG 比纯聊天多两件事：**检索等待期** 与 **引用收尾**——若前端只会 `text += delta`，会出现闪烁、卡顿、引用编号乱跳。 [116 篇 SSE RAG](116.sse-rag-streaming-tutorial.md) 定义了后端事件；[路线图第 22 条](ENTERPRISE_RAG_ROADMAP.md) 强调 **流式 UI 渲染**。本篇是 [企业 RAG 路线图](ENTERPRISE_RAG_ROADMAP.md) **F2 前端第四篇**（路线图第 **191** 条），**主线篇**：`fetch`/`EventSource` 接流、缓冲与 `requestAnimationFrame`、与 citations 挂载时机。前置：[116 SSE RAG](116.sse-rag-streaming-tutorial.md)、[7 SSE 基础](7.sse-tutorial.md)、[171 聊天列表](171.chat-message-list-ui-tutorial.md)、[172 Markdown](172.markdown-render-rag-tutorial.md)。
+> ChatGPT 把 **逐字流出** 变成用户心智里的「AI 在思考」。RAG 比纯聊天多两件事：**检索等待期** 与 **引用收尾**——若前端只会 `text += delta`，会出现闪烁、卡顿、引用编号乱跳。 [116 篇 SSE RAG](116.sse-rag-streaming-tutorial.md) 定义了后端事件；[路线图第 22 条](ENTERPRISE_RAG_ROADMAP.md) 强调 **流式 UI 渲染**。本篇是 [企业 RAG 路线图](ENTERPRISE_RAG_ROADMAP.md) **F2 前端第四篇**（路线图第 **191** 条），**主线篇**：`fetch`/`EventSource` 接流、缓冲与 `requestAnimationFrame`、与 citations 挂载时机。前置：[116 SSE RAG](116.sse-rag-streaming-tutorial.md)、[7 SSE 基础](7.sse-tutorial.md)、[171 聊天列表](171.chat-message-list-ui-tutorial（front-end）.md)、[172 Markdown](172.markdown-render-rag-tutorial（front-end）.md)。
 
 ---
 
@@ -94,13 +94,13 @@ ARTICLE_174 = r'''# F2 前端（四）：流式打字机效果完全指南
 1. 用 `fetch` + `ReadableStream` 或 `EventSource` 解析 [116](116.sse-rag-streaming-tutorial.md) 四类事件。  
 2. 实现 §6 `useRagStream`，含缓冲与 `requestAnimationFrame`。  
 3. 区分 **检索 spinner** 与 **生成打字机** 两阶段 UI。  
-4. 在 `done` 后挂载 [176 引用卡片](176.citation-card-ui-tutorial.md) 数据。  
-5. 与 [175 AbortController](175.abort-controller-stream-tutorial.md) 预留 `signal`。  
+4. 在 `done` 后挂载 [176 引用卡片](176.citation-card-ui-tutorial（front-end）.md) 数据。  
+5. 与 [175 AbortController](175.abort-controller-stream-tutorial（front-end）.md) 预留 `signal`。  
 6. 识别 §10 五种翻车。
 
 ### 1.1 F2 与路线图第 22 条
 
-[路线图 A 模块第 22 条](ENTERPRISE_RAG_ROADMAP.md)：「流式 UI 渲染（逐字显示、中断）」。本篇覆盖 **逐字显示**；中断在 [175](175.abort-controller-stream-tutorial.md)；后端协议在 [116](116.sse-rag-streaming-tutorial.md)。
+[路线图 A 模块第 22 条](ENTERPRISE_RAG_ROADMAP.md)：「流式 UI 渲染（逐字显示、中断）」。本篇覆盖 **逐字显示**；中断在 [175](175.abort-controller-stream-tutorial（front-end）.md)；后端协议在 [116](116.sse-rag-streaming-tutorial.md)。
 
 ### 1.2 术语双轨速查
 
@@ -127,7 +127,7 @@ ARTICLE_174 = r'''# F2 前端（四）：流式打字机效果完全指南
 |------|----------|------|
 | A | 读 [116 §5](116.sse-rag-streaming-tutorial.md) 事件表 | 能手写 JSON |
 | B | 跑 §6 Hook 接 mock 流 | 控制台见 delta |
-| C | 接 [171](171.chat-message-list-ui-tutorial.md) | 气泡逐字增长 |
+| C | 接 [171](171.chat-message-list-ui-tutorial（front-end）.md) | 气泡逐字增长 |
 | D | citations 在 done 后渲染 | `[1]` 可点击 |
 | E | §10 五种错法 | 能口述 |
 | F | Lighthouse 无长任务告警 | 可选 |
@@ -158,7 +158,7 @@ ARTICLE_174 = r'''# F2 前端（四）：流式打字机效果完全指南
 |------|----------|
 | `message` | `content += delta` |
 | `citations` | `setCitations(payload)`，**勿**在首个 delta 前渲染可点链接 |
-| `done` | `setStreaming(false)`，触发 [173](173.code-highlight-rag-tutorial.md) 延迟高亮 |
+| `done` | `setStreaming(false)`，触发 [173](173.code-highlight-rag-tutorial（front-end）.md) 延迟高亮 |
 | `error` |  toast + 保留已生成 partial |
 
 ```typescript
@@ -292,13 +292,13 @@ function parseSseBlock(
 }
 ```
 
-详见 [175 篇](175.abort-controller-stream-tutorial.md) 的 `stop()` 与后端断开协作。
+详见 [175 篇](175.abort-controller-stream-tutorial（front-end）.md) 的 `stop()` 与后端断开协作。
 
 ---
 
 ## 7. 与 Markdown 渲染协作
 
-[172 Markdown](172.markdown-render-rag-tutorial.md) 在流式下有两种模式：
+[172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 在流式下有两种模式：
 
 1. **纯文本模式**（流式中）：`white-space: pre-wrap` 显示原始 Markdown，避免未闭合 `**` 抖动；  
 2. **富文本模式**（done 后）：切 `ReactMarkdown` 完整渲染。
@@ -320,8 +320,8 @@ function parseSseBlock(
 | 阶段 | UI | 输入框 |
 |------|-----|--------|
 | retrieving | 「正在检索…」+ 轻量 spinner | 禁用发送 |
-| streaming | 打字机 + 闪烁光标 `▍` | 显示「停止」→ [175](175.abort-controller-stream-tutorial.md) |
-| done | 完整 Markdown + [176 卡片](176.citation-card-ui-tutorial.md) | 恢复发送 |
+| streaming | 打字机 + 闪烁光标 `▍` | 显示「停止」→ [175](175.abort-controller-stream-tutorial（front-end）.md) |
+| done | 完整 Markdown + [176 卡片](176.citation-card-ui-tutorial（front-end）.md) | 恢复发送 |
 
 **光标实现**：
 
@@ -401,7 +401,7 @@ export function TypewriterMessage({ content, citations, phase, onStop }: Props) 
 
 ## 11. 性能与可访问性
 
-- **长答案**：虚拟列表在 [171](171.chat-message-list-ui-tutorial.md) 层做，单条消息内避免上万 DOM 节点；  
+- **长答案**：虚拟列表在 [171](171.chat-message-list-ui-tutorial（front-end）.md) 层做，单条消息内避免上万 DOM 节点；  
 - **a11y**：`aria-live="polite"` 区域播报完成态，流式中勿每秒读屏；  
 - **移动弱网**：delta 合并更重要，避免输入法冲突。
 
@@ -417,7 +417,7 @@ export function TypewriterMessage({ content, citations, phase, onStop }: Props) 
 
 ### 13.1 EventSource 还是 fetch？
 
-`EventSource` 仅 GET，RAG 常 POST body → **fetch + ReadableStream**（[175](175.abort-controller-stream-tutorial.md) 亦需 AbortSignal）。
+`EventSource` 仅 GET，RAG 常 POST body → **fetch + ReadableStream**（[175](175.abort-controller-stream-tutorial（front-end）.md) 亦需 AbortSignal）。
 
 ### 13.2 与 [117 WebSocket](117.websocket-rag-streaming-tutorial.md)？
 
@@ -433,14 +433,14 @@ export function TypewriterMessage({ content, citations, phase, onStop }: Props) 
 
 1. **打字机** = 接 [116](116.sse-rag-streaming-tutorial.md) delta + rAF 缓冲 + 三态 UI。  
 2. **citations 收尾** 再挂可点引用，对齐 [113](113.inline-citation-tutorial.md)。  
-3. **停止** 交 [175 AbortController](175.abort-controller-stream-tutorial.md)。
+3. **停止** 交 [175 AbortController](175.abort-controller-stream-tutorial（front-end）.md)。
 
 ### 14.1 系列下一步
 
 | 目标 | 阅读 |
 |------|------|
-| 中断 | [175 AbortController](175.abort-controller-stream-tutorial.md) |
-| 引用卡片 | [176 引用卡片 UI](176.citation-card-ui-tutorial.md) |
+| 中断 | [175 AbortController](175.abort-controller-stream-tutorial（front-end）.md) |
+| 引用卡片 | [176 引用卡片 UI](176.citation-card-ui-tutorial（front-end）.md) |
 | 后端 SSE | [116 SSE RAG](116.sse-rag-streaming-tutorial.md) |
 
 ### 14.2 面试 30 秒版
@@ -451,7 +451,7 @@ export function TypewriterMessage({ content, citations, phase, onStop }: Props) 
 
 ARTICLE_175 = r'''# F2 前端（五）：中断生成 AbortController 完全指南
 
-> 用户点「停止生成」时，若只是 **前端不再显示新字**，而后端 LLM 仍在烧 Token，财务与 SLO 都会记一笔。 [174 流式打字机](174.streaming-typewriter-ui-tutorial.md) 负责把字冒出来；本篇负责 **真停**：`AbortController` 断开 HTTP 流、通知后端取消任务，并在 UI 上保留 **可读的 partial 答案**。这篇是 [企业 RAG 路线图](ENTERPRISE_RAG_ROADMAP.md) **F2 前端第五篇**（路线图第 **192** 条），**地基篇**。可选对照 [6 WebSocket](6.websocket-tutorial.md)、[117 WebSocket RAG](117.websocket-rag-streaming-tutorial.md) 的 `cancel` 帧。前置：[174 流式打字机](174.streaming-typewriter-ui-tutorial.md)、[116 SSE RAG](116.sse-rag-streaming-tutorial.md)、[7 SSE](7.sse-tutorial.md)。
+> 用户点「停止生成」时，若只是 **前端不再显示新字**，而后端 LLM 仍在烧 Token，财务与 SLO 都会记一笔。 [174 流式打字机](174.streaming-typewriter-ui-tutorial（front-end）.md) 负责把字冒出来；本篇负责 **真停**：`AbortController` 断开 HTTP 流、通知后端取消任务，并在 UI 上保留 **可读的 partial 答案**。这篇是 [企业 RAG 路线图](ENTERPRISE_RAG_ROADMAP.md) **F2 前端第五篇**（路线图第 **192** 条），**地基篇**。可选对照 [6 WebSocket](6.websocket-tutorial.md)、[117 WebSocket RAG](117.websocket-rag-streaming-tutorial.md) 的 `cancel` 帧。前置：[174 流式打字机](174.streaming-typewriter-ui-tutorial（front-end）.md)、[116 SSE RAG](116.sse-rag-streaming-tutorial.md)、[7 SSE](7.sse-tutorial.md)。
 
 ---
 
@@ -637,7 +637,7 @@ export function useRagStream() {
         headers: { "Content-Type": "application/json", Accept: "text/event-stream" },
         body: JSON.stringify({ query }),
       });
-      // ... reader loop 同 [174](174.streaming-typewriter-ui-tutorial.md)
+      // ... reader loop 同 [174](174.streaming-typewriter-ui-tutorial（front-end）.md)
       setPhase("done");
     } catch (e) {
       if ((e as Error).name === "AbortError") setPhase("aborted");
@@ -699,7 +699,7 @@ export function useRagStream() {
 
 ### 12.3 与 [175] 和 [174] 谁写 Hook？
 
-本篇与 [174](174.streaming-typewriter-ui-tutorial.md) 可 **同一 Hook**：174 管渲染节奏，175 管 abort。
+本篇与 [174](174.streaming-typewriter-ui-tutorial（front-end）.md) 可 **同一 Hook**：174 管渲染节奏，175 管 abort。
 
 ---
 
@@ -713,8 +713,8 @@ export function useRagStream() {
 
 | 目标 | 阅读 |
 |------|------|
-| 引用 UI | [176 引用卡片](176.citation-card-ui-tutorial.md) |
-| 打字机 | [174 流式打字机](174.streaming-typewriter-ui-tutorial.md) |
+| 引用 UI | [176 引用卡片](176.citation-card-ui-tutorial（front-end）.md) |
+| 打字机 | [174 流式打字机](174.streaming-typewriter-ui-tutorial（front-end）.md) |
 
 ### 13.2 面试 30 秒版
 
@@ -725,7 +725,7 @@ export function useRagStream() {
 # Articles 176-178 continue with substantial content
 ARTICLE_176 = r'''# F2 前端（六）：引用卡片 UI 完全指南
 
-> 行内 `[1]` 适合短答案，但企业用户常需要 **扫一眼所有依据**：哪份制度、哪一页、相似度多少。 [113 行内引用](113.inline-citation-tutorial.md) 解决句末标注；[115 源文档导航](115.source-document-navigation-tutorial.md) 解决跳哪；本篇解决 **卡片长什么样、怎么排、怎么点**。这篇是 [企业 RAG 路线图](ENTERPRISE_RAG_ROADMAP.md) **F2 前端第六篇**（路线图第 **193** 条），**主线篇**。前置：[113 行内引用](113.inline-citation-tutorial.md)、[115 源文档导航](115.source-document-navigation-tutorial.md)、[116 SSE RAG](116.sse-rag-streaming-tutorial.md)、[174 流式打字机](174.streaming-typewriter-ui-tutorial.md)。
+> 行内 `[1]` 适合短答案，但企业用户常需要 **扫一眼所有依据**：哪份制度、哪一页、相似度多少。 [113 行内引用](113.inline-citation-tutorial.md) 解决句末标注；[115 源文档导航](115.source-document-navigation-tutorial.md) 解决跳哪；本篇解决 **卡片长什么样、怎么排、怎么点**。这篇是 [企业 RAG 路线图](ENTERPRISE_RAG_ROADMAP.md) **F2 前端第六篇**（路线图第 **193** 条），**主线篇**。前置：[113 行内引用](113.inline-citation-tutorial.md)、[115 源文档导航](115.source-document-navigation-tutorial.md)、[116 SSE RAG](116.sse-rag-streaming-tutorial.md)、[174 流式打字机](174.streaming-typewriter-ui-tutorial（front-end）.md)。
 
 ---
 
@@ -749,7 +749,7 @@ ARTICLE_176 = r'''# F2 前端（六）：引用卡片 UI 完全指南
 
 ## 1. 前言：引用卡片是 Grounding 的「第二屏」
 
-法务反馈：「答案两句，但我需要对比三条制度原文。」只有 [113](113.inline-citation-tutorial.md) 行内 `[1][2]` 时，她要在正文里找编号；**引用卡片列表**在答案下方整齐列出 **来源标题、摘录、页码**，一点进 [177 侧栏预览](177.source-preview-sidebar-tutorial.md)。
+法务反馈：「答案两句，但我需要对比三条制度原文。」只有 [113](113.inline-citation-tutorial.md) 行内 `[1][2]` 时，她要在正文里找编号；**引用卡片列表**在答案下方整齐列出 **来源标题、摘录、页码**，一点进 [177 侧栏预览](177.source-preview-sidebar-tutorial（front-end）.md)。
 
 **引用卡片 UI（Citation Card UI）**：将 `citations[]` 渲染为可扫描的卡片列表，与行内 `[n]` 编号联动高亮。  
 通俗说：**脚注区的「现代版」**，但仍要与 [113](113.inline-citation-tutorial.md) 编号一致。
@@ -758,8 +758,8 @@ ARTICLE_176 = r'''# F2 前端（六）：引用卡片 UI 完全指南
 
 1. 设计 `Citation` TypeScript 类型，对齐 [115 navigate_url](115.source-document-navigation-tutorial.md)。  
 2. 实现 §6 `CitationCard` + `CitationCardList`。  
-3. 在 [174 done 态](174.streaming-typewriter-ui-tutorial.md) 挂载卡片。  
-4. 点击卡片触发 `onOpenSource(citation)` 供 [177](177.source-preview-sidebar-tutorial.md) 消费。  
+3. 在 [174 done 态](174.streaming-typewriter-ui-tutorial（front-end）.md) 挂载卡片。  
+4. 点击卡片触发 `onOpenSource(citation)` 供 [177](177.source-preview-sidebar-tutorial（front-end）.md) 消费。  
 5. 处理 **无权限** 卡片灰显（[121 ACL](121.unauthorized-doc-filter-tutorial.md)）。  
 6. 识别 §10 四种翻车。
 
@@ -770,7 +770,7 @@ ARTICLE_176 = r'''# F2 前端（六）：引用卡片 UI 完全指南
 **档位：F2 主线篇（路线图 193）。**
 
 **本文讲：** 卡片信息架构、JSON 契约、React 组件、流式时机、点击委托、响应式。  
-**本文不讲：** 脚注式纯文末编号（[114](114.footnote-citation-tutorial.md) 可并存）、PDF 高亮实现（[178](178.pdf-highlight-locate-tutorial.md)）。
+**本文不讲：** 脚注式纯文末编号（[114](114.footnote-citation-tutorial.md) 可并存）、PDF 高亮实现（[178](178.pdf-highlight-locate-tutorial（front-end）.md)）。
 
 ---
 
@@ -898,7 +898,7 @@ export function CitationCardList({
 
 ## 7. 与流式收尾事件衔接
 
-[174](174.streaming-typewriter-ui-tutorial.md) + [116](116.sse-rag-streaming-tutorial.md)：
+[174](174.streaming-typewriter-ui-tutorial（front-end）.md) + [116](116.sse-rag-streaming-tutorial.md)：
 
 1. `streaming` 阶段 **不渲染** `CitationCardList`（或渲染 skeleton）；  
 2. 收到 `citations` → 写入 state；  
@@ -908,7 +908,7 @@ export function CitationCardList({
 ```tsx
 const handleCitationSelect = (c: Citation) => {
   setActiveCitation(c.index);
-  openPreviewSidebar(c); // [177](177.source-preview-sidebar-tutorial.md)
+  openPreviewSidebar(c); // [177](177.source-preview-sidebar-tutorial（front-end）.md)
 };
 ```
 
@@ -928,7 +928,7 @@ const handleCitationSelect = (c: Citation) => {
 
 ## 9. 移动端与无障碍
 
-- 移动：**底部 Sheet** 代替右侧栏（[177](177.source-preview-sidebar-tutorial.md) 响应式）；  
+- 移动：**底部 Sheet** 代替右侧栏（[177](177.source-preview-sidebar-tutorial（front-end）.md) 响应式）；  
 - `aria-label={`参考来源 ${index}：${title}`}`；  
 - 键盘：卡片 `focus-visible` 轮廓清晰。
 
@@ -980,13 +980,13 @@ const handleCitationSelect = (c: Citation) => {
 
 1. **引用卡片** = `citations[]` 的可扫列表，与 [113](113.inline-citation-tutorial.md) 编号联动。  
 2. **流式** 在 `citations` 后挂载，对齐 [116](116.sse-rag-streaming-tutorial.md)。  
-3. 点击进 [177 侧栏预览](177.source-preview-sidebar-tutorial.md) 或 [178 PDF 高亮](178.pdf-highlight-locate-tutorial.md)。
+3. 点击进 [177 侧栏预览](177.source-preview-sidebar-tutorial（front-end）.md) 或 [178 PDF 高亮](178.pdf-highlight-locate-tutorial（front-end）.md)。
 
 ### 13.1 系列下一步
 
 | 目标 | 阅读 |
 |------|------|
-| 侧栏预览 | [177 侧边栏原文预览](177.source-preview-sidebar-tutorial.md) |
+| 侧栏预览 | [177 侧边栏原文预览](177.source-preview-sidebar-tutorial（front-end）.md) |
 | 导航契约 | [115 源文档导航](115.source-document-navigation-tutorial.md) |
 
 ### 13.2 面试 30 秒版
@@ -997,7 +997,7 @@ const handleCitationSelect = (c: Citation) => {
 
 ARTICLE_177 = r'''# F2 前端（七）：侧边栏原文预览完全指南
 
-> 用户点 [176 引用卡片](176.citation-card-ui-tutorial.md) 或行内 `[1]` 时，若只弹 **chunk 文本 Toast**，Grounding 仍像「高级摘要」。**侧边栏原文预览（Source Preview Sidebar）** 在桌面端把布局切成 **左对话、右原文**，加载 PDF/Markdown/HTML，并预留 [178 PDF 高亮](178.pdf-highlight-locate-tutorial.md) 接口。这篇是 [企业 RAG 路线图](ENTERPRISE_RAG_ROADMAP.md) **F2 前端第七篇**（路线图第 **194** 条），**主线篇**。前置：[115 源文档导航](115.source-document-navigation-tutorial.md)、[176 引用卡片](176.citation-card-ui-tutorial.md)、[121 越权过滤](121.unauthorized-doc-filter-tutorial.md)、[52 溯源元数据](52.metadata-source-page-tutorial.md)。
+> 用户点 [176 引用卡片](176.citation-card-ui-tutorial（front-end）.md) 或行内 `[1]` 时，若只弹 **chunk 文本 Toast**，Grounding 仍像「高级摘要」。**侧边栏原文预览（Source Preview Sidebar）** 在桌面端把布局切成 **左对话、右原文**，加载 PDF/Markdown/HTML，并预留 [178 PDF 高亮](178.pdf-highlight-locate-tutorial（front-end）.md) 接口。这篇是 [企业 RAG 路线图](ENTERPRISE_RAG_ROADMAP.md) **F2 前端第七篇**（路线图第 **194** 条），**主线篇**。前置：[115 源文档导航](115.source-document-navigation-tutorial.md)、[176 引用卡片](176.citation-card-ui-tutorial（front-end）.md)、[121 越权过滤](121.unauthorized-doc-filter-tutorial.md)、[52 溯源元数据](52.metadata-source-page-tutorial.md)。
 
 ---
 
@@ -1021,7 +1021,7 @@ ARTICLE_177 = r'''# F2 前端（七）：侧边栏原文预览完全指南
 
 ## 1. 前言：预览侧栏是「点引用」的默认归宿
 
-销售演示时，客户点 `[1]`，右侧 **滑出员工手册 PDF 第 8 页**——这一屏往往决定采购。若只有 [176 卡片](176.citation-card-ui-tutorial.md) 上的两行摘录，信任感不够。
+销售演示时，客户点 `[1]`，右侧 **滑出员工手册 PDF 第 8 页**——这一屏往往决定采购。若只有 [176 卡片](176.citation-card-ui-tutorial（front-end）.md) 上的两行摘录，信任感不够。
 
 **侧边栏原文预览**：在聊天界面旁展示源文档完整视图，根据 [115 navigate_url](115.source-document-navigation-tutorial.md) 与 metadata 定位页码/章节。  
 通俗说：**左问右证**，审计最爱。
@@ -1032,8 +1032,8 @@ ARTICLE_177 = r'''# F2 前端（七）：侧边栏原文预览完全指南
 2. 状态机覆盖 loading / preview / error / permission_denied。  
 3. 按 `mime` 或扩展名路由 PDF、Markdown、HTML 预览器。  
 4. 用 **signed URL** 拉取受 ACL 保护的文件（[121](121.unauthorized-doc-filter-tutorial.md)）。  
-5. 与 [176 onSelect](176.citation-card-ui-tutorial.md) 联动。  
-6. 为 [178 PDF 高亮](178.pdf-highlight-locate-tutorial.md) 留 `highlightText` prop。
+5. 与 [176 onSelect](176.citation-card-ui-tutorial（front-end）.md) 联动。  
+6. 为 [178 PDF 高亮](178.pdf-highlight-locate-tutorial（front-end）.md) 留 `highlightText` prop。
 
 ---
 
@@ -1105,7 +1105,7 @@ type PreviewState =
 
 | 类型 | 组件 | 定位 |
 |------|------|------|
-| PDF | `PdfPreview`（[178](178.pdf-highlight-locate-tutorial.md)） | `?page=12` |
+| PDF | `PdfPreview`（[178](178.pdf-highlight-locate-tutorial（front-end）.md)） | `?page=12` |
 | Markdown | `MdPreview` | `#heading-id` |
 | HTML | `iframe` sandbox | `?highlight=` |
 
@@ -1240,14 +1240,14 @@ export function PreviewSidebar({
 ## 13. 总结与系列下一步
 
 1. **侧栏预览** = 双栏 + 状态机 + 多格式路由 + signed URL。  
-2. 与 [176 卡片](176.citation-card-ui-tutorial.md)、[113 行内](113.inline-citation-tutorial.md) 共用 `openCitation`。  
-3. PDF 精确定位见 [178](178.pdf-highlight-locate-tutorial.md)。
+2. 与 [176 卡片](176.citation-card-ui-tutorial（front-end）.md)、[113 行内](113.inline-citation-tutorial.md) 共用 `openCitation`。  
+3. PDF 精确定位见 [178](178.pdf-highlight-locate-tutorial（front-end）.md)。
 
 ### 13.1 系列下一步
 
 | 目标 | 阅读 |
 |------|------|
-| PDF 高亮 | [178 PDF 高亮定位](178.pdf-highlight-locate-tutorial.md) |
+| PDF 高亮 | [178 PDF 高亮定位](178.pdf-highlight-locate-tutorial（front-end）.md) |
 | 导航 API | [115 源文档导航](115.source-document-navigation-tutorial.md) |
 
 ### 13.2 面试 30 秒版
@@ -1258,7 +1258,7 @@ export function PreviewSidebar({
 
 ARTICLE_178 = r'''# F2 前端（八）：PDF 高亮定位完全指南 —— 阶段 4 全栈收官
 
-> 侧边栏已能打开 PDF（[177 篇](177.source-preview-sidebar-tutorial.md)），但若不能 **跳到第 n 页并把 chunk 那句话标黄**，法务仍说「看不清依据在哪」。**PDF 高亮定位**把 [52 页码元数据](52.metadata-source-page-tutorial.md)、[115 导航](115.source-document-navigation-tutorial.md) 与 **PDF.js 文本层** 接到一起。这篇是 [企业 RAG 路线图](ENTERPRISE_RAG_ROADMAP.md) **F2 前端第八篇**（路线图第 **195** 条），**了解档**，也是 **路线图 145～195 批量教程的系列收官**。前置：[177 侧边栏预览](177.source-preview-sidebar-tutorial.md)、[115 源文档导航](115.source-document-navigation-tutorial.md)、[42 PyMuPDF](42.pymupdf-tutorial.md)、[176 引用卡片](176.citation-card-ui-tutorial.md)。
+> 侧边栏已能打开 PDF（[177 篇](177.source-preview-sidebar-tutorial（front-end）.md)），但若不能 **跳到第 n 页并把 chunk 那句话标黄**，法务仍说「看不清依据在哪」。**PDF 高亮定位**把 [52 页码元数据](52.metadata-source-page-tutorial.md)、[115 导航](115.source-document-navigation-tutorial.md) 与 **PDF.js 文本层** 接到一起。这篇是 [企业 RAG 路线图](ENTERPRISE_RAG_ROADMAP.md) **F2 前端第八篇**（路线图第 **195** 条），**了解档**，也是 **路线图 145～195 批量教程的系列收官**。前置：[177 侧边栏预览](177.source-preview-sidebar-tutorial（front-end）.md)、[115 源文档导航](115.source-document-navigation-tutorial.md)、[42 PyMuPDF](42.pymupdf-tutorial.md)、[176 引用卡片](176.citation-card-ui-tutorial（front-end）.md)。
 
 ---
 
@@ -1294,7 +1294,7 @@ ARTICLE_178 = r'''# F2 前端（八）：PDF 高亮定位完全指南 —— 阶
 2. 比较 **页码 + 文本搜索** 与 **入库 bbox** 两路线。  
 3. 用 `react-pdf` 实现 §9 `PdfPreview`。  
 4. 处理 **文本层为空** 的扫描 PDF 降级。  
-5. 把能力接入 [177 PreviewSidebar](177.source-preview-sidebar-tutorial.md)。  
+5. 把能力接入 [177 PreviewSidebar](177.source-preview-sidebar-tutorial（front-end）.md)。  
 6. 对照 [阶段 4 验收](ENTERPRISE_RAG_ROADMAP.md#阶段-4全栈产品) 打勾。
 
 ### 1.1 系列收官位置
@@ -1321,7 +1321,7 @@ ARTICLE_178 = r'''# F2 前端（八）：PDF 高亮定位完全指南 —— 阶
 | A | 检查向量库 metadata 有 `page` | [52 篇](52.metadata-source-page-tutorial.md) |
 | B | `pnpm add react-pdf pdfjs-dist` | 能渲染第 1 页 |
 | C | §9 跳页 + 文本高亮 | 点 [1] 标黄 |
-| D | 接入 [177 侧栏](177.source-preview-sidebar-tutorial.md) | 端到端 Demo |
+| D | 接入 [177 侧栏](177.source-preview-sidebar-tutorial（front-end）.md) | 端到端 Demo |
 | E | 对照 §11 阶段 4 清单 | 路演材料 |
 
 ---
@@ -1331,8 +1331,8 @@ ARTICLE_178 = r'''# F2 前端（八）：PDF 高亮定位完全指南 —— 阶
 ![PDF 高亮定位链路](image/pdf-highlight-locate/01-pdf-locate-flow.png)
 
 ```text
-用户点击 citation（[176](176.citation-card-ui-tutorial.md)）
-  → resolvePreviewUrl（[177](177.source-preview-sidebar-tutorial.md)）
+用户点击 citation（[176](176.citation-card-ui-tutorial（front-end）.md)）
+  → resolvePreviewUrl（[177](177.source-preview-sidebar-tutorial（front-end）.md)）
   → PdfPreview 加载 PDF
   → initialPage = citation.page
   → text layer 渲染完成
@@ -1467,7 +1467,7 @@ export function PdfPreview({ url, page = 1, highlightText }: PdfPreviewProps) {
 }
 ```
 
-从 [177](177.source-preview-sidebar-tutorial.md) 传入 `citation.page` 与 `citation.excerpt`。
+从 [177](177.source-preview-sidebar-tutorial（front-end）.md) 传入 `citation.page` 与 `citation.excerpt`。
 
 ---
 
@@ -1497,11 +1497,11 @@ export function PdfPreview({ url, page = 1, highlightText }: PdfPreviewProps) {
 
 | 验收项 | 相关教程 | 你应演示 |
 |--------|----------|----------|
-| 聊天界面 | [171](171.chat-message-list-ui-tutorial.md) | 多轮消息 |
-| 流式答案 | [174](174.streaming-typewriter-ui-tutorial.md)、[116](116.sse-rag-streaming-tutorial.md) | 打字机 |
-| 可中断 | [175](175.abort-controller-stream-tutorial.md) | 点停止 |
-| 引用可点 | [113](113.inline-citation-tutorial.md)、[176](176.citation-card-ui-tutorial.md) | 卡片+行内 |
-| 原文预览 | [177](177.source-preview-sidebar-tutorial.md) | 侧栏 |
+| 聊天界面 | [171](171.chat-message-list-ui-tutorial（front-end）.md) | 多轮消息 |
+| 流式答案 | [174](174.streaming-typewriter-ui-tutorial（front-end）.md)、[116](116.sse-rag-streaming-tutorial.md) | 打字机 |
+| 可中断 | [175](175.abort-controller-stream-tutorial（front-end）.md) | 点停止 |
+| 引用可点 | [113](113.inline-citation-tutorial.md)、[176](176.citation-card-ui-tutorial（front-end）.md) | 卡片+行内 |
+| 原文预览 | [177](177.source-preview-sidebar-tutorial（front-end）.md) | 侧栏 |
 | PDF 跳页高亮 | 本篇 | 标黄句 |
 | 多用户隔离 | [166](166.tenant-isolation-backend-tutorial.md)、[164 JWT](164.jwt-auth-rag-tutorial.md) | 租户 A 不见 B 文档 |
 | 上传索引 | 路线图 196+、[159 Celery](159.celery-async-queue-tutorial.md) | 后台任务 |
@@ -1519,7 +1519,7 @@ export function PdfPreview({ url, page = 1, highlightText }: PdfPreviewProps) {
 | 数据 | [52 page](52.metadata-source-page-tutorial.md)、[51 chunk_id](51.metadata-chunk-id-tutorial.md) |
 | 检索 | [91 dense](91.dense-retrieval-tutorial.md)、[76 Chroma](76.chroma-vector-db-tutorial.md) |
 | 生成 | [113 引用](113.inline-citation-tutorial.md)、[116 SSE](116.sse-rag-streaming-tutorial.md) |
-| 前端 F2 | [171～177](171.chat-message-list-ui-tutorial.md)、本篇 |
+| 前端 F2 | [171～177](171.chat-message-list-ui-tutorial（front-end）.md)、本篇 |
 | 产品 | [阶段 4 全栈](ENTERPRISE_RAG_ROADMAP.md#阶段-4全栈产品) |
 
 ---
@@ -1543,20 +1543,20 @@ layout 复杂时 **bbox** 优于纯文本搜索—— ingest 用 [37 layout](37.
 ## 14. 总结：从 145 到 195，再到阶段 4 项目
 
 1. **PDF 高亮** = `page` 跳页 + text layer 搜索或 bbox overlay + 扫描件降级。  
-2. 接入 [177 侧栏](177.source-preview-sidebar-tutorial.md)，完成 **点引用看原文** 闭环。  
+2. 接入 [177 侧栏](177.source-preview-sidebar-tutorial（front-end）.md)，完成 **点引用看原文** 闭环。  
 3. 本篇收官 **路线图 190～195 F2 前端溯源主线**；全栈交付以 **[阶段 4：企业知识库助手](ENTERPRISE_RAG_ROADMAP.md#阶段-4全栈产品)** 验收。
 
 ### 14.1 F2 前端八篇回顾
 
 | 路线图 | 文件 | 关键词 |
 |--------|------|--------|
-| 188 | [171 消息列表](171.chat-message-list-ui-tutorial.md) | 气泡、滚动 |
-| 189 | [172 Markdown](172.markdown-render-rag-tutorial.md) | XSS、渲染 |
-| 190 | [173 代码高亮](173.code-highlight-rag-tutorial.md) | hljs/shiki |
-| 191 | [174 打字机](174.streaming-typewriter-ui-tutorial.md) | SSE delta |
-| 192 | [175 中断](175.abort-controller-stream-tutorial.md) | AbortController |
-| 193 | [176 引用卡片](176.citation-card-ui-tutorial.md) | citations UI |
-| 194 | [177 侧栏预览](177.source-preview-sidebar-tutorial.md) | 双栏 |
+| 188 | [171 消息列表](171.chat-message-list-ui-tutorial（front-end）.md) | 气泡、滚动 |
+| 189 | [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) | XSS、渲染 |
+| 190 | [173 代码高亮](173.code-highlight-rag-tutorial（front-end）.md) | hljs/shiki |
+| 191 | [174 打字机](174.streaming-typewriter-ui-tutorial（front-end）.md) | SSE delta |
+| 192 | [175 中断](175.abort-controller-stream-tutorial（front-end）.md) | AbortController |
+| 193 | [176 引用卡片](176.citation-card-ui-tutorial（front-end）.md) | citations UI |
+| 194 | [177 侧栏预览](177.source-preview-sidebar-tutorial（front-end）.md) | 双栏 |
 | 195 | 本篇 | PDF 高亮 |
 
 ### 14.2 与 C6 后端链路合龙

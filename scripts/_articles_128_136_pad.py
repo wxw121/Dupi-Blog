@@ -222,7 +222,7 @@ Loader [129] → Splitter 本篇 → Embed [25] → VectorStore [128]。Splitter
 
 ### 18.3 source_nodes 与 Grounding
 
-`response.source_nodes` 含 `node_id、score、metadata`——对应 [34 Grounding](34.grounding-citation-tutorial.md)。了解即可：结构类似你在 LCEL 里维护的 `hit_docs` 列表。前端 [176 引用卡片](176.citation-card-ui-tutorial.md) 需要 **稳定 id**，无论数据来自 LI 还是 LC。
+`response.source_nodes` 含 `node_id、score、metadata`——对应 [34 Grounding](34.grounding-citation-tutorial.md)。了解即可：结构类似你在 LCEL 里维护的 `hit_docs` 列表。前端 [176 引用卡片](176.citation-card-ui-tutorial（front-end）.md) 需要 **稳定 id**，无论数据来自 LI 还是 LC。
 
 ### 18.4 何时仍看 Query Engine
 

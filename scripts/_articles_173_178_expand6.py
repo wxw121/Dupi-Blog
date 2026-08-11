@@ -2,11 +2,11 @@
 """Expand6: final top-up sections (~600+ hanzi each)."""
 
 E6 = {
-    "173.code-highlight-rag-tutorial.md": r'''
+    "173.code-highlight-rag-tutorial（front-end）.md": r'''
 ## 附录 Y：读者问答集锦（代码高亮）
 
 **问：markdown 里既有代码又有表格，高亮会影响表格吗？**  
-答：不会。高亮仅作用于 `code` 节点；表格走 [172 GFM](172.markdown-render-rag-tutorial.md) 另一分支。注意表格单元格内行内 code 仍走行内样式。
+答：不会。高亮仅作用于 `code` 节点；表格走 [172 GFM](172.markdown-render-rag-tutorial（front-end）.md) 另一分支。注意表格单元格内行内 code 仍走行内样式。
 
 **问：能否让用户切换高亮主题？**  
 答：可以，在设置里切换 `hljs` 主题 CSS，与全局暗色模式联动。企业版可默认锁定品牌主题。
@@ -18,9 +18,9 @@ E6 = {
 答：了解档，非硬性；但技术类知识库强烈建议，否则 Demo 质量落后于竞品。
 
 **问：下一步读什么？**  
-答：[174 流式打字机](174.streaming-typewriter-ui-tutorial.md) 让代码答案「流出来」，done 后再应用本篇高亮策略。
+答：[174 流式打字机](174.streaming-typewriter-ui-tutorial（front-end）.md) 让代码答案「流出来」，done 后再应用本篇高亮策略。
 ''',
-    "174.streaming-typewriter-ui-tutorial.md": r'''
+    "174.streaming-typewriter-ui-tutorial（front-end）.md": r'''
 ## 附录 AD：读者问答集锦（流式打字机）
 
 **问：能否用 CSS `animation` 假打字？**  
@@ -36,9 +36,9 @@ E6 = {
 答：多 retrieving 态、citations 收尾、RAG 特有事件解析。
 
 **问：下一步？**  
-答：[175 中断](175.abort-controller-stream-tutorial.md) 让用户能停；[176 卡片](176.citation-card-ui-tutorial.md) 展示依据。
+答：[175 中断](175.abort-controller-stream-tutorial（front-end）.md) 让用户能停；[176 卡片](176.citation-card-ui-tutorial（front-end）.md) 展示依据。
 ''',
-    "175.abort-controller-stream-tutorial.md": r'''
+    "175.abort-controller-stream-tutorial（front-end）.md": r'''
 ## 附录 AC：读者问答集锦（AbortController）
 
 **问：iOS Safari abort 可靠吗？**  
@@ -54,9 +54,9 @@ E6 = {
 答：流式应用 async；同步难以检测 disconnect。
 
 **问：下一步？**  
-答：[176 引用卡片](176.citation-card-ui-tutorial.md)；可选 [117 WebSocket](117.websocket-rag-streaming-tutorial.md) 深潜。
+答：[176 引用卡片](176.citation-card-ui-tutorial（front-end）.md)；可选 [117 WebSocket](117.websocket-rag-streaming-tutorial.md) 深潜。
 ''',
-    "176.citation-card-ui-tutorial.md": r'''
+    "176.citation-card-ui-tutorial（front-end）.md": r'''
 ## 附录 AC：读者问答集锦（引用卡片）
 
 **问：卡片能否横向滑动 Carousel？**  
@@ -72,9 +72,9 @@ E6 = {
 答：非必须，加分项。
 
 **问：下一步？**  
-答：[177 侧栏预览](177.source-preview-sidebar-tutorial.md) 点开原文。
+答：[177 侧栏预览](177.source-preview-sidebar-tutorial（front-end）.md) 点开原文。
 ''',
-    "177.source-preview-sidebar-tutorial.md": r'''
+    "177.source-preview-sidebar-tutorial（front-end）.md": r'''
 ## 附录 AC：读者问答集锦（侧栏预览）
 
 **问：能否三栏（对话+预览+目录）？**  
@@ -90,9 +90,9 @@ E6 = {
 答：移动 Sheet 可 70vh；桌面最大 50% 宽。
 
 **问：下一步？**  
-答：[178 PDF 高亮](178.pdf-highlight-locate-tutorial.md) 精确定位句段。
+答：[178 PDF 高亮](178.pdf-highlight-locate-tutorial（front-end）.md) 精确定位句段。
 ''',
-    "178.pdf-highlight-locate-tutorial.md": r'''
+    "178.pdf-highlight-locate-tutorial（front-end）.md": r'''
 ## 附录 AC：读者问答集锦（PDF 高亮 · 系列收官）
 
 **问：没有 PDF 只有 Word？**  

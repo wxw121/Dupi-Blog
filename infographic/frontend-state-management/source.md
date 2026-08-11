@@ -537,7 +537,7 @@ A：新项目 Pinia；维护 Vue 2 老库才重点 Vuex。
 A：同为状态方案；本篇聚焦路线图列出的 Zustand/Redux/Pinia。原子化状态（Jotai）适合细粒度订阅，是进阶选型。
 
 **Q：全局状态要不要 TypeScript？**  
-A：推荐。Store 形状清晰可减少字段拼错，见 [TypeScript 基础](13.typescript-basics-tutorial.md)。
+A：推荐。Store 形状清晰可减少字段拼错，见 [TypeScript 基础](13.typescript-basics-tutorial（front-end）.md)。
 
 **Q：Next.js App Router 用什么？**  
 A：客户端组件里仍可用 Zustand；服务端组件不直接持客户端 Store——注意 `'use client'` 边界，细节见 [Next.js 系列](nextjs/README.md)。
@@ -569,7 +569,7 @@ A：不必。等出现「第三处要写同一字段」或「prop 传了四层�
 | 目标 | 文档 |
 |------|------|
 | React 请求与轮询 | [React 12：TanStack Query](react/12.tanstack-query.md) |
-| TypeScript 读 Store 类型 | [13：TypeScript 基础](13.typescript-basics-tutorial.md) |
+| TypeScript 读 Store 类型 | [13：TypeScript 基础](13.typescript-basics-tutorial（front-end）.md) |
 | useEffect 与本地 state | [React 03：数据请求](react/03.use-effect-data-fetching.md) |
 | 全栈 RAG 前端闭环 | [Next.js 系列 README](nextjs/README.md) |
 

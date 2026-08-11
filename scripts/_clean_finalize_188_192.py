@@ -25,7 +25,7 @@ FINAL_BLOCK = {
 | 7 | grep sk- | 0 命中 |
 | 8 | Loki 本地 profile（可选） | 查询 <3s |
 
-**字段契约回归：** 任意 PR 改日志字段须更新 `docs/log-events.md` 并通知 [184 看板](184.admin-log-eval-dashboard-tutorial.md) 维护者。`error_code` 新增值须同步 [161 状态机](161.index-task-state-machine-tutorial.md)。
+**字段契约回归：** 任意 PR 改日志字段须更新 `docs/log-events.md` 并通知 [184 看板](184.admin-log-eval-dashboard-tutorial（front-end）.md) 维护者。`error_code` 新增值须同步 [161 状态机](161.index-task-state-machine-tutorial.md)。
 
 **与 191 联调：** 指标尖刺时，从 exemplar 或日志取 `trace_id`，确认 `rag_query` 的 `retrieval_ms` 与 `llm_ttft_ms` 哪段异常。勿只靠 grep ERROR 字符串。
 

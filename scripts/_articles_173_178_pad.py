@@ -19,7 +19,7 @@ PAD_173 = r'''
 
 ---
 
-## 附录 H：与 [172 Markdown](172.markdown-render-rag-tutorial.md) 管道插入点详解
+## 附录 H：与 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 管道插入点详解
 
 ```text
 原始 Markdown 字符串
@@ -41,7 +41,7 @@ PAD_173 = r'''
 :root[data-theme="dark"] .hljs { background: #0d1117; }
 ```
 
-切换主题时 **勿 remount 整棵树**，仅换 class，避免 [174 流式](174.streaming-typewriter-ui-tutorial.md) 闪烁。
+切换主题时 **勿 remount 整棵树**，仅换 class，避免 [174 流式](174.streaming-typewriter-ui-tutorial（front-end）.md) 闪烁。
 
 ---
 
@@ -104,7 +104,7 @@ Chrome Performance：记录一次 **done 后高亮** 的 Scripting 时间，目�
 1. 在 Storybook 渲染 5 种语言同屏；  
 2. 模拟流式输入未闭合 ` ``` ` 观察 UI；  
 3. 用 Lighthouse 对比开/关高亮 JS 体积；  
-4. 读 [16 XSS](16.markdown-rendering-security-tutorial.md) 构造恶意围栏，验证 sanitize。
+4. 读 [16 XSS](16.markdown-rendering-security-tutorial（front-end）.md) 构造恶意围栏，验证 sanitize。
 '''
 
 PAD_174 = r'''
@@ -134,7 +134,7 @@ PAD_174 = r'''
 
 ---
 
-## 附录 L：与 [171 消息列表](171.chat-message-list-ui-tutorial.md) 滚动契约
+## 附录 L：与 [171 消息列表](171.chat-message-list-ui-tutorial（front-end）.md) 滚动契约
 
 ```typescript
 function shouldAutoScroll(container: HTMLElement) {
@@ -360,7 +360,7 @@ PAD_176 = r'''
 onMouseEnter={() => prefetchPreview(c.chunk_id)}
 ```
 
-延迟 200ms 触发，降低侧栏首开时延（配合 [177](177.source-preview-sidebar-tutorial.md)）。
+延迟 200ms 触发，降低侧栏首开时延（配合 [177](177.source-preview-sidebar-tutorial（front-end）.md)）。
 
 ---
 
@@ -390,7 +390,7 @@ chunk 含英文条款时，`line-clamp` 仍适用；字体 `font-sans` 覆盖拉
 
 ## 附录 S：阶段 4 引用闭环
 
-验收「看引用」= [176 卡片](176.citation-card-ui-tutorial.md) + [177 侧栏](177.source-preview-sidebar-tutorial.md) + [178 PDF](178.pdf-highlight-locate-tutorial.md) 至少一种格式打通。
+验收「看引用」= [176 卡片](176.citation-card-ui-tutorial（front-end）.md) + [177 侧栏](177.source-preview-sidebar-tutorial（front-end）.md) + [178 PDF](178.pdf-highlight-locate-tutorial（front-end）.md) 至少一种格式打通。
 '''
 
 PAD_177 = r'''
@@ -412,7 +412,7 @@ PAD_177 = r'''
 
 ## 附录 L：Markdown 代码块在预览内
 
-若预览 MD 含代码，递归调用 [173 高亮](173.code-highlight-rag-tutorial.md)——注意嵌套 sanitize。
+若预览 MD 含代码，递归调用 [173 高亮](173.code-highlight-rag-tutorial（front-end）.md)——注意嵌套 sanitize。
 
 ---
 
@@ -505,7 +505,7 @@ workerSrc 与 pdf 文件域不同源时，配置 CDN 或同源托管 worker，�
 
 ## 附录 Q：highlightText 过长截断
 
-搜索串最长 120 字，与 [176 excerpt](176.citation-card-ui-tutorial.md) 对齐，提高命中率。
+搜索串最长 120 字，与 [176 excerpt](176.citation-card-ui-tutorial（front-end）.md) 对齐，提高命中率。
 
 ---
 
@@ -524,10 +524,10 @@ workerSrc 与 pdf 文件域不同源时，配置 CDN 或同源托管 worker，�
 '''
 
 PAD = {
-    "173.code-highlight-rag-tutorial.md": PAD_173,
-    "174.streaming-typewriter-ui-tutorial.md": PAD_174,
-    "175.abort-controller-stream-tutorial.md": PAD_175,
-    "176.citation-card-ui-tutorial.md": PAD_176,
-    "177.source-preview-sidebar-tutorial.md": PAD_177,
-    "178.pdf-highlight-locate-tutorial.md": PAD_178,
+    "173.code-highlight-rag-tutorial（front-end）.md": PAD_173,
+    "174.streaming-typewriter-ui-tutorial（front-end）.md": PAD_174,
+    "175.abort-controller-stream-tutorial（front-end）.md": PAD_175,
+    "176.citation-card-ui-tutorial（front-end）.md": PAD_176,
+    "177.source-preview-sidebar-tutorial（front-end）.md": PAD_177,
+    "178.pdf-highlight-locate-tutorial（front-end）.md": PAD_178,
 }

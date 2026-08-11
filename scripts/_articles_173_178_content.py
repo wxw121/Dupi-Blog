@@ -7,8 +7,8 @@ from __future__ import annotations
 FOOTER_F2 = """
 ### 13.4 30 分钟动手作业
 
-1. 把 §9 组件接到你 [171 聊天列表](171.chat-message-list-ui-tutorial.md) 的消息气泡里；  
-2. 与 [172 Markdown 渲染](172.markdown-render-rag-tutorial.md) 联调，确认 XSS 策略仍生效；  
+1. 把 §9 组件接到你 [171 聊天列表](171.chat-message-list-ui-tutorial（front-end）.md) 的消息气泡里；  
+2. 与 [172 Markdown 渲染](172.markdown-render-rag-tutorial（front-end）.md) 联调，确认 XSS 策略仍生效；  
 3. 用浏览器 DevTools 录一段 **3 分钟演示视频** 给产品；  
 4. 写 wiki 一段：**本文 UI 在 F2 前端链路中的位置**。
 
@@ -26,7 +26,7 @@ FOOTER_F2 = """
 
 ARTICLE_173 = r'''# F2 前端（三）：RAG 答案代码高亮完全指南
 
-> RAG 回答里经常出现 **配置示例、curl 命令、Python 片段**——若仍用纯文本灰框，工程师会骂，审计也会问「这段代码跑过吗」。 [172 篇 Markdown 渲染](172.markdown-render-rag-tutorial.md) 把答案正文变成 HTML；本篇在同样管道上叠加 **代码高亮（Syntax Highlighting）**：让 ` ```python ` 块可读、可复制、主题与整站一致。这篇是 [企业 RAG 路线图](ENTERPRISE_RAG_ROADMAP.md) **F2 前端第三篇**（路线图第 **190** 条），**了解档**：选型 **highlight.js vs shiki**、与流式打字机衔接、安全与性能边界。前置：[172 Markdown 渲染](172.markdown-render-rag-tutorial.md)、[171 聊天消息列表](171.chat-message-list-ui-tutorial.md)、[16 XSS 安全](16.markdown-rendering-security-tutorial.md)。
+> RAG 回答里经常出现 **配置示例、curl 命令、Python 片段**——若仍用纯文本灰框，工程师会骂，审计也会问「这段代码跑过吗」。 [172 篇 Markdown 渲染](172.markdown-render-rag-tutorial（front-end）.md) 把答案正文变成 HTML；本篇在同样管道上叠加 **代码高亮（Syntax Highlighting）**：让 ` ```python ` 块可读、可复制、主题与整站一致。这篇是 [企业 RAG 路线图](ENTERPRISE_RAG_ROADMAP.md) **F2 前端第三篇**（路线图第 **190** 条），**了解档**：选型 **highlight.js vs shiki**、与流式打字机衔接、安全与性能边界。前置：[172 Markdown 渲染](172.markdown-render-rag-tutorial（front-end）.md)、[171 聊天消息列表](171.chat-message-list-ui-tutorial（front-end）.md)、[16 XSS 安全](16.markdown-rendering-security-tutorial（front-end）.md)。
 
 ---
 
@@ -57,11 +57,11 @@ ARTICLE_173 = r'''# F2 前端（三）：RAG 答案代码高亮完全指南
 
 **读完本文，你应该能做到：**
 
-1. 说明代码高亮在 [172 Markdown](172.markdown-render-rag-tutorial.md) 管道中的插入点。  
+1. 说明代码高亮在 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 管道中的插入点。  
 2. 在 **highlight.js** 与 **shiki** 之间做 PoC 级选型。  
 3. 写出可复用的 React `CodeBlock`（§9）。  
-4. 处理 [174 流式打字机](174.streaming-typewriter-ui-tutorial.md) 下的 **延迟高亮** 策略。  
-5. 确认高亮路径不破坏 [16 篇](16.markdown-rendering-security-tutorial.md) 的 XSS 策略。  
+4. 处理 [174 流式打字机](174.streaming-typewriter-ui-tutorial（front-end）.md) 下的 **延迟高亮** 策略。  
+5. 确认高亮路径不破坏 [16 篇](16.markdown-rendering-security-tutorial（front-end）.md) 的 XSS 策略。  
 6. 识别 §10 四种翻车。
 
 ### 1.1 F2 前端位置
@@ -75,7 +75,7 @@ ARTICLE_173 = r'''# F2 前端（三）：RAG 答案代码高亮完全指南
 193 引用卡片
 ```
 
-**学习顺序**：先 [172](172.markdown-render-rag-tutorial.md) 跑通 `react-markdown` + `rehype-sanitize`；本篇加高亮；流式体验在 [174](174.streaming-typewriter-ui-tutorial.md) 统一处理。
+**学习顺序**：先 [172](172.markdown-render-rag-tutorial（front-end）.md) 跑通 `react-markdown` + `rehype-sanitize`；本篇加高亮；流式体验在 [174](174.streaming-typewriter-ui-tutorial（front-end）.md) 统一处理。
 
 ### 1.2 术语双轨速查
 
@@ -102,7 +102,7 @@ ARTICLE_173 = r'''# F2 前端（三）：RAG 答案代码高亮完全指南
 |------|----------|------|
 | A | 读 §3～§4，选型表打勾 | 团队 wiki 一段 |
 | B | 跟做 §5 shiki 或 hljs 二选一 | 静态 MD 有颜色 |
-| C | 接 [171](171.chat-message-list-ui-tutorial.md) 气泡 | 助手消息内代码有色 |
+| C | 接 [171](171.chat-message-list-ui-tutorial（front-end）.md) 气泡 | 助手消息内代码有色 |
 | D | §6 流式延迟高亮 | 打字时不闪屏 |
 | E | §9 CodeBlock + 复制 | 复制无 HTML 标签 |
 | F | §10 先错对对 | 四种错法 |
@@ -113,10 +113,10 @@ ARTICLE_173 = r'''# F2 前端（三）：RAG 答案代码高亮完全指南
 
 | 概念 | 来自 |
 |------|------|
-| Markdown 管道 | [172](172.markdown-render-rag-tutorial.md) |
-| XSS 与 sanitize | [16](16.markdown-rendering-security-tutorial.md) |
-| 消息列表结构 | [171](171.chat-message-list-ui-tutorial.md) |
-| 流式 delta | [174](174.streaming-typewriter-ui-tutorial.md)、[116 SSE](116.sse-rag-streaming-tutorial.md) |
+| Markdown 管道 | [172](172.markdown-render-rag-tutorial（front-end）.md) |
+| XSS 与 sanitize | [16](16.markdown-rendering-security-tutorial（front-end）.md) |
+| 消息列表结构 | [171](171.chat-message-list-ui-tutorial（front-end）.md) |
+| 流式 delta | [174](174.streaming-typewriter-ui-tutorial（front-end）.md)、[116 SSE](116.sse-rag-streaming-tutorial.md) |
 
 ---
 
@@ -127,10 +127,10 @@ ARTICLE_173 = r'''# F2 前端（三）：RAG 答案代码高亮完全指南
 对照上图：
 
 - **模型输出**：Markdown 字符串，常含 ` ```bash ` / ` ```yaml `；  
-- **解析层**：[172](172.markdown-render-rag-tutorial.md) 的 `react-markdown` 把 AST 变 React 节点；  
+- **解析层**：[172](172.markdown-render-rag-tutorial（front-end）.md) 的 `react-markdown` 把 AST 变 React 节点；  
 - **高亮层（本篇）**：`code` 组件替换为 `CodeBlock`，内部调 shiki/hljs；  
-- **展示层**：[171](171.chat-message-list-ui-tutorial.md) 消息气泡承载；  
-- **流式层**：[174](174.streaming-typewriter-ui-tutorial.md) 决定 **何时** 对未闭合围栏块着色。
+- **展示层**：[171](171.chat-message-list-ui-tutorial（front-end）.md) 消息气泡承载；  
+- **流式层**：[174](174.streaming-typewriter-ui-tutorial（front-end）.md) 决定 **何时** 对未闭合围栏块着色。
 
 ### 3.1 为什么 RAG 特别需要高亮
 
@@ -143,7 +143,7 @@ ARTICLE_173 = r'''# F2 前端（三）：RAG 答案代码高亮完全指南
 
 ### 3.2 了解档定位
 
-路线图把本篇标为 **了解**：PoC 可用 hljs 快速接入；产品定型再评估 shiki 主题一致性。**不阻塞** [193 引用卡片](176.citation-card-ui-tutorial.md) 主线交付。
+路线图把本篇标为 **了解**：PoC 可用 hljs 快速接入；产品定型再评估 shiki 主题一致性。**不阻塞** [193 引用卡片](176.citation-card-ui-tutorial（front-end）.md) 主线交付。
 
 ---
 
@@ -212,7 +212,7 @@ export function MarkdownAnswer({ content }: Props) {
 }
 ```
 
-**注意**：`dangerouslySetInnerHTML` 只用于 **hljs 输出**（非用户原始 HTML）；用户输入仍经 [172](172.markdown-render-rag-tutorial.md) sanitize。若你禁止任何 innerHTML，改用 shiki 的 `tokens` 转 React 元素。
+**注意**：`dangerouslySetInnerHTML` 只用于 **hljs 输出**（非用户原始 HTML）；用户输入仍经 [172](172.markdown-render-rag-tutorial（front-end）.md) sanitize。若你禁止任何 innerHTML，改用 shiki 的 `tokens` 转 React 元素。
 
 ### 5.2 shiki 路径（静态或流结束后）
 
@@ -245,7 +245,7 @@ kubectl get pods
 
 ## 6. 流式场景：边打字边高亮
 
-[174 流式打字机](174.streaming-typewriter-ui-tutorial.md) 与 [116 SSE](116.sse-rag-streaming-tutorial.md) 下，Markdown 字符串 **不断增长**，围栏代码块可能 **长时间未闭合**。
+[174 流式打字机](174.streaming-typewriter-ui-tutorial（front-end）.md) 与 [116 SSE](116.sse-rag-streaming-tutorial.md) 下，Markdown 字符串 **不断增长**，围栏代码块可能 **长时间未闭合**。
 
 ### 6.1 三档策略
 
@@ -278,7 +278,7 @@ function useDeferredHighlight(content: string, isStreaming: boolean) {
 ### 7.1 主题与暗色模式
 
 - 聊天应用多 **暗色**：`github-dark` / `one-dark-pro`；  
-- 用 CSS 变量切换 `hljs` 主题类，与 [171](171.chat-message-list-ui-tutorial.md) 布局 token 一致；  
+- 用 CSS 变量切换 `hljs` 主题类，与 [171](171.chat-message-list-ui-tutorial（front-end）.md) 布局 token 一致；  
 - **打印/PDF 导出**（若产品有）备一套浅色主题。
 
 ### 7.2 行号
@@ -312,7 +312,7 @@ function CopyButton({ text }: { text: string }) {
 
 ## 8. 安全：高亮不能绕过 XSS 闸
 
-[16 篇](16.markdown-rendering-security-tutorial.md) 原则：**永远不要** 把模型输出当 `dangerouslySetInnerHTML` 直接渲染。
+[16 篇](16.markdown-rendering-security-tutorial（front-end）.md) 原则：**永远不要** 把模型输出当 `dangerouslySetInnerHTML` 直接渲染。
 
 | 路径 | 安全 |
 |------|------|
@@ -364,8 +364,8 @@ export function CodeBlock({ code, language = "text", showCopy = true }: CodeBloc
 
 **接入检查单：**
 
-1. [171](171.chat-message-list-ui-tutorial.md) `AssistantMessage` 使用 `MarkdownAnswer`；  
-2. 流式时 `isStreaming` 传 [174](174.streaming-typewriter-ui-tutorial.md) 状态；  
+1. [171](171.chat-message-list-ui-tutorial（front-end）.md) `AssistantMessage` 使用 `MarkdownAnswer`；  
+2. 流式时 `isStreaming` 传 [174](174.streaming-typewriter-ui-tutorial（front-end）.md) 状态；  
 3. 长代码块 `max-h-96 overflow-y-auto`，避免撑破布局；  
 4. 移动端横向滚动提示细滚动条样式。
 
@@ -432,18 +432,18 @@ PDF 生成常在服务端用 headless Chrome 打印页面——确保打印 CSS 
 
 ## 13. 总结与系列下一步
 
-1. **代码高亮** 接在 [172 Markdown](172.markdown-render-rag-tutorial.md) 之后，提升 Runbook/API 类答案可读性。  
+1. **代码高亮** 接在 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 之后，提升 Runbook/API 类答案可读性。  
 2. **PoC 用 hljs**，流式 **延迟高亮**；品牌统一再考虑 shiki。  
-3. **安全** 仍靠 sanitize，高亮不替代 [16 篇](16.markdown-rendering-security-tutorial.md)。  
-4. 下一篇 [174 流式打字机](174.streaming-typewriter-ui-tutorial.md) 处理 **逐字显示** 与引用挂载时机。
+3. **安全** 仍靠 sanitize，高亮不替代 [16 篇](16.markdown-rendering-security-tutorial（front-end）.md)。  
+4. 下一篇 [174 流式打字机](174.streaming-typewriter-ui-tutorial（front-end）.md) 处理 **逐字显示** 与引用挂载时机。
 
 ### 13.1 系列下一步
 
 | 目标 | 阅读 |
 |------|------|
-| 流式 UI | [174 流式打字机](174.streaming-typewriter-ui-tutorial.md) |
+| 流式 UI | [174 流式打字机](174.streaming-typewriter-ui-tutorial（front-end）.md) |
 | SSE 协议 | [116 SSE RAG](116.sse-rag-streaming-tutorial.md) |
-| 引用展示 | [176 引用卡片](176.citation-card-ui-tutorial.md) |
+| 引用展示 | [176 引用卡片](176.citation-card-ui-tutorial（front-end）.md) |
 
 ### 13.2 学习目标自检
 
@@ -469,7 +469,7 @@ from _articles_173_178_part2 import (  # noqa: E402
 
 ARTICLES = [
     (
-        "173.code-highlight-rag-tutorial.md",
+        "173.code-highlight-rag-tutorial（front-end）.md",
         "code-highlight-rag",
         "RAG 答案代码高亮",
         ARTICLE_173,
@@ -503,7 +503,7 @@ ARTICLES = [
         ],
     ),
     (
-        "174.streaming-typewriter-ui-tutorial.md",
+        "174.streaming-typewriter-ui-tutorial（front-end）.md",
         "streaming-typewriter-ui",
         "流式打字机效果",
         ARTICLE_174,
@@ -537,7 +537,7 @@ ARTICLES = [
         ],
     ),
     (
-        "175.abort-controller-stream-tutorial.md",
+        "175.abort-controller-stream-tutorial（front-end）.md",
         "abort-controller-stream",
         "中断生成 AbortController",
         ARTICLE_175,
@@ -571,7 +571,7 @@ ARTICLES = [
         ],
     ),
     (
-        "176.citation-card-ui-tutorial.md",
+        "176.citation-card-ui-tutorial（front-end）.md",
         "citation-card-ui",
         "引用卡片 UI",
         ARTICLE_176,
@@ -605,7 +605,7 @@ ARTICLES = [
         ],
     ),
     (
-        "177.source-preview-sidebar-tutorial.md",
+        "177.source-preview-sidebar-tutorial（front-end）.md",
         "source-preview-sidebar",
         "侧边栏原文预览",
         ARTICLE_177,
@@ -639,7 +639,7 @@ ARTICLES = [
         ],
     ),
     (
-        "178.pdf-highlight-locate-tutorial.md",
+        "178.pdf-highlight-locate-tutorial（front-end）.md",
         "pdf-highlight-locate",
         "PDF 高亮定位",
         ARTICLE_178,

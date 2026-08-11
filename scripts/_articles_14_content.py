@@ -39,7 +39,7 @@ def mk_faq(qas: list[tuple[str, str]]) -> str:
 # ── Article 180 ─────────────────────────────────────────────────────
 ARTICLE_180 = """# F2 前端（十）：解析 / 索引进度展示完全指南
 
-> 用户上传后最常问：「还要多久？」——答案不在 **上传字节进度条** 里，而在 [161 索引任务状态机](161.index-task-state-machine-tutorial.md) 的 **pending / running / done / failed** 与可选 **分阶段 progress**。[159 Celery 异步队列](159.celery-async-queue-tutorial.md) 把 ingest 丢进 worker 池后，前端若仍显示「上传百分之百」就会制造 **虚假完成感**。本篇用 **React** 实现 **任务轮询、阶段时间线、失败可重试入口**，是 [企业 RAG 路线图](ENTERPRISE_RAG_ROADMAP.md) **F2 前端主线篇**（路线图 **197**）。前置：[161 状态机](161.index-task-state-machine-tutorial.md)、[157 上传](157.file-upload-multipart-tutorial.md)、[179 上传界面](179.kb-doc-upload-ui-tutorial.md)、[170 OpenAPI](170.openapi-swagger-docs-tutorial.md)。下一篇 [181 重建索引 UI](181.reindex-ui-tutorial.md) 共用同一任务查询 API；完成后可跳转 [182 检索调试台](182.retrieval-debug-console-tutorial.md)。
+> 用户上传后最常问：「还要多久？」——答案不在 **上传字节进度条** 里，而在 [161 索引任务状态机](161.index-task-state-machine-tutorial.md) 的 **pending / running / done / failed** 与可选 **分阶段 progress**。[159 Celery 异步队列](159.celery-async-queue-tutorial.md) 把 ingest 丢进 worker 池后，前端若仍显示「上传百分之百」就会制造 **虚假完成感**。本篇用 **React** 实现 **任务轮询、阶段时间线、失败可重试入口**，是 [企业 RAG 路线图](ENTERPRISE_RAG_ROADMAP.md) **F2 前端主线篇**（路线图 **197**）。前置：[161 状态机](161.index-task-state-machine-tutorial.md)、[157 上传](157.file-upload-multipart-tutorial.md)、[179 上传界面](179.kb-doc-upload-ui-tutorial（front-end）.md)、[170 OpenAPI](170.openapi-swagger-docs-tutorial.md)。下一篇 [181 重建索引 UI](181.reindex-ui-tutorial（front-end）.md) 共用同一任务查询 API；完成后可跳转 [182 检索调试台](182.retrieval-debug-console-tutorial（front-end）.md)。
 
 ---
 
@@ -63,7 +63,7 @@ ARTICLE_180 = """# F2 前端（十）：解析 / 索引进度展示完全指南
 
 ## 1. 前言：进度 UI 是「后台黑盒」的窗户
 
-[179 上传界面](179.kb-doc-upload-ui-tutorial.md) 把文件送进 [157 multipart](157.file-upload-multipart-tutorial.md) 接口后，运营手里只有一个 **task_id**。若界面到此为止，用户会 **反复刷新聊天页** 测检索，浪费算力且体验差；会 **误判 failed**——其实还在 `pending` 排队（Celery 积压，见 [159](159.celery-async-queue-tutorial.md)）；**无法向业务承诺时间**——客服没有可引用的 **阶段与百分比**。
+[179 上传界面](179.kb-doc-upload-ui-tutorial（front-end）.md) 把文件送进 [157 multipart](157.file-upload-multipart-tutorial.md) 接口后，运营手里只有一个 **task_id**。若界面到此为止，用户会 **反复刷新聊天页** 测检索，浪费算力且体验差；会 **误判 failed**——其实还在 `pending` 排队（Celery 积压，见 [159](159.celery-async-queue-tutorial.md)）；**无法向业务承诺时间**——客服没有可引用的 **阶段与百分比**。
 
 **解析 / 索引进度展示（Index Progress UI）**：根据 `GET /index-tasks/{id}`（及可选 SSE）渲染 **任务状态、分阶段步骤、错误码、预估剩余时间**，并在 **done** 时引导「去检索调试」或「去问答」。通俗说：**外卖 App 的「商家已接单 → 骑手取餐 → 送达」**——只不过站点是 **解析 PDF、切块、Embedding、写向量库**。
 
@@ -86,7 +86,7 @@ ARTICLE_180 = """# F2 前端（十）：解析 / 索引进度展示完全指南
 199 检索调试台 [182]
 ```
 
-**学习顺序**：本篇紧接 [179](179.kb-doc-upload-ui-tutorial.md)；与 [181 重建](181.reindex-ui-tutorial.md) 共用同一任务查询 API。后端契约以 [161](161.index-task-state-machine-tutorial.md) 为准，前端 **不猜测** worker 内部实现。
+**学习顺序**：本篇紧接 [179](179.kb-doc-upload-ui-tutorial（front-end）.md)；与 [181 重建](181.reindex-ui-tutorial（front-end）.md) 共用同一任务查询 API。后端契约以 [161](161.index-task-state-machine-tutorial.md) 为准，前端 **不猜测** worker 内部实现。
 
 ### 1.2 术语双轨速查
 
@@ -130,7 +130,7 @@ ARTICLE_180 = """# F2 前端（十）：解析 / 索引进度展示完全指南
 | A | 读 §3～§4，对照 OpenAPI 画 IndexTask | 字段与后端一致 |
 | B | 实现 `useIndexTask` 退避轮询 | Network 可见间隔递增 |
 | C | 做 `StageStepper` 四阶段 | running 时高亮当前 stage |
-| D | 嵌入 [179](179.kb-doc-upload-ui-tutorial.md) 上传行 | accepted 后出现 Panel |
+| D | 嵌入 [179](179.kb-doc-upload-ui-tutorial（front-end）.md) 上传行 | accepted 后出现 Panel |
 | E | MSW 模拟 failed | error_code 文案可读 |
 | F | §8 先错对对 | 五种错法 |
 
@@ -142,7 +142,7 @@ ARTICLE_180 = """# F2 前端（十）：解析 / 索引进度展示完全指南
 |------|------|
 | 四态状态机 | [161](161.index-task-state-machine-tutorial.md) |
 | 异步执行 | [159 Celery](159.celery-async-queue-tutorial.md) |
-| 上传拿 task_id | [179](179.kb-doc-upload-ui-tutorial.md) |
+| 上传拿 task_id | [179](179.kb-doc-upload-ui-tutorial（front-end）.md) |
 | 增量 skipped | [49 增量](49.incremental-update-tutorial.md) |
 | 死信重试 | [163 DLQ](163.retry-dead-letter-tutorial.md) |
 
@@ -156,10 +156,10 @@ ARTICLE_180 = """# F2 前端（十）：解析 / 索引进度展示完全指南
 
 对照上图：
 
-- **输入**：`task_id`（来自 [179](179.kb-doc-upload-ui-tutorial.md) 上传响应）；  
+- **输入**：`task_id`（来自 [179](179.kb-doc-upload-ui-tutorial（front-end）.md) 上传响应）；  
 - **查询**：`GET /api/v1/index-tasks/{id}`；  
 - **输出**：四态 Badge + 分阶段 Stepper + 终态 CTA（去调试/去聊天）；  
-- **非职责**：不算 ETA 精确到秒（除非后端给 `eta_seconds`）、不替代 [182 检索调试台](182.retrieval-debug-console-tutorial.md)。
+- **非职责**：不算 ETA 精确到秒（除非后端给 `eta_seconds`）、不替代 [182 检索调试台](182.retrieval-debug-console-tutorial（front-end）.md)。
 
 ### 3.1 用户心智模型
 
@@ -167,7 +167,7 @@ ARTICLE_180 = """# F2 前端（十）：解析 / 索引进度展示完全指南
 |----------|------|
 | 上传完就能问 | 还要 parse/embed/index |
 | 卡住就是坏了 | 可能在 pending 排队 |
-| 失败只能重传 | 可能只需 [181 重建](181.reindex-ui-tutorial.md) |
+| 失败只能重传 | 可能只需 [181 重建](181.reindex-ui-tutorial（front-end）.md) |
 
 ### 3.2 与聊天页加载态区分
 
@@ -224,7 +224,7 @@ pending → running → done
                  ↘ failed
 ```
 
-**禁止** 前端本地把 `failed` 改成 `pending`——重试应调 **后端重试 API** 或 [181 重建](181.reindex-ui-tutorial.md)，产生 **新 task_id**。
+**禁止** 前端本地把 `failed` 改成 `pending`——重试应调 **后端重试 API** 或 [181 重建](181.reindex-ui-tutorial（front-end）.md)，产生 **新 task_id**。
 
 ### 4.2 skipped 语义
 
@@ -244,7 +244,7 @@ pending → running → done
 |------|------|------|
 | Badge | 四态一眼识别 | 色盲友好：配图标+文字 |
 | Stepper | running 阶段 | 顺序固定 parse→chunk→embed→index |
-| Timeline | 详情页历史 | 多次重建 [181](181.reindex-ui-tutorial.md) 记录 |
+| Timeline | 详情页历史 | 多次重建 [181](181.reindex-ui-tutorial（front-end）.md) 记录 |
 | Progress 条 | 辅助 | **不能替代** stage |
 
 ### 5.1 颜色与可访问性
@@ -314,7 +314,7 @@ parse/embed 超过两分钟时，可加 **「大文档处理中，请耐心等�
 
 ### 7.3 cancelled（若支持）
 
-灰态「已取消」；再次提交链到 [179](179.kb-doc-upload-ui-tutorial.md) 或 [181](181.reindex-ui-tutorial.md)。
+灰态「已取消」；再次提交链到 [179](179.kb-doc-upload-ui-tutorial（front-end）.md) 或 [181](181.reindex-ui-tutorial（front-end）.md)。
 
 ### 7.4 Worker 上报进度的后端参考
 
@@ -326,7 +326,7 @@ Worker 在 [159 Celery](159.celery-async-queue-tutorial.md) 任务中应 **单�
 
 ### 7.6 历史任务 Timeline 组件
 
-详情页展示同一 `doc_id` 最近十次任务：横轴时间，纵轴状态。重建 [181](181.reindex-ui-tutorial.md) 频繁时 Timeline 能解释「为何昨晚又跑了一次」。点击历史条可展开当时 `error_code` 与 `pipeline_version`。
+详情页展示同一 `doc_id` 最近十次任务：横轴时间，纵轴状态。重建 [181](181.reindex-ui-tutorial（front-end）.md) 频繁时 Timeline 能解释「为何昨晚又跑了一次」。点击历史条可展开当时 `error_code` 与 `pipeline_version`。
 
 ### 7.7 权限与多租户
 
@@ -350,7 +350,7 @@ Worker 在 [159 Celery](159.celery-async-queue-tutorial.md) 任务中应 **单�
 
 ### 8.1 错：failed 只显示「失败」
 
-**对：** 映射 `error_code` 到可操作文案（重传、重建 [181](181.reindex-ui-tutorial.md)、联系管理员）。
+**对：** 映射 `error_code` 到可操作文案（重传、重建 [181](181.reindex-ui-tutorial（front-end）.md)、联系管理员）。
 
 ### 8.2 错：多个 Tab 同时轮询同一 taskId
 
@@ -358,7 +358,7 @@ Worker 在 [159 Celery](159.celery-async-queue-tutorial.md) 任务中应 **单�
 
 ### 8.3 错：done 后立即断言检索一定有结果
 
-**对：** 引导用户打开 [182 检索调试台](182.retrieval-debug-console-tutorial.md) 验证；若空，可能是 ACL [53](53.metadata-acl-tutorial.md) 或索引一致性 bug。
+**对：** 引导用户打开 [182 检索调试台](182.retrieval-debug-console-tutorial（front-end）.md) 验证；若空，可能是 ACL [53](53.metadata-acl-tutorial.md) 或索引一致性 bug。
 
 ---
 
@@ -431,13 +431,13 @@ export function IndexProgressPanel({ taskId, token }: { taskId: string; token: s
 
 `done`：「《员工手册》已可检索」；`failed` 可点进详情。**同 task 只 toast 一次**（sessionStorage 记 id）。
 
-### 10.3 与 [181 重建](181.reindex-ui-tutorial.md)
+### 10.3 与 [181 重建](181.reindex-ui-tutorial（front-end）.md)
 
 重建产生 **新 task_id**——Panel **复用本篇组件**。
 
 ### 10.4 深链与客服
 
-客服工单让用户报 `task_id` 或 `doc_id`，后台 [184 日志看板](184.admin-log-eval-dashboard-tutorial.md) 用 [190 trace_id](190.structured-logging-rag-tutorial.md) 查全链路。
+客服工单让用户报 `task_id` 或 `doc_id`，后台 [184 日志看板](184.admin-log-eval-dashboard-tutorial（front-end）.md) 用 [190 trace_id](190.structured-logging-rag-tutorial.md) 查全链路。
 
 ### 10.5 Playwright E2E
 
@@ -488,7 +488,7 @@ A：**以 stage 为准** 渲染 Stepper；`progress` 仅作条。
 A：在——状态在 **服务端 [161](161.index-task-state-machine-tutorial.md)**。用 `task_id` 或 `doc_id` 列表恢复。
 
 **Q：cancelled 怎么展示？**  
-A：灰态 +「已取消」；链到 [179](179.kb-doc-upload-ui-tutorial.md) 或 [181](181.reindex-ui-tutorial.md)。
+A：灰态 +「已取消」；链到 [179](179.kb-doc-upload-ui-tutorial（front-end）.md) 或 [181](181.reindex-ui-tutorial（front-end）.md)。
 
 **Q：需要显示 pipeline_version 吗？**  
 A：运维/Debug 模式显示，普通运营可隐藏——与 [143 金标](143.golden-dataset-tutorial.md) 回归相关。
@@ -505,16 +505,16 @@ A：运维/Debug 模式显示，普通运营可隐藏——与 [143 金标](143.
 2. **与上传进度分离**：上传完成 ≠ 可检索。  
 3. **轮询要礼貌**：退避、abort、批量。  
 4. **done/skipped/failed** 三种终态 **文案不同**。  
-5. 下一篇 [181 重建索引 UI](181.reindex-ui-tutorial.md) 处理 **运维重跑** 的确认与幂等提示。
+5. 下一篇 [181 重建索引 UI](181.reindex-ui-tutorial（front-end）.md) 处理 **运维重跑** 的确认与幂等提示。
 
 ### 13.1 系列下一步
 
 | 目标 | 阅读 |
 |------|------|
 | 状态机 | [161](161.index-task-state-machine-tutorial.md) |
-| 上传 UI | [179](179.kb-doc-upload-ui-tutorial.md) |
-| 重建 UI | [181](181.reindex-ui-tutorial.md) |
-| 检索调试 | [182](182.retrieval-debug-console-tutorial.md) |
+| 上传 UI | [179](179.kb-doc-upload-ui-tutorial（front-end）.md) |
+| 重建 UI | [181](181.reindex-ui-tutorial（front-end）.md) |
+| 检索调试 | [182](182.retrieval-debug-console-tutorial（front-end）.md) |
 | 结构化日志 | [190](190.structured-logging-rag-tutorial.md) |
 
 ### 13.2 学习目标自检
@@ -553,7 +553,7 @@ SUPPLEMENT = [
     "文档债管理：API 字段变更必须同步 OpenAPI、前端类型、教程 §4 数据模型三处。CI 可加简单脚本 diff 枚举值，防止 silent drift。",
     "可访问性与国际化虽非 MVP，但 error_code 与状态文案建议外置词典，为后续 en-US 留口子；键盘可达性在政务项目中常为硬要求。",
     "面试准备：用三十秒讲清本篇在路线图中的位置、与前后篇接口契约、以及一个真实排障故事（含 trace_id）。再准备画一张概念地图白板。",
-    "成本意识：任何重复 embed、重复全量重建、无退避轮询都会在 [183 用量看板](183.admin-usage-dashboard-tutorial.md) 放大。设计默认值应偏保守，高级选项才打开激进策略。",
+    "成本意识：任何重复 embed、重复全量重建、无退避轮询都会在 [183 用量看板](183.admin-usage-dashboard-tutorial（front-end）.md) 放大。设计默认值应偏保守，高级选项才打开激进策略。",
 ]
 
 
@@ -585,7 +585,7 @@ def _inject_extras(base: str, extras: list[str]) -> str:
 
 SPECS: list[dict] = [
     {
-        "file": "180.index-progress-ui-tutorial.md",
+        "file": "180.index-progress-ui-tutorial（front-end）.md",
         "image": None,
         "title": "索引进度展示",
         "base": "ARTICLE_180",
@@ -593,28 +593,28 @@ SPECS: list[dict] = [
         "concepts": ["指数退避轮询", "IndexTask 四态", "stage 与 progress", "skipped 增量语义"],
     },
     {
-        "file": "181.reindex-ui-tutorial.md",
+        "file": "181.reindex-ui-tutorial（front-end）.md",
         "image": "reindex-ui",
         "title": "重建索引操作界面",
         "links": ["162 幂等重建", "49 增量更新", "180 索引进度", "161 状态机", "179 上传"],
         "concepts": ["幂等重建", "全量与增量", "二次确认", "pipeline 版本"],
     },
     {
-        "file": "182.retrieval-debug-console-tutorial.md",
+        "file": "182.retrieval-debug-console-tutorial（front-end）.md",
         "image": "retrieval-debug-console",
         "title": "检索调试台",
         "links": ["93 混合检索", "98 Top-K", "95 交叉编码重排", "96 BGE-Reranker", "180 索引进度"],
         "concepts": ["混合检索", "Top-K 截断", "重排序", "分数可解释性"],
     },
     {
-        "file": "183.admin-usage-dashboard-tutorial.md",
+        "file": "183.admin-usage-dashboard-tutorial（front-end）.md",
         "image": "admin-usage-dashboard",
         "title": "管理后台用量统计",
         "links": ["27 Token 计费", "192 嵌入批次成本", "184 日志看板", "190 结构化日志", "27 计费"],
         "concepts": ["Token 计量", "请求次数", "存储占用", "成本归因"],
     },
     {
-        "file": "184.admin-log-eval-dashboard-tutorial.md",
+        "file": "184.admin-log-eval-dashboard-tutorial（front-end）.md",
         "image": "admin-log-eval-dashboard",
         "title": "管理后台日志与评测看板",
         "links": ["141 RAGAS", "147 LangSmith", "148 Langfuse", "165 Langfuse 深化", "190 结构化日志"],

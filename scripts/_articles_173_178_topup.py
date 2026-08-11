@@ -2,12 +2,12 @@
 """Per-article top-up paragraphs until >=5000 hanzi."""
 
 TOPUP: dict[str, list[str]] = {
-    "174.streaming-typewriter-ui-tutorial.md": [
+    "174.streaming-typewriter-ui-tutorial（front-end）.md": [
         "企业采购演示时，流式打字机往往是第一印象分。请确保检索等待期有明确文案，而不是空白屏幕。与后端约定首个 delta 应在检索完成后五秒内到达，否则前端转 error 并提示检查模型配置。",
         "在弱网环境测试时，将 Chrome DevTools 设为 Slow 3G，观察 rAF 合并是否仍流畅。若出现长时间卡顿，考虑加大合并窗口而非减少 delta 接收频率。",
         "多轮对话场景下，仅最新一条 assistant 消息可以是 streaming 态。历史消息应冻结为 done，避免用户滚动时看到旧消息重新打字。",
         "与设计师确认 streaming 态光标样式与品牌一致。完成态移除光标时，建议 100ms 过渡，避免突兀闪烁。",
-        "若答案含代码块，流式阶段用 pre 展示，done 后交 [172 Markdown](172.markdown-render-rag-tutorial.md) 与 [173 高亮](173.code-highlight-rag-tutorial.md) 处理。",
+        "若答案含代码块，流式阶段用 pre 展示，done 后交 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 与 [173 高亮](173.code-highlight-rag-tutorial（front-end）.md) 处理。",
         "citations 事件到达前，行内 [n] 应渲染为不可点样式，颜色与正文链接区分。避免用户误以为系统坏了。",
         "上报指标：ttft_ms、stream_duration_ms、delta_count、aborted。与 [148 Langfuse](148.langfuse-observability-tutorial.md) trace 关联。",
         "编写 Storybook：retrieving、streaming、done、error 四态各一例，供 QA 视觉回归。",
@@ -22,10 +22,10 @@ TOPUP: dict[str, list[str]] = {
         "完成态可选展示总耗时「用时 8.2 秒」，数据来自 done 事件扩展字段。",
         "Nightwatch 或 Playwright 定期跑流式回归，纳入 [144 回归集](144.regression-test-set-tutorial.md)。",
         "新人 onboarding：先读 116 后端，再读本篇前端，最后联调半天。",
-        "与 [175 停止](175.abort-controller-stream-tutorial.md) 共用 useRagStream，stop 即 abort。",
+        "与 [175 停止](175.abort-controller-stream-tutorial（front-end）.md) 共用 useRagStream，stop 即 abort。",
         "产品文档写明：流式中代码块可能无配色，结束后自动着色，属预期行为。",
     ],
-    "175.abort-controller-stream-tutorial.md": [
+    "175.abort-controller-stream-tutorial（front-end）.md": [
         "停止按钮应始终可见于 streaming 态，位置靠近输入区或答案底部，避免用户滚动寻找。",
         "AbortController 不可复用。每次提问必须 new，否则第二次 ask 会立即 aborted。",
         "捕获 AbortError 后勿清空 content。partial 答案是用户已阅读资产，清空会引发投诉。",
@@ -48,7 +48,7 @@ TOPUP: dict[str, list[str]] = {
         "oncall 手册链接本篇与 116 disconnect 排查。",
         "双栈 WS 时 stop() 内部路由到 cancel 帧，API 不变。",
     ],
-    "176.citation-card-ui-tutorial.md": [
+    "176.citation-card-ui-tutorial（front-end）.md": [
         "Citation 类型定义应放在 packages/types 共享，前后端 OpenAPI 同源。",
         "卡片 excerpt 取 chunk 前 120～200 字，在句号处截断更自然。",
         "score 展示为百分比时四舍五入，避免 0.891 显示 89% 与 0.895 同显。",
@@ -71,7 +71,7 @@ TOPUP: dict[str, list[str]] = {
         "A11y：列表 role=list，卡片 role=listitem。",
         "国际化：页码、相关度标签走 i18n。",
     ],
-    "177.source-preview-sidebar-tutorial.md": [
+    "177.source-preview-sidebar-tutorial（front-end）.md": [
         "双栏布局默认隐藏侧栏，点引用后 slide-in，减少首屏压迫感。",
         "signed URL 过期前六十秒可静默刷新，避免用户阅读中断。",
         "iframe 预览必须 sandbox，HTML 来源限制脚本执行。",
@@ -90,11 +90,11 @@ TOPUP: dict[str, list[str]] = {
         "多 citation 切换不保留上一文档滚动位置，除非产品要对比。",
         "CSP frame-src 白名单随环境配置。",
         "深色模式 PDF 灰底与侧栏背景协调。",
-        "与 [178](178.pdf-highlight-locate-tutorial.md) 接口：highlightText prop。",
+        "与 [178](178.pdf-highlight-locate-tutorial（front-end）.md) 接口：highlightText prop。",
         "QA 用三类型文档各测：PDF、MD、HTML。",
         "售前彩排台词：这是可审计的左问右证，不是黑盒聊天。",
     ],
-    "178.pdf-highlight-locate-tutorial.md": [
+    "178.pdf-highlight-locate-tutorial（front-end）.md": [
         "PDF.js worker 与主文件同源部署，避免 CORS 加载失败。",
         "页码统一 1-based，与 [52 metadata](52.metadata-source-page-tutorial.md) 一致。",
         "文本搜索前 normalize 空白与零宽字符，提高命中率。",
@@ -102,7 +102,7 @@ TOPUP: dict[str, list[str]] = {
         "单页渲染模式控制内存，勿一次 mount 两百页。",
         "highlight overlay 使用 pointer-events-none，不挡文本选择。",
         "bbox 路线适合双栏 PDF，入库阶段记录归一化坐标。",
-        "与 [177 侧栏](177.source-preview-sidebar-tutorial.md) 联调：同 chunk 端到端。",
+        "与 [177 侧栏](177.source-preview-sidebar-tutorial（front-end）.md) 联调：同 chunk 端到端。",
         "阶段四验收：上传 PDF、问答、点引用、侧栏高亮录像五分钟。",
         "路线图第 195 条勾选，F2 前端系列收官，进入 196 管理台与阶段五生产化。",
         "加密 PDF 返回 ENCRYPTED 码，UI 明确提示。",
@@ -120,8 +120,8 @@ TOPUP: dict[str, list[str]] = {
 }
 
 MORE_TOPUP: dict[str, list[str]] = {
-    "174.streaming-typewriter-ui-tutorial.md": [
-        "本篇主线地位意味着它应优先于了解篇排期：在 sprint 计划中，先打通 [116 SSE](116.sse-rag-streaming-tutorial.md) 与 useRagStream，再并行 [173 高亮](173.code-highlight-rag-tutorial.md) 与 [176 卡片](176.citation-card-ui-tutorial.md)。评审 Demo 时，评委第一眼看到流式打字机，第二眼才看引用。请把 TTFT 与 retrieve_ms 写入演示脚本的旁白，体现工程透明度。",
+    "174.streaming-typewriter-ui-tutorial（front-end）.md": [
+        "本篇主线地位意味着它应优先于了解篇排期：在 sprint 计划中，先打通 [116 SSE](116.sse-rag-streaming-tutorial.md) 与 useRagStream，再并行 [173 高亮](173.code-highlight-rag-tutorial（front-end）.md) 与 [176 卡片](176.citation-card-ui-tutorial（front-end）.md)。评审 Demo 时，评委第一眼看到流式打字机，第二眼才看引用。请把 TTFT 与 retrieve_ms 写入演示脚本的旁白，体现工程透明度。",
         "若你使用 Next.js App Router，流式消费可在 Client Component 中完成，Server Action 仅负责转发 SSE。勿在 RSC 中直接读流。参考路线图推荐技术栈表与 nextjs 目录。",
         "对键盘用户：streaming 期间 Tab 焦点不应被光标动画抢走；done 后焦点可移到复制答案或第一条引用。屏幕阅读器在流式中保持 silent，完成时 polite 播报。",
         "与多模型路由组合时，done 事件可带 model_id，UI 小字展示由哪款模型生成，便于 bad case 归因。",
@@ -130,12 +130,12 @@ MORE_TOPUP: dict[str, list[str]] = {
         "将 useRagStream 单测覆盖率目标设为八十 percent，解析器 bug 最常在半包边界。",
         "与产品经理对齐：检索超过五秒是否取消请求，由产品决定，前端实现 timeout 钩子。",
         "在 README 用 Mermaid 画 message/citations/done 时序，方便跨团队沟通。",
-        "流式答案过长时提供「收起」折叠，默认展开前五百字，与 [171 列表](171.chat-message-list-ui-tutorial.md) 协作。",
+        "流式答案过长时提供「收起」折叠，默认展开前五百字，与 [171 列表](171.chat-message-list-ui-tutorial（front-end）.md) 协作。",
         "Chrome 扩展或内部插件勿注入页面修改 delta，排障时先禁用扩展。",
         "CORS 预检不影响 POST SSE，但自定义头需后端 Allow-Headers 包含 Accept。",
         "灰度发布流式 UI：feature flag stream_v2 控制新解析器，回滚一键切换。",
         "文档化 mock 流文件路径，QA 离线可测，不依赖 GPU 服务器。",
-        "与 [175 中断](175.abort-controller-stream-tutorial.md) 同屏演示：问长问题后两秒点停止。",
+        "与 [175 中断](175.abort-controller-stream-tutorial（front-end）.md) 同屏演示：问长问题后两秒点停止。",
         "完成第 191 条后，在团队墙贴流式体验 before/after 对比打印稿。",
         "解析 SSE 时兼容 CRLF 与 LF，Windows 后端勿因换行符导致事件粘连。",
         "用户快速刷新页面时，进行中的流自动 abort，避免幽灵后台连接。",
@@ -144,8 +144,8 @@ MORE_TOPUP: dict[str, list[str]] = {
         "结语：流式打字机是 RAG 产品体验基线，请务必在阶段四项目中默认开启。",
         "与后端约定错误事件 JSON 含 code 与 message，前端映射友好文案而非裸抛异常。",
         "检索阶段可展示骨架屏三条灰条，比单一 spinner 更有「正在工作」感。",
-        "TypewriterMessage 组件 props 保持稳定，便于 [171](171.chat-message-list-ui-tutorial.md) 列表复用。",
-        "感谢阅读本篇流式打字机指南，下一篇 [175](175.abort-controller-stream-tutorial.md) 教你真停生成。",
+        "TypewriterMessage 组件 props 保持稳定，便于 [171](171.chat-message-list-ui-tutorial（front-end）.md) 列表复用。",
+        "感谢阅读本篇流式打字机指南，下一篇 [175](175.abort-controller-stream-tutorial（front-end）.md) 教你真停生成。",
         "企业 RAG 的流式体验应与 ChatGPT 同级，这是用户默认预期，也是路线图第 22 条与第 191 条的工程化落地。",
         "最后请在预发环境用真实员工手册 PDF 与真实向量库跑通一次端到端流式问答，录屏存档作为阶段四里程碑交付物之一，便于产品与市场复用。",
         "若你维护组件库，请导出 TypewriterMessage 与 useRagStream 的 Storybook 文档，并在 PR 模板中勾选「已测流式四态」。",
@@ -153,7 +153,7 @@ MORE_TOPUP: dict[str, list[str]] = {
         "谢谢阅读，祝阶段四项目流式体验一次通过验收。",
         "请将 mockRagStream 与真实 API 的切换做成环境变量，方便开发与演示两套场景无缝切换。",
     ],
-    "175.abort-controller-stream-tutorial.md": [
+    "175.abort-controller-stream-tutorial（front-end）.md": [
         "地基篇意味着每个 RAG 前端项目都应默认实现 abort。脚手架模板内置 stop 按钮与 AbortController，新功能继承此行为。",
         "与 Celery 异步索引无关，生成流是 HTTP 长连接，取消语义不同。",
         "企业安全扫描可能把频繁 abort 判为异常流量，提前与白名单或限流策略协调。",
@@ -164,7 +164,7 @@ MORE_TOPUP: dict[str, list[str]] = {
         "与流式打字机共用 Hook，减少 duplicate 逻辑与状态不一致。",
         "季度回顾 abort 率与答案长度相关性，反馈给 prompt 与检索优化。",
     ],
-    "176.citation-card-ui-tutorial.md": [
+    "176.citation-card-ui-tutorial（front-end）.md": [
         "主线篇要求与行内引用、源文档导航同时验收，卡片是 citations 事件的视觉载体。",
         "B 端采购常问依据在哪，卡片加侧栏是标准答案，截图放进售前材料。",
         "与 Faithfulness 评测：人工抽检卡片 excerpt 与带编号句子是否一致。",
@@ -174,7 +174,7 @@ MORE_TOPUP: dict[str, list[str]] = {
         "卡片 excerpt 禁止 HTML，纯文本截断，防 XSS 从 citations 渗入。",
         "与侧栏联调会议：点击后 500ms 内侧栏 opening，超则优化 preview-url。",
     ],
-    "177.source-preview-sidebar-tutorial.md": [
+    "177.source-preview-sidebar-tutorial（front-end）.md": [
         "主线篇双栏是阶段四路演核心画面，对外 Demo 必须演示侧栏而非 chunk 弹窗。",
         "与 ACL 双保险：检索过滤加 preview-url 403，前端区分未命中与无权。",
         "signed URL 的 Content-Disposition 用 inline 改善 PDF 内嵌体验。",
@@ -184,7 +184,7 @@ MORE_TOPUP: dict[str, list[str]] = {
         "侧栏宽度拖曳上限百分之六十，下限百分之三十。",
         "与 PDF 高亮联调列入阶段四 Definition of Done。",
     ],
-    "178.pdf-highlight-locate-tutorial.md": [
+    "178.pdf-highlight-locate-tutorial（front-end）.md": [
         "了解档但战略意义重大，是阶段四溯源体验的皇冠。时间紧可先跳页，有时间必做文本高亮。",
         "系列收官：从聊天列表到本篇，八篇 F2 构成完整对话与溯源 UI。下一步 196 上传界面补运营。",
         "简历模板：实现 SSE 流式 RAG 前端，含打字机、中断、引用卡片、侧栏与 PDF 高亮，通过阶段四验收。",

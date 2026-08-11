@@ -50,7 +50,7 @@ SUPPLEMENT = {
 
 **response_mode 了解即可**：`compact / tree_summarize / refine` 影响成本与延迟；生产更常用手写 LCEL 控制进 prompt 的块列表，而非黑盒 synthesizer。
 
-**source_nodes**：对应 [34 Grounding](34.grounding-citation-tutorial.md)；前端 [176 引用卡片](176.citation-card-ui-tutorial.md) 需要稳定 `chunk_id`，无论数据来自 LI 还是 LC。
+**source_nodes**：对应 [34 Grounding](34.grounding-citation-tutorial.md)；前端 [176 引用卡片](176.citation-card-ui-tutorial（front-end）.md) 需要稳定 `chunk_id`，无论数据来自 LI 还是 LC。
 
 **面试 30 秒**：「熟 LCEL 分步链；了解 Query Engine 一站式 API 与 source_nodes，能读 LI 项目，生产默认可审计的 LangChain 管道。」
 """,

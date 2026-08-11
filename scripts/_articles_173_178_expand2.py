@@ -14,7 +14,7 @@ E173 = r'''
 }
 ```
 
-切换暗色模式时，hljs 样式随 `data-theme` 自动变换，避免 [174 流式](174.streaming-typewriter-ui-tutorial.md) 完成瞬间「闪白」。若使用 shiki，则选与品牌接近的 TextMate 主题 JSON，或让设计导出 token 后映射到 shiki `customTheme`。
+切换暗色模式时，hljs 样式随 `data-theme` 自动变换，避免 [174 流式](174.streaming-typewriter-ui-tutorial（front-end）.md) 完成瞬间「闪白」。若使用 shiki，则选与品牌接近的 TextMate 主题 JSON，或让设计导出 token 后映射到 shiki `customTheme`。
 
 **评审要点**：对比度至少 WCAG AA；注释与背景区分度；链接色勿与字符串色混淆。色盲同事抽检红绿字符串是否可辨。
 
@@ -63,7 +63,7 @@ performance.measure("ttft", "rag-ask-start", "rag-first-delta");
 
 ## 附录 V：ReadableStream 与 EventSource 迁移对照表
 
-团队若从 OpenAI 官方 SDK 前端示例迁到 [116](116.sse-rag-streaming-tutorial.md) 契约，建议增加 **BFF 适配层**，统一输出四类事件，前端只保留一套 `useRagStream`。适配层负责：解析 `choices[0].delta.content`、在流末从 header 或 side channel 附 citations、映射 `finish_reason` 到 done 事件。这样 [176 引用卡片](176.citation-card-ui-tutorial.md) 组件不因供应商切换而重写。
+团队若从 OpenAI 官方 SDK 前端示例迁到 [116](116.sse-rag-streaming-tutorial.md) 契约，建议增加 **BFF 适配层**，统一输出四类事件，前端只保留一套 `useRagStream`。适配层负责：解析 `choices[0].delta.content`、在流末从 header 或 side channel 附 citations、映射 `finish_reason` 到 done 事件。这样 [176 引用卡片](176.citation-card-ui-tutorial（front-end）.md) 组件不因供应商切换而重写。
 
 ---
 
@@ -101,7 +101,7 @@ E176 = r'''
 
 ## 附录 U：与 RAGAS Faithfulness 演示
 
-给投资人演示时，可并排：**左** 带 [1] 的短答，**右** 卡片 excerpt 与 PDF 高亮（[178](178.pdf-highlight-locate-tutorial.md)）同屏，直观展示 [141 Faithfulness](141.ragas-faithfulness-tutorial.md) 所追求的「答案绑证据」。这比讲指标更打动非技术干系人。
+给投资人演示时，可并排：**左** 带 [1] 的短答，**右** 卡片 excerpt 与 PDF 高亮（[178](178.pdf-highlight-locate-tutorial（front-end）.md)）同屏，直观展示 [141 Faithfulness](141.ragas-faithfulness-tutorial.md) 所追求的「答案绑证据」。这比讲指标更打动非技术干系人。
 
 ---
 
@@ -119,7 +119,7 @@ E177 = r'''
 
 ## 附录 U：对象存储 Range 请求与 PDF 大文件
 
-预览 50MB+ PDF 时，signed URL 应允许 **HTTP Range**，PDF.js 才能按需拉页而非整文件下载。S3/MinIO 配置 `Accept-Ranges`；CDN 勿缓存错误的全文件响应。首屏只请求 `page` 对应 range，降低 [178](178.pdf-highlight-locate-tutorial.md) 跳页等待。
+预览 50MB+ PDF 时，signed URL 应允许 **HTTP Range**，PDF.js 才能按需拉页而非整文件下载。S3/MinIO 配置 `Accept-Ranges`；CDN 勿缓存错误的全文件响应。首屏只请求 `page` 对应 range，降低 [178](178.pdf-highlight-locate-tutorial（front-end）.md) 跳页等待。
 
 ---
 
@@ -132,9 +132,9 @@ E178 = r'''
 ## 附录 T：阶段 4 全栈里程碑演讲提纲（8 分钟）
 
 1. **问题**（1min）：企业知识库需要可审计溯源。  
-2. **链路**（2min）：上传→索引→检索→[116 SSE](116.sse-rag-streaming-tutorial.md)→[174 打字机](174.streaming-typewriter-ui-tutorial.md)。  
-3. **Grounding**（2min）：[113 行内](113.inline-citation-tutorial.md)+[176 卡片](176.citation-card-ui-tutorial.md)。  
-4. **溯源闭环**（2min）：[177 侧栏](177.source-preview-sidebar-tutorial.md)+本篇 PDF 高亮。  
+2. **链路**（2min）：上传→索引→检索→[116 SSE](116.sse-rag-streaming-tutorial.md)→[174 打字机](174.streaming-typewriter-ui-tutorial（front-end）.md)。  
+3. **Grounding**（2min）：[113 行内](113.inline-citation-tutorial.md)+[176 卡片](176.citation-card-ui-tutorial（front-end）.md)。  
+4. **溯源闭环**（2min）：[177 侧栏](177.source-preview-sidebar-tutorial（front-end）.md)+本篇 PDF 高亮。  
 5. **验收**（1min）：对照 [ENTERPRISE_RAG_ROADMAP 阶段 4](ENTERPRISE_RAG_ROADMAP.md#阶段-4全栈产品) 勾选演示。
 
 ---
@@ -151,10 +151,10 @@ E178 = r'''
 '''
 
 EXPAND2 = {
-    "173.code-highlight-rag-tutorial.md": E173,
-    "174.streaming-typewriter-ui-tutorial.md": E174,
-    "175.abort-controller-stream-tutorial.md": E175,
-    "176.citation-card-ui-tutorial.md": E176,
-    "177.source-preview-sidebar-tutorial.md": E177,
-    "178.pdf-highlight-locate-tutorial.md": E178,
+    "173.code-highlight-rag-tutorial（front-end）.md": E173,
+    "174.streaming-typewriter-ui-tutorial（front-end）.md": E174,
+    "175.abort-controller-stream-tutorial（front-end）.md": E175,
+    "176.citation-card-ui-tutorial（front-end）.md": E176,
+    "177.source-preview-sidebar-tutorial（front-end）.md": E177,
+    "178.pdf-highlight-locate-tutorial（front-end）.md": E178,
 }

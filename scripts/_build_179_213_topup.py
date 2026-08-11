@@ -52,7 +52,7 @@ def build_179() -> str:
         sec(s + 1, "运营入库场景：批量手册与版本并存",
             """HR 每年更新员工手册 PDF，运营需要在 **不删旧版** 的前提下上传新版。上传界面应引导填写与 [48 文档版本](48.doc-versioning-tutorial.md) 一致的 `version` 字段，并在 doc_id 稳定时展示「将触发增量更新」提示，避免运营误以为必须改 doc_id。
 
-典型流程：选择文件 → 系统根据文件名 **建议** doc_id（可编辑）→ 展示 content_hash 预览（可选）→ 提交 202 → 跳转 [180 索引进度](180.index-progress-ui-tutorial.md)。若 [162 幂等](162.idempotent-reindex-tutorial.md) 检测到相同 hash，应友好提示「内容未变，无需重跑」，而不是 500。
+典型流程：选择文件 → 系统根据文件名 **建议** doc_id（可编辑）→ 展示 content_hash 预览（可选）→ 提交 202 → 跳转 [180 索引进度](180.index-progress-ui-tutorial（front-end）.md)。若 [162 幂等](162.idempotent-reindex-tutorial.md) 检测到相同 hash，应友好提示「内容未变，无需重跑」，而不是 500。
 
 **批量上传** 时队列组件要限制并发（如同时 3 个 POST），并显示每个文件的独立错误，不能把整批标红。与 [157 multipart](157.file-upload-multipart-tutorial.md) 对齐：单文件超限在客户端拦截，减少无意义带宽。"""),
         sec(s + 2, "上传界面安全与合规检查清单",
@@ -77,8 +77,8 @@ def build_179() -> str:
     body = "\n\n".join(parts)
     body += "\n\n" + links_block([
         ("157 后端上传", "157.file-upload-multipart-tutorial.md"),
-        ("180 索引进度 UI", "180.index-progress-ui-tutorial.md"),
-        ("181 重建索引", "181.reindex-ui-tutorial.md"),
+        ("180 索引进度 UI", "180.index-progress-ui-tutorial（front-end）.md"),
+        ("181 重建索引", "181.reindex-ui-tutorial（front-end）.md"),
     ])
     return pad_unique("知识库文档上传界面", "[161 索引任务](161.index-task-state-machine-tutorial.md)", 550, body)
 
@@ -89,7 +89,7 @@ def build_180() -> str:
         sec(s + 1, "索引进度可视化：阶段拆解与 ETA",
             """用户最焦虑的是 **黑盒等待**。进度 UI 应映射 [161 状态机](161.index-task-state-machine-tutorial.md) 的 `pending → parsing → chunking → embedding → indexing → done`，每阶段显示 **已耗时** 与 **可选 ETA**（基于历史 p50）。
 
-当 worker 上报 `progress_pct` 时，前端用 **单调递增** 规则：不允许从 80% 跳回 10%，除非状态重置为 failed 后重试。与 [179 上传](179.kb-doc-upload-ui-tutorial.md) 衔接：从上传成功页 deep link 到 `/tasks/{task_id}`，自动开始 SSE 或轮询。
+当 worker 上报 `progress_pct` 时，前端用 **单调递增** 规则：不允许从 80% 跳回 10%，除非状态重置为 failed 后重试。与 [179 上传](179.kb-doc-upload-ui-tutorial（front-end）.md) 衔接：从上传成功页 deep link 到 `/tasks/{task_id}`，自动开始 SSE 或轮询。
 
 **失败态** 必须展示 `error_code` 的人类可读说明：如 `PARSER_OOM` 建议拆文件，`EMBED_RATE_LIMIT` 建议稍后重试。提供「复制 task_id 给运维」按钮。"""),
         sec(s + 2, "轮询、SSE 与 WebSocket 选型",
@@ -103,12 +103,12 @@ def build_180() -> str:
         sec(s + 3, "进度页与聊天产品的信息架构",
             """不要把索引进度塞进聊天窗口顶部横幅——运营在 **知识库管理域** 解决问题，聊天域只展示 **可检索** 状态（绿点/灰点）。
 
-推荐信息架构：`/kb/upload` → `/kb/tasks/{id}` → 完成后 CTA「去检索调试」→ [182 调试台](182.retrieval-debug-console-tutorial.md)。客服脚本：「请打开任务页截图 stage 与 error_code」。
+推荐信息架构：`/kb/upload` → `/kb/tasks/{id}` → 完成后 CTA「去检索调试」→ [182 调试台](182.retrieval-debug-console-tutorial（front-end）.md)。客服脚本：「请打开任务页截图 stage 与 error_code」。
 
-埋点：`task_view`、`task_refresh`、`task_failed_copy_id`，与 [183 用量看板](183.admin-usage-dashboard-tutorial.md) 的索引耗时指标对齐。"""),
+埋点：`task_view`、`task_refresh`、`task_failed_copy_id`，与 [183 用量看板](183.admin-usage-dashboard-tutorial（front-end）.md) 的索引耗时指标对齐。"""),
         sec(s + 4, "综合实战：IndexProgressPanel 验收",
             """1. mock 161 API 返回各 stage，UI 逐步点亮。  
-2. failed 态展示重试按钮（若后端支持）并链到 [181 重建](181.reindex-ui-tutorial.md)。  
+2. failed 态展示重试按钮（若后端支持）并链到 [181 重建](181.reindex-ui-tutorial（front-end）.md)。  
 3. 多 tab 打开同一 task_id，状态一致。  
 4. 弱网轮询退避，不出现请求风暴。  
 5. Playwright：上传后自动跳转并见到 `done` 徽章。"""),
@@ -116,8 +116,8 @@ def build_180() -> str:
     body = "\n\n".join(parts)
     body += "\n\n" + links_block([
         ("161 任务状态机", "161.index-task-state-machine-tutorial.md"),
-        ("179 上传界面", "179.kb-doc-upload-ui-tutorial.md"),
-        ("181 重建索引", "181.reindex-ui-tutorial.md"),
+        ("179 上传界面", "179.kb-doc-upload-ui-tutorial（front-end）.md"),
+        ("181 重建索引", "181.reindex-ui-tutorial（front-end）.md"),
     ])
     return pad_unique("索引进度展示", "[161 任务状态机](161.index-task-state-machine-tutorial.md)", 1600, body)
 
@@ -140,14 +140,14 @@ def build_181() -> str:
 
 界面文案要写清：**重建会删除旧 chunk 再写入**，耗时与文档大小正相关。展示预估来自历史 metrics（[191 Prometheus](191.prometheus-metrics-rag-tutorial.md)）。"""),
         sec(s + 3, "Reindex UI 组件与 API 契约",
-            """按钮触发 `POST /api/v1/documents/{doc_id}/reindex` 或 bulk 端点，响应仍为 **202 + task_id**，进度复用 [180 进度 UI](180.index-progress-ui-tutorial.md)。
+            """按钮触发 `POST /api/v1/documents/{doc_id}/reindex` 或 bulk 端点，响应仍为 **202 + task_id**，进度复用 [180 进度 UI](180.index-progress-ui-tutorial（front-end）.md)。
 
 状态：idle / submitting / accepted / failed。提交后 disable 按钮直至 task 终端态。列表页展示「上次重建时间」「上次重建人」。
 
 **先错对对**：在 UI 直接同步等待索引完成（错）→ 202 后跳任务页（对）；不展示 tenant 隔离（错）→ 仅本租户 doc 可重建（对）。"""),
         sec(s + 4, "演练：换模型后的全库重建",
             """1. 在 staging 选 10 份代表文档触发重建。  
-2. 对比重建前后 [182 调试台](182.retrieval-debug-console-tutorial.md) Top-5。  
+2. 对比重建前后 [182 调试台](182.retrieval-debug-console-tutorial（front-end）.md) Top-5。  
 3. 检查向量库 manifest 版本字段更新。  
 4. 聊天抽样 20 问，Faithfulness 不下降。  
 5. 填写变更记录，关联 [48 版本](48.doc-versioning-tutorial.md)。"""),
@@ -155,7 +155,7 @@ def build_181() -> str:
     body = "\n\n".join(parts)
     body += "\n\n" + links_block([
         ("162 幂等重索引", "162.idempotent-reindex-tutorial.md"),
-        ("180 进度 UI", "180.index-progress-ui-tutorial.md"),
+        ("180 进度 UI", "180.index-progress-ui-tutorial（front-end）.md"),
         ("196 审计日志", "196.audit-log-rag-tutorial.md"),
     ])
     return pad_unique("重建索引操作界面", "[162 幂等重索引](162.idempotent-reindex-tutorial.md)", 1600, body)
@@ -173,7 +173,7 @@ def build_182() -> str:
         sec(s + 2, "Debug API 字段设计与前端表格",
             """`DebugRetrieveResponse` 建议包含：`query`、`rewritten_query`（若有 [100](100.query-rewriting-tutorial.md)）、`hits[]`（chunk_id, score, doc_id, page, excerpt, filter_matched）、`latency_ms`、`index_version`。
 
-表格支持 **按 score 排序**、**复制 chunk_id**、**一键在 [177 侧栏](177.source-preview-sidebar-tutorial.md) 打开**（若集成）。敏感环境对 excerpt 做脱敏 [195](195.pii-redaction-rag-tutorial.md)。"""),
+表格支持 **按 score 排序**、**复制 chunk_id**、**一键在 [177 侧栏](177.source-preview-sidebar-tutorial（front-end）.md) 打开**（若集成）。敏感环境对 excerpt 做脱敏 [195](195.pii-redaction-rag-tutorial.md)。"""),
         sec(s + 3, "生产边界：谁能在生产点调试",
             """调试台暴露 **检索内幕**，生产应限制 `rag:debug:retrieve` 权限，并全量 audit。只读副本或 staging 镜像库是更安全习惯。
 
@@ -183,7 +183,7 @@ def build_182() -> str:
     body += "\n\n" + links_block([
         ("98 Top-K", "98.top-k-retrieval-tutorial.md"),
         ("93 混合检索", "93.hybrid-search-tutorial.md"),
-        ("171 聊天 UI", "171.chat-message-list-ui-tutorial.md"),
+        ("171 聊天 UI", "171.chat-message-list-ui-tutorial（front-end）.md"),
     ])
     return pad_unique("检索调试台", "[98 Top-K](98.top-k-retrieval-tutorial.md)", 1100, body)
 
@@ -192,7 +192,7 @@ def build_183() -> str:
     s = 14
     parts = [
         sec(s + 1, "FinOps 视角：用量看板要回答的五个问题",
-            """财务与业务常问：**本月花了多少、谁花的、花在哪、趋势如何、如何控**。用量看板 [183](183.admin-usage-dashboard-tutorial.md) 要把 Token、Embedding 字符数、检索次数、存储 GB 分开，避免「一个总数」无法行动。
+            """财务与业务常问：**本月花了多少、谁花的、花在哪、趋势如何、如何控**。用量看板 [183](183.admin-usage-dashboard-tutorial（front-end）.md) 要把 Token、Embedding 字符数、检索次数、存储 GB 分开，避免「一个总数」无法行动。
 
 与 [192 Embedding 成本](192.embedding-batch-cost-tutorial.md)、[194 LLM Token](194.llm-token-cost-optimization-tutorial.md)、[193 向量存储](193.vector-storage-cost-tutorial.md) 形成 **成本三联**。每张卡片可下钻到 tenant、user、model_id。"""),
         sec(s + 2, "埋点位置与数据管道",
@@ -216,7 +216,7 @@ def build_183() -> str:
     body += "\n\n" + links_block([
         ("192 Embedding 成本", "192.embedding-batch-cost-tutorial.md"),
         ("194 Token 优化", "194.llm-token-cost-optimization-tutorial.md"),
-        ("184 日志评测看板", "184.admin-log-eval-dashboard-tutorial.md"),
+        ("184 日志评测看板", "184.admin-log-eval-dashboard-tutorial（front-end）.md"),
     ])
     return pad_unique("管理台用量统计看板", "[192 Embedding 成本](192.embedding-batch-cost-tutorial.md)", 2000, body)
 
@@ -225,7 +225,7 @@ def build_184() -> str:
     s = 14
     parts = [
         sec(s + 1, "日志与评测看板：闭环质量运营",
-            """[184](184.admin-log-eval-dashboard-tutorial.md) 把 **线上日志** 与 **离线评测** 放在同一管理域：左侧是请求量、拒答率、平均引用数；右侧是 RAGAS 子集分数趋势（见 [139 RAGAS](139.ragas-context-precision-tutorial.md)）。
+            """[184](184.admin-log-eval-dashboard-tutorial（front-end）.md) 把 **线上日志** 与 **离线评测** 放在同一管理域：左侧是请求量、拒答率、平均引用数；右侧是 RAGAS 子集分数趋势（见 [139 RAGAS](139.ragas-context-precision-tutorial.md)）。
 
 目标用户是 **算法负责人 + 客服质检**，不是终端员工。支持按 `prompt_version`、`retriever_config` 分组，回答「上周改 top_k 后 precision 变了吗」。"""),
         sec(s + 2, "日志采样与 PII 边界",
@@ -239,13 +239,13 @@ def build_184() -> str:
         sec(s + 4, "Dashboard 实现要点",
             """后端：`GET /admin/metrics/summary`、`GET /admin/eval/runs`。前端：Recharts/ECharts，注意大数据量聚合在服务端。权限 `admin:metrics:read`。
 
-与 [183 用量](183.admin-usage-dashboard-tutorial.md) 区别：183 偏 **钱与资源**，184 偏 **质量与行为**。"""),
+与 [183 用量](183.admin-usage-dashboard-tutorial（front-end）.md) 区别：183 偏 **钱与资源**，184 偏 **质量与行为**。"""),
     ]
     body = "\n\n".join(parts)
     body += "\n\n" + links_block([
         ("148 Langfuse", "148.langfuse-observability-tutorial.md"),
         ("144 回归集", "144.regression-test-set-tutorial.md"),
-        ("183 用量看板", "183.admin-usage-dashboard-tutorial.md"),
+        ("183 用量看板", "183.admin-usage-dashboard-tutorial（front-end）.md"),
     ])
     return pad_unique("日志与评测看板", "[148 Langfuse](148.langfuse-observability-tutorial.md)", 2100, body)
 
@@ -421,7 +421,7 @@ RED 方法：Rate、Errors、Duration。SLO 示例：retrieve P95 < 800ms、erro
     body = "\n\n".join(parts)
     body += "\n\n" + links_block([
         ("190 结构化日志", "190.structured-logging-rag-tutorial.md"),
-        ("183 用量看板", "183.admin-usage-dashboard-tutorial.md"),
+        ("183 用量看板", "183.admin-usage-dashboard-tutorial（front-end）.md"),
         ("189 健康检查", "189.health-readiness-rag-tutorial.md"),
     ])
     return pad_unique("Prometheus 指标", "[190 结构化日志](190.structured-logging-rag-tutorial.md)", 3600, body)
@@ -437,7 +437,7 @@ def build_192() -> str:
         sec(s + 2, "缓存、去重与增量",
             """[68 缓存](68.embedding-cache-tutorial.md) 对 content_hash 命中则跳过 API。[49 增量](49.incremental-update-tutorial.md) 只 embed 新 chunk。重复文档 [47 去重](47.doc-dedup-tutorial.md) 直接省一倍。
 
-看板展示：每千 chunk 成本、每 GB 原文成本，供 [183](183.admin-usage-dashboard-tutorial.md) 引用。"""),
+看板展示：每千 chunk 成本、每 GB 原文成本，供 [183](183.admin-usage-dashboard-tutorial（front-end）.md) 引用。"""),
         sec(s + 3, "限流与重试成本",
             """[69 重试](69.embedding-retry-rate-limit-tutorial.md) 指数退避避免账单爆炸。429 时 worker 应降并发而非无脑重试。
 
@@ -452,7 +452,7 @@ def build_192() -> str:
     body += "\n\n" + links_block([
         ("193 向量存储成本", "193.vector-storage-cost-tutorial.md"),
         ("67 批处理", "67.embedding-batching-tutorial.md"),
-        ("183 用量看板", "183.admin-usage-dashboard-tutorial.md"),
+        ("183 用量看板", "183.admin-usage-dashboard-tutorial（front-end）.md"),
     ])
     return pad_unique("Embedding 批处理成本", "[193 向量存储成本](193.vector-storage-cost-tutorial.md)", 2800, body)
 
@@ -469,7 +469,7 @@ def build_193() -> str:
 
 删除租户时按 namespace 清向量 [89](89.multi-tenant-namespace-tutorial.md)，避免幽灵账单。"""),
         sec(s + 3, "容量规划公式",
-            """估算：`chunks × dim × 4 bytes × 1.3（HNSW 开销）`。年增长率来自上传趋势 [179](179.kb-doc-upload-ui-tutorial.md)。提前 3 个月扩容。
+            """估算：`chunks × dim × 4 bytes × 1.3（HNSW 开销）`。年增长率来自上传趋势 [179](179.kb-doc-upload-ui-tutorial（front-end）.md)。提前 3 个月扩容。
 
 备份 [90](90.vector-db-backup-tutorial.md) 也占存储，单独计费项。"""),
     ]
@@ -488,7 +488,7 @@ def build_194() -> str:
         sec(s + 1, "Token 消耗解剖",
             """一次问答 Token ≈ **system + 检索上下文 + 历史 + 问题 + 答案**。[107 上下文预算](107.context-budget-tutorial.md) 限制注入 chunk 数；[108 重排](108.long-context-reorder-tutorial.md) 把相关段放中间。
 
-生成侧：[29 采样](29.llm-sampling-tutorial.md) 与 `max_tokens` 封顶；流式 [116](116.sse-rag-streaming-tutorial.md) 可提前 stop [175](175.abort-controller-stream-tutorial.md) 省 completion token。"""),
+生成侧：[29 采样](29.llm-sampling-tutorial.md) 与 `max_tokens` 封顶；流式 [116](116.sse-rag-streaming-tutorial.md) 可提前 stop [175](175.abort-controller-stream-tutorial（front-end）.md) 省 completion token。"""),
         sec(s + 2, "降本策略矩阵",
             """| 策略 | 效果 | 篇 |
 |------|------|-----|
@@ -499,7 +499,7 @@ def build_194() -> str:
 
 监控：每问答平均 prompt/completion 比，异常升高查是否注入重复 chunk [106](106.retrieval-dedup-tutorial.md)。"""),
         sec(s + 3, "定价、预算与产品策略",
-            """按租户设月 Token 配额，超限降级或拒答 [112](112.refusal-strategy-tutorial.md)。对外报价把 Token 与 embed 分开列项，见 [183](183.admin-usage-dashboard-tutorial.md)。
+            """按租户设月 Token 配额，超限降级或拒答 [112](112.refusal-strategy-tutorial.md)。对外报价把 Token 与 embed 分开列项，见 [183](183.admin-usage-dashboard-tutorial（front-end）.md)。
 
 A/B 测 cheaper model 在简单问上的质量损失，用 [144 回归集](144.regression-test-set-tutorial.md) 量化。"""),
         sec(s + 4, "优化验收",
@@ -556,7 +556,7 @@ def build_196() -> str:
 
 查询 API 仅合规角色可访问，本身也要 audit（查审计的人被记录）。"""),
         sec(s + 3, "检索调试与聊天溯源",
-            """用户点击 [176 引用](176.citation-card-ui-tutorial.md) 可记 `citation_view`；[182 调试台](182.retrieval-debug-console-tutorial.md) 记 `debug_retrieve`。回答争议时可重建「当时用了哪些 chunk」。
+            """用户点击 [176 引用](176.citation-card-ui-tutorial（front-end）.md) 可记 `citation_view`；[182 调试台](182.retrieval-debug-console-tutorial（front-end）.md) 记 `debug_retrieve`。回答争议时可重建「当时用了哪些 chunk」。
 
 与 [113 行内引用](113.inline-citation-tutorial.md) 编号一致，避免审计链断裂。"""),
         sec(s + 4, "落地与抽检",
@@ -566,7 +566,7 @@ def build_196() -> str:
     body += "\n\n" + links_block([
         ("195 PII", "195.pii-redaction-rag-tutorial.md"),
         ("190 结构化日志", "190.structured-logging-rag-tutorial.md"),
-        ("182 调试台", "182.retrieval-debug-console-tutorial.md"),
+        ("182 调试台", "182.retrieval-debug-console-tutorial（front-end）.md"),
     ])
     return pad_unique("审计日志", "[195 PII](195.pii-redaction-rag-tutorial.md)", 3250, body)
 
@@ -707,7 +707,7 @@ def build_202() -> str:
         sec(s + 1, "ReAct 轨迹在 RAG 中的形态",
             """Thought：分析缺什么信息。Action：`search(query)`。Observation：Top chunk 摘要。循环直至 Action: `finish(answer)`。
 
-日志轨迹可给专家调试 [182](182.retrieval-debug-console-tutorial.md)，但勿把原始 Thought 展示给终端用户（易泄露推理链）。"""),
+日志轨迹可给专家调试 [182](182.retrieval-debug-console-tutorial（front-end）.md)，但勿把原始 Thought 展示给终端用户（易泄露推理链）。"""),
         sec(s + 2, "Prompt 与解析鲁棒性",
             """要求 JSON 或固定前缀 `Action:` 便于解析；畸形输出重试一次。与 [123 结构化输出](123.structured-output-json-tutorial.md) 一致。
 
@@ -738,7 +738,7 @@ OpenAI function calling 或 LangChain [126 LCEL](126.langchain-lcel-tutorial.md)
 
 并行：无依赖的 `fetch_chunk` 可 asyncio.gather；有依赖串行。"""),
         sec(s + 3, "错误与降级",
-            """工具超时返回结构化错误 Observation，模型可换 query 重试。max_tool_calls 防止死循环。与 [175 abort](175.abort-controller-stream-tutorial.md) 共用取消语义。"""),
+            """工具超时返回结构化错误 Observation，模型可换 query 重试。max_tool_calls 防止死循环。与 [175 abort](175.abort-controller-stream-tutorial（front-end）.md) 共用取消语义。"""),
         sec(s + 4, "与 Agentic、CRAG 组合",
             """[201](201.agentic-rag-tutorial.md) 定策略；[205 CRAG](205.crag-corrective-rag-tutorial.md) 在 Observation 差时触发纠正检索。路线图 H 模块进阶必读 trio。"""),
     ]
@@ -911,7 +911,7 @@ def build_210() -> str:
 
 存储：原图对象存储，向量库存向量 + image_url metadata。"""),
         sec(s + 3, "生成与展示",
-            """检索到图时 UI 展示缩略图 [177 侧栏](177.source-preview-sidebar-tutorial.md)；LLM 输入可用 caption 或 multimodal API（GPT-4V 等）。
+            """检索到图时 UI 展示缩略图 [177 侧栏](177.source-preview-sidebar-tutorial（front-end）.md)；LLM 输入可用 caption 或 multimodal API（GPT-4V 等）。
 
 幻觉：要求模型仅描述可见内容；无图拒答。"""),
         sec(s + 4, "选型决策树",
@@ -988,7 +988,7 @@ def build_213() -> str:
 
 比 RLHF 省奖励模型，工程更常落地 DPO。"""),
         sec(s + 2, "偏好数据从哪来",
-            """人工标注客服满意/不满意；[184 评测看板](184.admin-log-eval-dashboard-tutorial.md) 抽样；对抗 **无引用瞎编** 的负例。
+            """人工标注客服满意/不满意；[184 评测看板](184.admin-log-eval-dashboard-tutorial（front-end）.md) 抽样；对抗 **无引用瞎编** 的负例。
 
 每条偏好注明用的 chunk 集，避免训成「背 chunk」而非「会用检索」。"""),
         sec(s + 3, "与 LoRA、Self-RAG",
@@ -1000,18 +1000,18 @@ def build_213() -> str:
     body += "\n\n" + links_block([
         ("212 LoRA", "212.lora-domain-qa-tutorial.md"),
         ("204 Self-RAG", "204.self-rag-tutorial.md"),
-        ("184 评测看板", "184.admin-log-eval-dashboard-tutorial.md"),
+        ("184 评测看板", "184.admin-log-eval-dashboard-tutorial（front-end）.md"),
     ])
     return pad_unique("RLHF/DPO", "[212 LoRA](212.lora-domain-qa-tutorial.md)", 2050, body)
 
 
 BUILDERS = {
-    "179.kb-doc-upload-ui-tutorial.md": build_179,
-    "180.index-progress-ui-tutorial.md": build_180,
-    "181.reindex-ui-tutorial.md": build_181,
-    "182.retrieval-debug-console-tutorial.md": build_182,
-    "183.admin-usage-dashboard-tutorial.md": build_183,
-    "184.admin-log-eval-dashboard-tutorial.md": build_184,
+    "179.kb-doc-upload-ui-tutorial（front-end）.md": build_179,
+    "180.index-progress-ui-tutorial（front-end）.md": build_180,
+    "181.reindex-ui-tutorial（front-end）.md": build_181,
+    "182.retrieval-debug-console-tutorial（front-end）.md": build_182,
+    "183.admin-usage-dashboard-tutorial（front-end）.md": build_183,
+    "184.admin-log-eval-dashboard-tutorial（front-end）.md": build_184,
     "186.docker-compose-fullstack-tutorial.md": build_186,
     "187.kubernetes-basics-rag-tutorial.md": build_187,
     "188.secrets-management-rag-tutorial.md": build_188,

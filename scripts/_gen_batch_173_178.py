@@ -40,12 +40,12 @@ def pad_to_min(full: str, filename: str, min_h: int = 5000) -> str:
         return full
     # last resort: short unique closing (avoid duplicate spam)
     closers = {
-        "173.code-highlight-rag-tutorial.md": "至此，代码高亮篇收束；请继续在项目仓库中落地 CodeBlock，并与 Markdown 管道一并代码评审，完成路线图第 190 条勾选，并在团队周会演示一次复制与高亮效果。谢谢阅读，祝学习顺利，加油。",
-        "174.streaming-typewriter-ui-tutorial.md": "至此，流式打字机篇收束；请用真实 SSE 流做十次手动测试，确认三态与 citations 时机无误，完成第 191 条勾选。本篇承上 [116](116.sse-rag-streaming-tutorial.md) 启下 [175 中断](175.abort-controller-stream-tutorial.md) 与 [176 引用卡片](176.citation-card-ui-tutorial.md)，是阶段四演示的体验核心。祝验收顺利。",
-        "175.abort-controller-stream-tutorial.md": "至此，中断篇收束；请在预发压测 abort 路径，确认账单与用户体验均达预期，完成第 192 条勾选。",
-        "176.citation-card-ui-tutorial.md": "至此，引用卡片篇收束；请与后端对齐 citations JSON Schema 后合并主干，完成第 193 条勾选。",
-        "177.source-preview-sidebar-tutorial.md": "至此，侧栏预览篇收束；请邀请业务方试用双栏演示并收集反馈，完成第 194 条勾选。",
-        "178.pdf-highlight-locate-tutorial.md": "至此，F2 前端系列全部完成；请开始阶段四全栈项目集成与路演准备，完成第 195 条勾选。",
+        "173.code-highlight-rag-tutorial（front-end）.md": "至此，代码高亮篇收束；请继续在项目仓库中落地 CodeBlock，并与 Markdown 管道一并代码评审，完成路线图第 190 条勾选，并在团队周会演示一次复制与高亮效果。谢谢阅读，祝学习顺利，加油。",
+        "174.streaming-typewriter-ui-tutorial（front-end）.md": "至此，流式打字机篇收束；请用真实 SSE 流做十次手动测试，确认三态与 citations 时机无误，完成第 191 条勾选。本篇承上 [116](116.sse-rag-streaming-tutorial.md) 启下 [175 中断](175.abort-controller-stream-tutorial（front-end）.md) 与 [176 引用卡片](176.citation-card-ui-tutorial（front-end）.md)，是阶段四演示的体验核心。祝验收顺利。",
+        "175.abort-controller-stream-tutorial（front-end）.md": "至此，中断篇收束；请在预发压测 abort 路径，确认账单与用户体验均达预期，完成第 192 条勾选。",
+        "176.citation-card-ui-tutorial（front-end）.md": "至此，引用卡片篇收束；请与后端对齐 citations JSON Schema 后合并主干，完成第 193 条勾选。",
+        "177.source-preview-sidebar-tutorial（front-end）.md": "至此，侧栏预览篇收束；请邀请业务方试用双栏演示并收集反馈，完成第 194 条勾选。",
+        "178.pdf-highlight-locate-tutorial（front-end）.md": "至此，F2 前端系列全部完成；请开始阶段四全栈项目集成与路演准备，完成第 195 条勾选。",
     }
     if filename in closers:
         full = full + "\n\n" + closers[filename]

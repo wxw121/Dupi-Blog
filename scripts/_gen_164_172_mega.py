@@ -7,7 +7,7 @@ MEGA_APPENDIX: dict[str, str] = {
 
 ### D.1 第一跳：TLS 终止
 
-用户浏览器到 API 之间 **必须 HTTPS**。TLS 在负载均衡或 Ingress 终止；内网服务间 **可选 mTLS**。JWT 在 TLS 内传输 **仍要** 短 TTL——TLS 不解雇 **XSS 偷 token**（见 [172 Markdown XSS](172.markdown-render-rag-tutorial.md)）。
+用户浏览器到 API 之间 **必须 HTTPS**。TLS 在负载均衡或 Ingress 终止；内网服务间 **可选 mTLS**。JWT 在 TLS 内传输 **仍要** 短 TTL——TLS 不解雇 **XSS 偷 token**（见 [172 Markdown XSS](172.markdown-render-rag-tutorial（front-end）.md)）。
 
 ### D.2 第二跳：网关验签
 
@@ -265,7 +265,7 @@ circuit_breaker:
 
 ## 附录 E：429 用户体验 copy
 
-「您的请求过于频繁，请 {retry_after} 秒后重试。升级套餐可获得更高配额。」——**与** [171 UI](171.chat-message-list-ui-tutorial.md) **error 组件** 绑定。
+「您的请求过于频繁，请 {retry_after} 秒后重试。升级套餐可获得更高配额。」——**与** [171 UI](171.chat-message-list-ui-tutorial（front-end）.md) **error 组件** 绑定。
 
 ## 附录 F：186 路线图交付
 
@@ -283,7 +283,7 @@ circuit_breaker:
 
 ## 附录 E：ChatResponse Schema 与前端类型
 
-codegen 生成 `ChatResponse.citations: Citation[]`——[171 Message](171.chat-message-list-ui-tutorial.md) **直接 import**。
+codegen 生成 `ChatResponse.citations: Citation[]`——[171 Message](171.chat-message-list-ui-tutorial（front-end）.md) **直接 import**。
 
 ## 附录 F：187 路线图交付
 
@@ -310,7 +310,7 @@ types/chat.ts
 
 ## 附录 E：Message 状态机图（文字）
 
-idle → sending → streaming → done；任一步 → error → retry → sending；streaming → cancelled（[175 Abort](175.abort-controller-stream-tutorial.md)）。
+idle → sending → streaming → done；任一步 → error → retry → sending；streaming → cancelled（[175 Abort](175.abort-controller-stream-tutorial（front-end）.md)）。
 
 ## 附录 F：188 路线图交付
 
@@ -347,1253 +347,1253 @@ Vitest：**每个 sample** 渲染后 **querySelector script/iframe** 为 null。
 TOPUP_APPENDIX: dict[str, str] = {
     "jwt-auth-rag": """### 附录 Z.1 JWT 认证工程笔记第1条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **1** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **1** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.2 JWT 认证工程笔记第2条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **2** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **2** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.3 JWT 认证工程笔记第3条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **3** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **3** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.4 JWT 认证工程笔记第4条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **4** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **4** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.5 JWT 认证工程笔记第5条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **5** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **5** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.6 JWT 认证工程笔记第6条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **6** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **6** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.7 JWT 认证工程笔记第7条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **7** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **7** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.8 JWT 认证工程笔记第8条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **8** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **8** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.9 JWT 认证工程笔记第9条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **9** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **9** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.10 JWT 认证工程笔记第10条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **10** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **10** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.11 JWT 认证工程笔记第11条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **11** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **11** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.12 JWT 认证工程笔记第12条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **12** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **12** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.13 JWT 认证工程笔记第13条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **13** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **13** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.14 JWT 认证工程笔记第14条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **14** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **14** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.15 JWT 认证工程笔记第15条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **15** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **15** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.16 JWT 认证工程笔记第16条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **16** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **16** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.17 JWT 认证工程笔记第17条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **17** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **17** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.18 JWT 认证工程笔记第18条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **18** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **18** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.19 JWT 认证工程笔记第19条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **19** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **19** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.20 JWT 认证工程笔记第20条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **20** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **20** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.21 JWT 认证工程笔记第21条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **21** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **21** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.22 JWT 认证工程笔记第22条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **22** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **22** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.23 JWT 认证工程笔记第23条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **23** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **23** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.24 JWT 认证工程笔记第24条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **24** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **24** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.25 JWT 认证工程笔记第25条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **25** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **25** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.26 JWT 认证工程笔记第26条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **26** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **26** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.27 JWT 认证工程笔记第27条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **27** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **27** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.28 JWT 认证工程笔记第28条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **28** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **28** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.29 JWT 认证工程笔记第29条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **29** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **29** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.30 JWT 认证工程笔记第30条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **30** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **30** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.31 JWT 认证工程笔记第31条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **31** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **31** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.32 JWT 认证工程笔记第32条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **32** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **32** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.33 JWT 认证工程笔记第33条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **33** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **33** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.34 JWT 认证工程笔记第34条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **34** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **34** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.35 JWT 认证工程笔记第35条
 
-在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **35** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。""",
+在企业 RAG 落地 **JWT 认证** 时，团队常忽略第 **35** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。""",
     "rbac-rag": """### 附录 Z.1 RBAC 权限工程笔记第1条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **1** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **1** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.2 RBAC 权限工程笔记第2条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **2** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **2** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.3 RBAC 权限工程笔记第3条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **3** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **3** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.4 RBAC 权限工程笔记第4条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **4** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **4** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.5 RBAC 权限工程笔记第5条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **5** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **5** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.6 RBAC 权限工程笔记第6条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **6** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **6** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.7 RBAC 权限工程笔记第7条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **7** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **7** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.8 RBAC 权限工程笔记第8条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **8** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **8** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.9 RBAC 权限工程笔记第9条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **9** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **9** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.10 RBAC 权限工程笔记第10条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **10** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **10** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.11 RBAC 权限工程笔记第11条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **11** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **11** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.12 RBAC 权限工程笔记第12条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **12** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **12** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.13 RBAC 权限工程笔记第13条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **13** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **13** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.14 RBAC 权限工程笔记第14条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **14** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **14** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.15 RBAC 权限工程笔记第15条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **15** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **15** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.16 RBAC 权限工程笔记第16条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **16** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **16** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.17 RBAC 权限工程笔记第17条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **17** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **17** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.18 RBAC 权限工程笔记第18条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **18** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **18** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.19 RBAC 权限工程笔记第19条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **19** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **19** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.20 RBAC 权限工程笔记第20条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **20** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **20** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.21 RBAC 权限工程笔记第21条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **21** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **21** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.22 RBAC 权限工程笔记第22条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **22** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **22** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.23 RBAC 权限工程笔记第23条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **23** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **23** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.24 RBAC 权限工程笔记第24条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **24** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **24** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.25 RBAC 权限工程笔记第25条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **25** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **25** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.26 RBAC 权限工程笔记第26条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **26** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **26** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.27 RBAC 权限工程笔记第27条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **27** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **27** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.28 RBAC 权限工程笔记第28条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **28** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **28** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.29 RBAC 权限工程笔记第29条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **29** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **29** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.30 RBAC 权限工程笔记第30条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **30** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **30** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.31 RBAC 权限工程笔记第31条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **31** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **31** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.32 RBAC 权限工程笔记第32条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **32** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **32** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.33 RBAC 权限工程笔记第33条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **33** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **33** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.34 RBAC 权限工程笔记第34条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **34** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **34** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.35 RBAC 权限工程笔记第35条
 
-在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **35** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。""",
+在企业 RAG 落地 **RBAC 权限** 时，团队常忽略第 **35** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。""",
     "tenant-isolation-backend": """### 附录 Z.1 租户隔离工程笔记第1条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **1** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **1** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.2 租户隔离工程笔记第2条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **2** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **2** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.3 租户隔离工程笔记第3条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **3** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **3** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.4 租户隔离工程笔记第4条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **4** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **4** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.5 租户隔离工程笔记第5条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **5** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **5** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.6 租户隔离工程笔记第6条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **6** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **6** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.7 租户隔离工程笔记第7条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **7** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **7** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.8 租户隔离工程笔记第8条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **8** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **8** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.9 租户隔离工程笔记第9条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **9** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **9** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.10 租户隔离工程笔记第10条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **10** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **10** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.11 租户隔离工程笔记第11条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **11** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **11** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.12 租户隔离工程笔记第12条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **12** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **12** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.13 租户隔离工程笔记第13条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **13** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **13** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.14 租户隔离工程笔记第14条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **14** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **14** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.15 租户隔离工程笔记第15条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **15** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **15** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.16 租户隔离工程笔记第16条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **16** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **16** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.17 租户隔离工程笔记第17条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **17** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **17** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.18 租户隔离工程笔记第18条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **18** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **18** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.19 租户隔离工程笔记第19条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **19** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **19** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.20 租户隔离工程笔记第20条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **20** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **20** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.21 租户隔离工程笔记第21条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **21** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **21** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.22 租户隔离工程笔记第22条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **22** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **22** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.23 租户隔离工程笔记第23条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **23** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **23** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.24 租户隔离工程笔记第24条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **24** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **24** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.25 租户隔离工程笔记第25条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **25** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **25** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.26 租户隔离工程笔记第26条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **26** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **26** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.27 租户隔离工程笔记第27条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **27** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **27** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.28 租户隔离工程笔记第28条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **28** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **28** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.29 租户隔离工程笔记第29条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **29** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **29** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.30 租户隔离工程笔记第30条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **30** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **30** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.31 租户隔离工程笔记第31条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **31** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **31** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.32 租户隔离工程笔记第32条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **32** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **32** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.33 租户隔离工程笔记第33条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **33** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **33** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.34 租户隔离工程笔记第34条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **34** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **34** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.35 租户隔离工程笔记第35条
 
-在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **35** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。""",
+在企业 RAG 落地 **租户隔离** 时，团队常忽略第 **35** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。""",
     "openai-api-wrapper": """### 附录 Z.1 OpenAI 封装工程笔记第1条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **1** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **1** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.2 OpenAI 封装工程笔记第2条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **2** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **2** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.3 OpenAI 封装工程笔记第3条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **3** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **3** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.4 OpenAI 封装工程笔记第4条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **4** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **4** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.5 OpenAI 封装工程笔记第5条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **5** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **5** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.6 OpenAI 封装工程笔记第6条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **6** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **6** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.7 OpenAI 封装工程笔记第7条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **7** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **7** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.8 OpenAI 封装工程笔记第8条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **8** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **8** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.9 OpenAI 封装工程笔记第9条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **9** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **9** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.10 OpenAI 封装工程笔记第10条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **10** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **10** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.11 OpenAI 封装工程笔记第11条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **11** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **11** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.12 OpenAI 封装工程笔记第12条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **12** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **12** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.13 OpenAI 封装工程笔记第13条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **13** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **13** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.14 OpenAI 封装工程笔记第14条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **14** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **14** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.15 OpenAI 封装工程笔记第15条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **15** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **15** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.16 OpenAI 封装工程笔记第16条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **16** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **16** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.17 OpenAI 封装工程笔记第17条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **17** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **17** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.18 OpenAI 封装工程笔记第18条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **18** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **18** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.19 OpenAI 封装工程笔记第19条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **19** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **19** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.20 OpenAI 封装工程笔记第20条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **20** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **20** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.21 OpenAI 封装工程笔记第21条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **21** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **21** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.22 OpenAI 封装工程笔记第22条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **22** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **22** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.23 OpenAI 封装工程笔记第23条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **23** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **23** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.24 OpenAI 封装工程笔记第24条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **24** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **24** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.25 OpenAI 封装工程笔记第25条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **25** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **25** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.26 OpenAI 封装工程笔记第26条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **26** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **26** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.27 OpenAI 封装工程笔记第27条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **27** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **27** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.28 OpenAI 封装工程笔记第28条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **28** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **28** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.29 OpenAI 封装工程笔记第29条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **29** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **29** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.30 OpenAI 封装工程笔记第30条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **30** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **30** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.31 OpenAI 封装工程笔记第31条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **31** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **31** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.32 OpenAI 封装工程笔记第32条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **32** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **32** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.33 OpenAI 封装工程笔记第33条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **33** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **33** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.34 OpenAI 封装工程笔记第34条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **34** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **34** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.35 OpenAI 封装工程笔记第35条
 
-在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **35** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。""",
+在企业 RAG 落地 **OpenAI 封装** 时，团队常忽略第 **35** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。""",
     "multi-model-routing": """### 附录 Z.1 多模型路由工程笔记第1条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **1** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **1** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.2 多模型路由工程笔记第2条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **2** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **2** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.3 多模型路由工程笔记第3条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **3** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **3** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.4 多模型路由工程笔记第4条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **4** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **4** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.5 多模型路由工程笔记第5条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **5** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **5** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.6 多模型路由工程笔记第6条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **6** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **6** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.7 多模型路由工程笔记第7条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **7** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **7** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.8 多模型路由工程笔记第8条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **8** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **8** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.9 多模型路由工程笔记第9条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **9** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **9** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.10 多模型路由工程笔记第10条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **10** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **10** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.11 多模型路由工程笔记第11条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **11** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **11** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.12 多模型路由工程笔记第12条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **12** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **12** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.13 多模型路由工程笔记第13条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **13** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **13** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.14 多模型路由工程笔记第14条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **14** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **14** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.15 多模型路由工程笔记第15条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **15** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **15** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.16 多模型路由工程笔记第16条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **16** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **16** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.17 多模型路由工程笔记第17条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **17** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **17** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.18 多模型路由工程笔记第18条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **18** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **18** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.19 多模型路由工程笔记第19条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **19** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **19** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.20 多模型路由工程笔记第20条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **20** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **20** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.21 多模型路由工程笔记第21条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **21** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **21** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.22 多模型路由工程笔记第22条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **22** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **22** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.23 多模型路由工程笔记第23条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **23** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **23** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.24 多模型路由工程笔记第24条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **24** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **24** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.25 多模型路由工程笔记第25条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **25** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **25** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.26 多模型路由工程笔记第26条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **26** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **26** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.27 多模型路由工程笔记第27条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **27** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **27** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.28 多模型路由工程笔记第28条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **28** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **28** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.29 多模型路由工程笔记第29条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **29** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **29** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.30 多模型路由工程笔记第30条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **30** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **30** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.31 多模型路由工程笔记第31条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **31** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **31** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.32 多模型路由工程笔记第32条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **32** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **32** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.33 多模型路由工程笔记第33条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **33** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **33** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.34 多模型路由工程笔记第34条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **34** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **34** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.35 多模型路由工程笔记第35条
 
-在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **35** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。""",
+在企业 RAG 落地 **多模型路由** 时，团队常忽略第 **35** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。""",
     "rate-limiting-api": """### 附录 Z.1 速率限制工程笔记第1条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **1** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **1** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.2 速率限制工程笔记第2条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **2** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **2** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.3 速率限制工程笔记第3条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **3** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **3** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.4 速率限制工程笔记第4条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **4** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **4** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.5 速率限制工程笔记第5条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **5** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **5** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.6 速率限制工程笔记第6条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **6** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **6** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.7 速率限制工程笔记第7条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **7** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **7** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.8 速率限制工程笔记第8条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **8** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **8** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.9 速率限制工程笔记第9条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **9** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **9** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.10 速率限制工程笔记第10条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **10** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **10** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.11 速率限制工程笔记第11条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **11** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **11** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.12 速率限制工程笔记第12条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **12** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **12** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.13 速率限制工程笔记第13条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **13** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **13** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.14 速率限制工程笔记第14条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **14** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **14** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.15 速率限制工程笔记第15条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **15** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **15** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.16 速率限制工程笔记第16条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **16** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **16** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.17 速率限制工程笔记第17条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **17** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **17** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.18 速率限制工程笔记第18条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **18** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **18** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.19 速率限制工程笔记第19条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **19** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **19** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.20 速率限制工程笔记第20条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **20** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **20** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.21 速率限制工程笔记第21条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **21** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **21** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.22 速率限制工程笔记第22条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **22** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **22** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.23 速率限制工程笔记第23条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **23** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **23** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.24 速率限制工程笔记第24条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **24** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **24** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.25 速率限制工程笔记第25条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **25** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **25** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.26 速率限制工程笔记第26条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **26** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **26** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.27 速率限制工程笔记第27条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **27** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **27** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.28 速率限制工程笔记第28条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **28** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **28** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.29 速率限制工程笔记第29条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **29** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **29** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.30 速率限制工程笔记第30条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **30** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **30** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.31 速率限制工程笔记第31条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **31** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **31** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.32 速率限制工程笔记第32条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **32** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **32** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.33 速率限制工程笔记第33条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **33** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **33** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.34 速率限制工程笔记第34条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **34** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **34** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.35 速率限制工程笔记第35条
 
-在企业 RAG 落地 **速率限制** 时，团队常忽略第 **35** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。""",
+在企业 RAG 落地 **速率限制** 时，团队常忽略第 **35** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。""",
     "openapi-swagger-docs": """### 附录 Z.1 OpenAPI 文档工程笔记第1条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **1** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **1** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.2 OpenAPI 文档工程笔记第2条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **2** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **2** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.3 OpenAPI 文档工程笔记第3条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **3** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **3** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.4 OpenAPI 文档工程笔记第4条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **4** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **4** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.5 OpenAPI 文档工程笔记第5条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **5** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **5** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.6 OpenAPI 文档工程笔记第6条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **6** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **6** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.7 OpenAPI 文档工程笔记第7条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **7** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **7** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.8 OpenAPI 文档工程笔记第8条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **8** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **8** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.9 OpenAPI 文档工程笔记第9条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **9** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **9** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.10 OpenAPI 文档工程笔记第10条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **10** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **10** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.11 OpenAPI 文档工程笔记第11条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **11** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **11** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.12 OpenAPI 文档工程笔记第12条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **12** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **12** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.13 OpenAPI 文档工程笔记第13条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **13** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **13** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.14 OpenAPI 文档工程笔记第14条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **14** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **14** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.15 OpenAPI 文档工程笔记第15条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **15** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **15** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.16 OpenAPI 文档工程笔记第16条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **16** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **16** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.17 OpenAPI 文档工程笔记第17条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **17** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **17** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.18 OpenAPI 文档工程笔记第18条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **18** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **18** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.19 OpenAPI 文档工程笔记第19条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **19** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **19** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.20 OpenAPI 文档工程笔记第20条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **20** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **20** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.21 OpenAPI 文档工程笔记第21条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **21** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **21** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.22 OpenAPI 文档工程笔记第22条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **22** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **22** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.23 OpenAPI 文档工程笔记第23条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **23** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **23** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.24 OpenAPI 文档工程笔记第24条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **24** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **24** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.25 OpenAPI 文档工程笔记第25条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **25** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **25** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.26 OpenAPI 文档工程笔记第26条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **26** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **26** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.27 OpenAPI 文档工程笔记第27条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **27** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **27** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.28 OpenAPI 文档工程笔记第28条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **28** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **28** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.29 OpenAPI 文档工程笔记第29条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **29** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **29** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.30 OpenAPI 文档工程笔记第30条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **30** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **30** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.31 OpenAPI 文档工程笔记第31条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **31** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **31** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.32 OpenAPI 文档工程笔记第32条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **32** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **32** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.33 OpenAPI 文档工程笔记第33条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **33** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **33** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.34 OpenAPI 文档工程笔记第34条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **34** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **34** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.35 OpenAPI 文档工程笔记第35条
 
-在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **35** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。""",
+在企业 RAG 落地 **OpenAPI 文档** 时，团队常忽略第 **35** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。""",
     "chat-message-list-ui": """### 附录 Z.1 聊天 UI工程笔记第1条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **1** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **1** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.2 聊天 UI工程笔记第2条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **2** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **2** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.3 聊天 UI工程笔记第3条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **3** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **3** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.4 聊天 UI工程笔记第4条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **4** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **4** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.5 聊天 UI工程笔记第5条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **5** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **5** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.6 聊天 UI工程笔记第6条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **6** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **6** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.7 聊天 UI工程笔记第7条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **7** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **7** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.8 聊天 UI工程笔记第8条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **8** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **8** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.9 聊天 UI工程笔记第9条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **9** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **9** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.10 聊天 UI工程笔记第10条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **10** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **10** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.11 聊天 UI工程笔记第11条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **11** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **11** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.12 聊天 UI工程笔记第12条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **12** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **12** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.13 聊天 UI工程笔记第13条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **13** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **13** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.14 聊天 UI工程笔记第14条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **14** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **14** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.15 聊天 UI工程笔记第15条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **15** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **15** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.16 聊天 UI工程笔记第16条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **16** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **16** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.17 聊天 UI工程笔记第17条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **17** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **17** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.18 聊天 UI工程笔记第18条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **18** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **18** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.19 聊天 UI工程笔记第19条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **19** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **19** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.20 聊天 UI工程笔记第20条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **20** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **20** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.21 聊天 UI工程笔记第21条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **21** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **21** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.22 聊天 UI工程笔记第22条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **22** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **22** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.23 聊天 UI工程笔记第23条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **23** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **23** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.24 聊天 UI工程笔记第24条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **24** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **24** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.25 聊天 UI工程笔记第25条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **25** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **25** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.26 聊天 UI工程笔记第26条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **26** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **26** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.27 聊天 UI工程笔记第27条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **27** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **27** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.28 聊天 UI工程笔记第28条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **28** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **28** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.29 聊天 UI工程笔记第29条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **29** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **29** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.30 聊天 UI工程笔记第30条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **30** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **30** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.31 聊天 UI工程笔记第31条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **31** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **31** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.32 聊天 UI工程笔记第32条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **32** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **32** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.33 聊天 UI工程笔记第33条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **33** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **33** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.34 聊天 UI工程笔记第34条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **34** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **34** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.35 聊天 UI工程笔记第35条
 
-在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **35** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。""",
+在企业 RAG 落地 **聊天 UI** 时，团队常忽略第 **35** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。""",
     "markdown-render-rag": """### 附录 Z.1 Markdown 安全工程笔记第1条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **1** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **1** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.2 Markdown 安全工程笔记第2条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **2** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **2** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.3 Markdown 安全工程笔记第3条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **3** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **3** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.4 Markdown 安全工程笔记第4条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **4** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **4** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.5 Markdown 安全工程笔记第5条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **5** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **5** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.6 Markdown 安全工程笔记第6条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **6** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **6** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.7 Markdown 安全工程笔记第7条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **7** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **7** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.8 Markdown 安全工程笔记第8条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **8** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **8** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.9 Markdown 安全工程笔记第9条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **9** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **9** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.10 Markdown 安全工程笔记第10条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **10** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **10** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.11 Markdown 安全工程笔记第11条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **11** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **11** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.12 Markdown 安全工程笔记第12条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **12** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **12** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.13 Markdown 安全工程笔记第13条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **13** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **13** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.14 Markdown 安全工程笔记第14条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **14** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **14** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.15 Markdown 安全工程笔记第15条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **15** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **15** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.16 Markdown 安全工程笔记第16条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **16** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **16** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.17 Markdown 安全工程笔记第17条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **17** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **17** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.18 Markdown 安全工程笔记第18条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **18** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **18** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.19 Markdown 安全工程笔记第19条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **19** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **19** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.20 Markdown 安全工程笔记第20条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **20** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **20** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.21 Markdown 安全工程笔记第21条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **21** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **21** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.22 Markdown 安全工程笔记第22条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **22** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **22** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.23 Markdown 安全工程笔记第23条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **23** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **23** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.24 Markdown 安全工程笔记第24条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **24** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **24** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.25 Markdown 安全工程笔记第25条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **25** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **25** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.26 Markdown 安全工程笔记第26条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **26** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **26** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.27 Markdown 安全工程笔记第27条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **27** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **27** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.28 Markdown 安全工程笔记第28条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **28** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **28** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.29 Markdown 安全工程笔记第29条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **29** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **29** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.30 Markdown 安全工程笔记第30条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **30** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **30** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.31 Markdown 安全工程笔记第31条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **31** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **31** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.32 Markdown 安全工程笔记第32条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **32** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **32** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.33 Markdown 安全工程笔记第33条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **33** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **33** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.34 Markdown 安全工程笔记第34条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **34** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **34** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。
 
 ### 附录 Z.35 Markdown 安全工程笔记第35条
 
-在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **35** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。""",
+在企业 RAG 落地 **Markdown 安全** 时，团队常忽略第 **35** 项细节：第一，与 [164 JWT](164.jwt-auth-rag-tutorial.md) 至 [172 Markdown](172.markdown-render-rag-tutorial（front-end）.md) 全链路配置一致；第二，PoC 与生产环境变量分离且密钥走 KMS；第三，每次参数变更同步 [170 OpenAPI](170.openapi-swagger-docs-tutorial.md) 与回归金标；第四，日志必须含 trace_id、tenant_id、sub 但不含机密正文；第五，安全评审包含越权与 XSS 负例。请把本节纳入 sprint 验收 checklist。""",
 }

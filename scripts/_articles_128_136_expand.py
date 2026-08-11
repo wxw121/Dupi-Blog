@@ -208,7 +208,7 @@ LlamaIndex 通过 **StorageContext** 绑定 vector_store、docstore、index_stor
 
 ### 14.4 流式
 
-`streaming=True` 时逐 token；对接前端见 [116 SSE](116.sse-rag-streaming-tutorial.md)、[174 打字机](174.streaming-typewriter-ui-tutorial.md)。了解即可。
+`streaming=True` 时逐 token；对接前端见 [116 SSE](116.sse-rag-streaming-tutorial.md)、[174 打字机](174.streaming-typewriter-ui-tutorial（front-end）.md)。了解即可。
 
 ### 14.5 面试话术
 

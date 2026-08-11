@@ -2,7 +2,7 @@
 """Final expansion to reach >=5000 hanzi without generic repetition."""
 
 FINAL = {
-    "173.code-highlight-rag-tutorial.md": r'''
+    "173.code-highlight-rag-tutorial（front-end）.md": r'''
 ## 附录 V：企业落地周会演示脚本（代码高亮专项）
 
 **对象**：研发 + 运维 + 产品  
@@ -10,7 +10,7 @@ FINAL = {
 
 1. 展示无高亮灰框答案，让运维找 `apiVersion`（故意困难）。  
 2. 刷新页面，启用本篇 CodeBlock，同一答案关键字分色，复制进终端一次成功。  
-3. 打开 DevTools Network，演示流式 done 后高亮不阻塞 delta（与 [174](174.streaming-typewriter-ui-tutorial.md) 联调视频）。  
+3. 打开 DevTools Network，演示流式 done 后高亮不阻塞 delta（与 [174](174.streaming-typewriter-ui-tutorial（front-end）.md) 联调视频）。  
 4. 展示 sanitize：构造含 `<script>` 的恶意围栏被剥离，hljs 仍正常。  
 5. Q&A：hljs vs shiki 选型表（§4）发 wiki。
 
@@ -29,7 +29,7 @@ FINAL = {
 
 路演时诚实说明边界，避免现场被问「能不能跑代码」翻车。
 ''',
-    "174.streaming-typewriter-ui-tutorial.md": r'''
+    "174.streaming-typewriter-ui-tutorial（front-end）.md": r'''
 ## 附录 AA：流式 UI 故障演练（Game Day）
 
 每月一次前端 Game Day，模拟四种故障：  
@@ -46,7 +46,7 @@ FINAL = {
 
 [阶段 0](ENTERPRISE_RAG_ROADMAP.md#阶段-0基础补齐) 的 `projects/00-llm-streaming/` 已练过纯 LLM 流式；本篇在其上叠加 **RAG 三态**（检索/生成/引用）与 citations 契约。建议把阶段 0 的 `useStream` 重命名为 `useLlmStream`，新建 `useRagStream` 避免语义混淆。
 ''',
-    "175.abort-controller-stream-tutorial.md": r'''
+    "175.abort-controller-stream-tutorial（front-end）.md": r'''
 ## 附录 Z：中断功能的产品文案与埋点
 
 | 埋点 | 字段 |
@@ -62,7 +62,7 @@ FINAL = {
 
 客服需知：用户停止后 **已显示文字仍可能不完整**，不可截图作为最终政策解释。系统应提供「重新生成完整答案」按钮，走新请求。培训幻灯片链接本篇 §9 partial 保留策略与 [112 拒答](112.refusal-strategy-tutorial.md) 区分。
 ''',
-    "176.citation-card-ui-tutorial.md": r'''
+    "176.citation-card-ui-tutorial（front-end）.md": r'''
 ## 附录 Z：引用卡片视觉规范（供设计稿）
 
 - 卡片最小高度 72px，最大高度 120px（含摘录）。  
@@ -78,7 +78,7 @@ FINAL = {
 
 [153 A/B](153.ab-experiment-rag-tutorial.md) 可测：仅行内 vs 行内+卡片 对 **用户点击率、停留时长、faithfulness 人工分** 的影响。假设：卡片提升点击率但移动端增加滚动——用数据决策默认折叠策略。
 ''',
-    "177.source-preview-sidebar-tutorial.md": r'''
+    "177.source-preview-sidebar-tutorial（front-end）.md": r'''
 ## 附录 Z：侧栏宽度与用户偏好持久化
 
 `localStorage` 存 `previewWidthPercent`，下次访问恢复。注意 GDPR：仅偏好、不含 PII。拖曳释放时 debounce 500ms 写入。
@@ -89,13 +89,13 @@ FINAL = {
 
 [48 文档版本](48.doc-versioning-tutorial.md) 变更后，旧 `chunk_id` 可能指向旧 PDF。预览 API 应返回 `doc_version`，侧栏 header 显示「员工手册 v3」；若用户书签旧链接，提示「文档已更新」并提供跳转最新版 navigate_url。
 ''',
-    "178.pdf-highlight-locate-tutorial.md": r'''
+    "178.pdf-highlight-locate-tutorial（front-end）.md": r'''
 ## 附录 Z：阶段 4 全栈产品 —— 从路线图到可售卖 Demo
 
 [ENTERPRISE_RAG_ROADMAP 阶段 4](ENTERPRISE_RAG_ROADMAP.md#阶段-4全栈产品) 不是再写一篇教程，而是交付 **`projects/04-fullstack-assistant/`**：
 
 **必须演示的业务流**  
-① 租户管理员上传 PDF → ② 后台 Celery 索引（[159](159.celery-async-queue-tutorial.md)）→ ③ 员工登录问政策 → ④ [174](174.streaming-typewriter-ui-tutorial.md) 流式答案 → ⑤ 点 [176](176.citation-card-ui-tutorial.md) 卡片 → ⑥ [177](177.source-preview-sidebar-tutorial.md) 侧栏打开 → ⑦ 本篇 PDF 跳页高亮。
+① 租户管理员上传 PDF → ② 后台 Celery 索引（[159](159.celery-async-queue-tutorial.md)）→ ③ 员工登录问政策 → ④ [174](174.streaming-typewriter-ui-tutorial（front-end）.md) 流式答案 → ⑤ 点 [176](176.citation-card-ui-tutorial（front-end）.md) 卡片 → ⑥ [177](177.source-preview-sidebar-tutorial（front-end）.md) 侧栏打开 → ⑦ 本篇 PDF 跳页高亮。
 
 **多用户隔离**：租户 A 的引用打不开的文档，租户 B 不可见（[166](166.tenant-isolation-backend-tutorial.md)、[121](121.unauthorized-doc-filter-tutorial.md)）。
 
