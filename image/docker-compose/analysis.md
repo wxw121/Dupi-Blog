@@ -15,3 +15,5 @@ hand-drawn-edu, landscape 16:9, zh (EXTEND.md)
 3. linear-progression - Dockerfile 构建流
 4. hub-spoke - Compose 多服务架构
 5. bento-grid - Compose 命令速查
+6. binary-comparison - Dockerfile 分层缓存失效对比
+7. linear-progression - 从零启动 Compose 项目流程
