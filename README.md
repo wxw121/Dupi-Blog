@@ -387,7 +387,7 @@ Graph RAG、Agentic RAG、多模态与微调。
 |------|------|
 | Superpowers + frontend-design 实战 | [skill/superpowers-frontend-design-web-dev-tutorial.md](skill/superpowers-frontend-design-web-dev-tutorial.md) |
 | 博客配图维护脚本 | [scripts/README.md](scripts/README.md) |
-| 面试自检 50 题 | [docs/interview-checklist.md](docs/interview-checklist.md)（路线图引用，待补充） |
+| 面试自检 50 题 | [docs/interview-checklist.md](docs/interview-checklist.md) |
 
 ---
 
